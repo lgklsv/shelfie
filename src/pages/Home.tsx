@@ -1,7 +1,14 @@
-/* eslint-disable react/prefer-stateless-function */
-import { Component } from 'react';
+import React from 'react';
 
-class Home extends Component {
+type HomeProps = {
+  title: string;
+};
+
+class Home extends React.Component<HomeProps> {
+  componentDidMount() {
+    document.title = this.props.title;
+  }
+
   render() {
     return <h1>Hello World</h1>;
   }

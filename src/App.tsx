@@ -1,16 +1,15 @@
-/* eslint-disable react/prefer-stateless-function */
-import { Component } from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home title="Home" />} />
+        <Route path="*" element={<NotFound title="404 Not Found" />} />
       </Routes>
     );
   }

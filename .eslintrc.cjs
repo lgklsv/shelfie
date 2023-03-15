@@ -25,5 +25,8 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 0,
     '@typescript-eslint/no-explicit-any': 'error',
+    'react/function-component-definition': 0,
+    'react/prefer-stateless-function': 0,
+    'react/destructuring-assignment': 0,
   },
 };
