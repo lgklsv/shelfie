@@ -1,0 +1,801 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1421,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "xEApjgEACAAJ",
+      "etag": "nIYkAbbO62c",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xEApjgEACAAJ",
+      "volumeInfo": {
+        "title": "React.js Essentials",
+        "subtitle": "A Fast-paced Guide to Designing and Building Scalable and Maintainable Web Apps with React.js",
+        "authors": ["Artemij Fedosejev"],
+        "publishedDate": "2015",
+        "description": "This book will help you understand why big organizations use React.js to build web applications with maintainable and performant user interfaces. From creating UI elements to testing and exploring scaling solutions, this book will take you through building your own maintainable React.js application in no time.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1783551623"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781783551620"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 0,
+        "printType": "BOOK",
+        "categories": ["Application software"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xEApjgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xEApjgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=xEApjgEACAAJ&dq=react&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=xEApjgEACAAJ&dq=react&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/React_js_Essentials.html?hl=&id=xEApjgEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xEApjgEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book will help you understand why big organizations use React.js to build web applications with maintainable and performant user interfaces."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ppjUtAEACAAJ",
+      "etag": "suiGC7qte2E",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ppjUtAEACAAJ",
+      "volumeInfo": {
+        "title": "Fullstack React",
+        "subtitle": "The Complete Guide to ReactJS and Friends",
+        "authors": ["Accomazzo Anthony", "Murray Nathaniel", "Ari Lerner"],
+        "publisher": "Fullstack.IO",
+        "publishedDate": "2017-03",
+        "description": "LEARN REACT TODAY The up-to-date, in-depth, complete guide to React and friends. Become a ReactJS expert today",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0991344626"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780991344628"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 836,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=ppjUtAEACAAJ&dq=react&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=ppjUtAEACAAJ&dq=react&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Fullstack_React.html?hl=&id=ppjUtAEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=ppjUtAEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "LEARN REACT TODAY The up-to-date, in-depth, complete guide to React and friends. Become a ReactJS expert today"
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "xAg7DwAAQBAJ",
+      "etag": "Q/HP9AIVdk0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xAg7DwAAQBAJ",
+      "volumeInfo": {
+        "title": "Learning React Native",
+        "subtitle": "Building Native Mobile Apps with JavaScript",
+        "authors": ["Bonnie Eisenman"],
+        "publisher": "\"O'Reilly Media, Inc.\"",
+        "publishedDate": "2017-10-23",
+        "description": "Get a practical introduction to React Native, the JavaScript framework for writing and deploying fully featured mobile apps that render natively. The second edition of this hands-on guide shows you how to build applications that target iOS, Android, and other mobile platforms instead of browsers—apps that can access platform features such as the camera, user location, and local storage. Through code examples and step-by-step instructions, web developers and frontend engineers familiar with React will learn how to build and style interfaces, use mobile components, and debug and deploy apps. You’ll learn how to extend React Native using third-party libraries or your own Java and Objective-C libraries. Understand how React Native works under the hood with native UI components Examine how React Native’s mobile-based components compare to basic HTML elements Create and style your own React Native components and applications Take advantage of platform-specific APIs, as well as modules from the framework’s community Incorporate platform-specific components into cross-platform apps Learn common pitfalls of React Native development, and tools for dealing with them Combine a large application’s many screens into a cohesive UX Handle state management in a large app with the Redux library",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781491989098"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1491989092"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 242,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "averageRating": 4,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=xAg7DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=xAg7DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=xAg7DwAAQBAJ&printsec=frontcover&dq=react&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=xAg7DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=xAg7DwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 40.99,
+          "currencyCode": "GBP"
+        },
+        "retailPrice": {
+          "amount": 40.99,
+          "currencyCode": "GBP"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=xAg7DwAAQBAJ&rdid=book-xAg7DwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 40990000,
+              "currencyCode": "GBP"
+            },
+            "retailPrice": {
+              "amountInMicros": 40990000,
+              "currencyCode": "GBP"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=xAg7DwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The second edition of this hands-on guide shows you how to build applications that target iOS, Android, and other mobile platforms instead of browsers—apps that can access platform features such as the camera, user location, and local ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "e_l9zQEACAAJ",
+      "etag": "FEssDoGAhHY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/e_l9zQEACAAJ",
+      "volumeInfo": {
+        "title": "React and React Native",
+        "subtitle": "A Complete Hands-on Guide to Modern Web and Mobile Development with React.js",
+        "authors": ["Adam Boduch", "Roy Derks"],
+        "publishedDate": "2020-04-29",
+        "description": "Discover and learn how to use React and React Native to build mobile, desktop and web apps. From composable and Native UIs through to device-specific APIs and offline development, this book has everything you need to create engaging and user-friendly React applications which run on all major platforms.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1839211148"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781839211140"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 526,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=e_l9zQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=e_l9zQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=e_l9zQEACAAJ&dq=react&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=e_l9zQEACAAJ&dq=react&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/React_and_React_Native.html?hl=&id=e_l9zQEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=e_l9zQEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "From composable and Native UIs through to device-specific APIs and offline development, this book has everything you need to create engaging and user-friendly React applications which run on all major platforms."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "viIvEAAAQBAJ",
+      "etag": "qF+6moN0UcM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/viIvEAAAQBAJ",
+      "volumeInfo": {
+        "title": "React 17 Design Patterns and Best Practices",
+        "subtitle": "Design, build, and deploy production-ready web applications using industry-standard practices, 3rd Edition",
+        "authors": ["Carlos Santana Roldan"],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2021-05-17",
+        "description": "React is an open-source JavaScript library that is used for building user interfaces or UI components. This React book is designed to take you through the most valuable design patterns in React, helping you learn how to apply design patterns and best practices in real-world scenarios.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781800561762"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1800561768"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 394,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=viIvEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=viIvEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=viIvEAAAQBAJ&printsec=frontcover&dq=react&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=viIvEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=viIvEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 20.99,
+          "currencyCode": "GBP"
+        },
+        "retailPrice": {
+          "amount": 13.64,
+          "currencyCode": "GBP"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=viIvEAAAQBAJ&rdid=book-viIvEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 20990000,
+              "currencyCode": "GBP"
+            },
+            "retailPrice": {
+              "amountInMicros": 13640000,
+              "currencyCode": "GBP"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=viIvEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Build scalable, maintainable, and powerful React web apps with design patterns and insightful best practices Key Features Make the most of design patterns in React – including render props and controlled and uncontrolled inputs Master ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "0DidDwAAQBAJ",
+      "etag": "7nlhOdVqPvY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/0DidDwAAQBAJ",
+      "volumeInfo": {
+        "title": "React Native for Mobile Development",
+        "subtitle": "Harness the Power of React Native to Create Stunning iOS and Android Applications",
+        "authors": ["Akshat Paul", "Abhishek Nalwaya"],
+        "publisher": "Apress",
+        "publishedDate": "2019-06-12",
+        "description": "Develop native iOS and Android apps with ease using React Native. Learn by doing through an example-driven approach, and have a substantial running app at the end of each chapter. This second edition is fully updated to include ES7 (ECMAScript 7), the latest version of React Native (including Redux), and development on Android. You will start by setting up React Native and exploring the anatomy of React Native apps. You'll then move on to Redux data flow, how it differs from flux, and how you can include it in your React Native project to solve state management differently and efficiently. You will also learn how to boost your development by including popular packages developed by the React Native community that will help you write less; do more. Finally, you'll learn to how write test cases using Jest and submit your application to the App Store. React Native challenges the status quo of native iOS and Android development with revolutionary components, asynchronous execution, unique methods for touch handling, and much more. This book reveals the the path-breaking concepts of React.js and acquaints you with the React way of thinking so you can learn to create stunning user interfaces. What You'll Learn Build stunning iOS and Android applications Understand the Redux design pattern and use it in your project Interact with iOS and android device capabilities such as addressbook, camera, GPS and more with your apps Test and launch your application to the App StoreWho This Book Is For Anyone with JavaScript experience who wants to build native mobile applications but dreads the thought of programming in Objective-C or Java. Developers who have experience with JavaScript but are new or not acquainted to React Native or ReactJS.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781484244548"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1484244540"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 243,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=0DidDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=0DidDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=0DidDwAAQBAJ&printsec=frontcover&dq=react&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=0DidDwAAQBAJ&dq=react&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/React_Native_for_Mobile_Development.html?hl=&id=0DidDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.uk/books/download/React_Native_for_Mobile_Development-sample-epub.acsm?id=0DidDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.uk/books/download/React_Native_for_Mobile_Development-sample-pdf.acsm?id=0DidDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=0DidDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book reveals the the path-breaking concepts of React.js and acquaints you with the React way of thinking so you can learn to create stunning user interfaces."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "uUMQEAAAQBAJ",
+      "etag": "ZuwdMNCb7rY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/uUMQEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Full-Stack React, TypeScript, and Node",
+        "subtitle": "Build cloud-ready web applications using React 17 with Hooks and GraphQL",
+        "authors": ["David Choi"],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2020-12-18",
+        "description": "Discover the current landscape of full-stack development and how to leverage modern web technologies for building production-ready React.js applications to deploy on AWS Key FeaturesUnderstand the architecture of React and single-page applicationsBuild a modern Web API for your SPA using Node.js, Express, and GraphQLGain a clear and practical understanding of how to build a complete full-stack applicationBook Description React sets the standard for building high-performance client-side web apps. Node.js is a scalable application server that is used in thousands of websites, while GraphQL is becoming the standard way for large websites to provide data and services to their users. Together, these technologies, when reinforced with the capabilities of TypeScript, provide a cutting-edge stack for complete web application development. This book takes a hands-on approach to implementing modern web technologies and the associated methodologies for building full-stack apps. You’ll begin by gaining a strong understanding of TypeScript and how to use it to build high-quality web apps. The chapters that follow delve into client-side development with React using the new Hooks API and Redux. Next, you’ll get to grips with server-side development with Express, including authentication with Redis-based sessions and accessing databases with TypeORM. The book will then show you how to use Apollo GraphQL to build web services for your full-stack app. Later, you’ll learn how to build GraphQL schemas and integrate them with React using Hooks. Finally, you’ll focus on how to deploy your application onto an NGINX server using the AWS cloud. By the end of this book, you’ll be able to build and deploy complete high-performance web applications using React, Node, and GraphQL. What you will learnDiscover TypeScript’s most important features and how they can be used to improve code quality and maintainabilityUnderstand what React Hooks are and how to build React apps using themImplement state management for your React app using ReduxSet up an Express project with TypeScript and GraphQL from scratchBuild a fully functional online forum app using React and GraphQLAdd authentication to your web app using RedisSave and retrieve data from a Postgres database using TypeORMConfigure NGINX on the AWS cloud to deploy and serve your appsWho this book is for The book is for web developers who want to go beyond front-end web development and enter the world of full-stack web development by learning about modern web technologies and how they come together. A good understanding of JavaScript programming is required before getting started with this web development book.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781839214691"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1839214694"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 648,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=uUMQEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=uUMQEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=uUMQEAAAQBAJ&printsec=frontcover&dq=react&hl=&cd=7&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=uUMQEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=uUMQEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 27.99,
+          "currencyCode": "GBP"
+        },
+        "retailPrice": {
+          "amount": 18.19,
+          "currencyCode": "GBP"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=uUMQEAAAQBAJ&rdid=book-uUMQEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 27990000,
+              "currencyCode": "GBP"
+            },
+            "retailPrice": {
+              "amountInMicros": 18190000,
+              "currencyCode": "GBP"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=uUMQEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book takes a hands-on approach to implementing modern web technologies and the associated methodologies for building full-stack apps."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "dKD8vwEACAAJ",
+      "etag": "eHo7vaCWPU0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/dKD8vwEACAAJ",
+      "volumeInfo": {
+        "title": "Pro React 16",
+        "authors": ["Adam Freeman"],
+        "publisher": "Apress",
+        "publishedDate": "2019-03-20",
+        "description": "Use the enormously popular React framework to build dynamic JavaScript applications that take advantage of the capabilities of modern browsers and devices. You will learn how React brings the power of strong architecture and responsive data to the client, providing the foundation for complex and rich user interfaces. Best-selling author Adam Freeman explains how to get the most from React. He begins by describing the React architecture and the benefits it offers and then shows you how to use React and its associated tools and libraries in your projects, starting from the nuts and bolts and building up to the most advanced and sophisticated features, going in-depth to give you the knowledge you need. Each topic is presented clearly and concisely. Chapters include common problems and how to avoid them. What You’ll Learn Gain a solid understanding of the React design Create rich and dynamic web app clients using React Create data stores using Redux Consume data using REST and GraphQL Test your React projects Who This Book Is For JavaScript developers who want to use React to create dynamic client-side applications",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1484244508"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781484244500"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 745,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=dKD8vwEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=dKD8vwEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=dKD8vwEACAAJ&dq=react&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=dKD8vwEACAAJ&dq=react&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Pro_React_16.html?hl=&id=dKD8vwEACAAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=dKD8vwEACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "What You’ll Learn Gain a solid understanding of the React design Create rich and dynamic web app clients using React Create data stores using Redux Consume data using REST and GraphQL Test your React projects Who This Book Is For ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "IsJCDgAAQBAJ",
+      "etag": "mQhmRVF0emU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/IsJCDgAAQBAJ",
+      "volumeInfo": {
+        "title": "Pro MERN Stack",
+        "subtitle": "Full Stack Web App Development with Mongo, Express, React, and Node",
+        "authors": ["Vasan Subramanian"],
+        "publisher": "Apress",
+        "publishedDate": "2017-03-02",
+        "description": "Assemble the complete stack required to build a modern web app using React: MongoDB (a NoSQL database) and Express (a framework for web application servers), which runs on Node (JavaScript on the server side), complement React very nicely. This book will also cover many other tools that go into building a complete web application: React Router, React-Bootstrap, Redux, Babel, and webpack. Though the primary focus of Pro MERN Stack is to equip you with all that is required to build a full-fledged web application, a large portion of the book will be devoted to React. The popular MEAN (MongoDB, Express, AngularJS, Node) stack introduced Single Page Apps (SPAs) and front-end Model-View-Controller (MVC) as new and efficient paradigms. But it has its shortcomings such as lack of support for SEO friendly server-side rendering and being too prescriptive by being a framework. Facebook's React is a technology that competes indirectly with AngularJS. It is not a full-fledged MVC framework. It is a JavaScript library for building user interfaces (in some sense the View part). Yet, it is possible to build a web app by replacing AngularJS with React – hence the term MERN stack. What You Will Learn Discover the details of React, the React Way, and how to get the maximum out of this library See the basics of MongoDB, Express, and Node, enough to build a web app Work with other tools complementary to React, including React-Bootstrap and React Router Use the tools required to build JavaScript based SPAs Tie all the components together to build a complete web app. Who This Book Is For Developers and architects who have prior experience in any web app stack other than the MERN stack will find the book useful to learn about this modern stack. Prior knowledge of JavaScript, HTML, and CSS is required.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781484226537"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1484226534"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 335,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=IsJCDgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=IsJCDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=IsJCDgAAQBAJ&printsec=frontcover&dq=react&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.co.uk/books?id=IsJCDgAAQBAJ&dq=react&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Pro_MERN_Stack.html?hl=&id=IsJCDgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.uk/books/download/Pro_MERN_Stack-sample-epub.acsm?id=IsJCDgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.uk/books/download/Pro_MERN_Stack-sample-pdf.acsm?id=IsJCDgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=IsJCDgAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book will also cover many other tools that go into building a complete web application: React Router, React-Bootstrap, Redux, Babel, and webpack."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "vqdhDwAAQBAJ",
+      "etag": "fwNlslmtlaY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/vqdhDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Hands-On Full Stack Development with Spring Boot 2.0 and React",
+        "subtitle": "Build modern and scalable full stack applications using the Java-based Spring Framework 5.0 and React",
+        "authors": ["Juha Hinkula"],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2018-06-21",
+        "description": "Develop efficient and modern full-stack applications using Spring Boot and React 16 Key Features Develop resourceful backends using Spring Boot and faultless frontends using React. Explore the techniques involved in creating a full-stack app by going through a methodical approach. Learn to add CRUD functionalities and use Material UI in the user interface to make it more user-friendly. Book Description Apart from knowing how to write frontend and backend code, a full-stack engineer has to tackle all the problems that are encountered in the application development life cycle, starting from a simple idea to UI design, the technical design, and all the way to implementing, testing, production, deployment, and monitoring. This book covers the full set of technologies that you need to know to become a full-stack web developer with Spring Boot for the backend and React for the frontend. This comprehensive guide demonstrates how to build a modern full-stack application in practice. This book will teach you how to build RESTful API endpoints and work with the data access Layer of Spring, using Hibernate as the ORM. As we move ahead, you will be introduced to the other components of Spring, such as Spring Security, which will teach you how to secure the backend. Then, we will move on to the frontend, where you will be introduced to React, a modern JavaScript library for building fast and reliable user interfaces, and its app development environment and components. You will also create a Docker container for your application. Finally, the book will lay out the best practices that underpin professional full-stack web development. What you will learn Create a RESTful web service with Spring Boot Understand how to use React for frontend programming Gain knowledge of how to create unit tests using JUnit Discover the techniques that go into securing the backend using Spring Security Learn how to use Material UI in the user interface to make it more user-friendly Create a React app by using the Create React App starter kit made by Facebook Who this book is for Java developers who are familiar with Spring, but have not yet built full-stack applications",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781788993166"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1788993160"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 302,
+        "printType": "BOOK",
+        "categories": ["Computers"],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.1.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=vqdhDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=vqdhDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.uk/books?id=vqdhDwAAQBAJ&printsec=frontcover&dq=react&hl=&cd=10&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=vqdhDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=vqdhDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "GB",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 25.99,
+          "currencyCode": "GBP"
+        },
+        "retailPrice": {
+          "amount": 16.89,
+          "currencyCode": "GBP"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=vqdhDwAAQBAJ&rdid=book-vqdhDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 25990000,
+              "currencyCode": "GBP"
+            },
+            "retailPrice": {
+              "amountInMicros": 16890000,
+              "currencyCode": "GBP"
+            },
+            "giftable": true
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "GB",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=vqdhDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Spring Boot and React allow us to build powerful full-stack applications and also demonstrate a modern full-stack app in practice."
+      }
+    }
+  ]
+}
