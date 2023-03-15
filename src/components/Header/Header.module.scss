@@ -14,6 +14,9 @@
 
   &__logo {
     @include flex-center;
+  }
+
+  &__title {
     font-size: 2rem;
     letter-spacing: 1%;
     text-transform: capitalize;

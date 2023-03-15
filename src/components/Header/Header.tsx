@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
-import Logo from '../../assets/icons/logo';
+import Navbar from './components/Navbar/Navbar';
+import Logo from '../../assets/icons/Logo';
 
 class Header extends React.Component {
   render() {
@@ -13,9 +14,10 @@ class Header extends React.Component {
             <Link to="/">
               <div className={styles.header__logo}>
                 <Logo />
-                <h1>Shelfie</h1>
+                <h1 className={styles.header__title}>Shelfie</h1>
               </div>
             </Link>
+            <Navbar />
           </div>
         </div>
       </div>

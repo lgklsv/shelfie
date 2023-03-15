@@ -47,17 +47,6 @@ a {
   text-decoration: none;
 }
 
-.container {
-  width: calc(100vw - 100px);
-  max-width: $desktop;
-  height: 100%;
-  margin: 0 auto;
-
-  @media (max-width: 640px) {
-    width: calc(100vw - 30px);
-  }
-}
-
 @mixin noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */

@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import appTitle from './consts/app-title';
 
+import './App.scss';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
