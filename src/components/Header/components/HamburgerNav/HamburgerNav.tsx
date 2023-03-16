@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
+import NavItems from '../NavItems/NavItems';
 import styles from './HamburgerNav.module.scss';
 
 type HamburgerNavState = {
@@ -27,16 +27,7 @@ class HamburgerNav extends React.Component {
             this.state.isOpen ? `${styles.active}` : `${styles.inactive}`
           }`}
         >
-          <li>
-            <Link to="/" className="btn btn-secondary">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="btn btn-secondary">
-              About us
-            </Link>
-          </li>
+          <NavItems />
         </ul>
         <div
           className={
