@@ -7,9 +7,7 @@ class MainLayout extends React.Component {
     return (
       <div>
         <Header />
-        <div className="container">
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Welcome from '../components/Welcome/Welcome';
+
 type HomeProps = {
   title: string;
 };
@@ -10,7 +12,7 @@ class Home extends React.Component<HomeProps> {
   }
 
   render() {
-    return <h1>Hello World</h1>;
+    return <Welcome />;
   }
 }
 

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-export default class Logo extends Component {
+export default class LogoIcon extends Component {
   render() {
     return (
       <svg width="65" height="65" version="1.1">
