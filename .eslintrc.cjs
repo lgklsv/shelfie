@@ -28,6 +28,10 @@ module.exports = {
     'react/function-component-definition': 0,
     'react/prefer-stateless-function': 0,
     'react/destructuring-assignment': 0,
+    'react/state-in-constructor': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
     'import/prefer-default-export': 0,
   },
 };

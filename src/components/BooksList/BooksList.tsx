@@ -1,4 +1,3 @@
-/* eslint-disable react/state-in-constructor */
 import React from 'react';
 
 import books from '../../books.json';
@@ -10,7 +9,7 @@ type BooksListState = {
 };
 
 class BooksList extends React.Component {
-  state: BooksListState = {
+  readonly state: BooksListState = {
     items: books.items,
   };
 

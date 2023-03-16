@@ -1,0 +1,76 @@
+@import '/src/theme/variable';
+
+.hamburger,
+.navbar_hamburger {
+  display: none;
+}
+
+@media (max-width: $phone-width) {
+  .navbar__list_hamburger {
+    position: fixed;
+    right: -100%;
+    top: 65px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: $header-footer;
+    width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .navbar__list_hamburger.active {
+    right: 0;
+  }
+
+  .navbar_hamburger {
+    @include flex-center;
+  }
+
+  .hamburger {
+    @include flex-center;
+    width: 23px;
+    height: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    margin-left: 1rem;
+  }
+
+  .hamburger__line {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: $white;
+    border-radius: 5px;
+  }
+
+  #bar1 {
+    transform: translateY(-4px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  #bar2 {
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  #bar3 {
+    transform: translateY(4px);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  .active #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+
+  .active #bar2 {
+    opacity: 0;
+  }
+
+  .active #bar3 {
+    transform: translateY(-2px) rotateZ(45deg);
+  }
+}

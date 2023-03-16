@@ -7,6 +7,10 @@
   position: relative;
   padding-bottom: 3rem;
 
+  @media (max-width: $phone-width) {
+    padding-top: 8rem;
+  }
+
   &__content {
     @include flex-center;
     flex-direction: column;
@@ -18,6 +22,10 @@
     font-weight: bold;
     text-align: center;
     line-height: 120%;
+
+    @media (max-width: $phone-width) {
+      font-size: 2rem;
+    }
   }
 
   &__cutout {

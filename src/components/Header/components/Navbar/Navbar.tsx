@@ -7,12 +7,18 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className={styles.navbar}>
-        <Link to="/" className="btn btn-secondary">
-          Home
-        </Link>
-        <Link to="/about" className="btn btn-secondary">
-          About us
-        </Link>
+        <ul className={styles.navbar__list}>
+          <li>
+            <Link to="/" className="btn btn-secondary">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="btn btn-secondary">
+              About us
+            </Link>
+          </li>
+        </ul>
       </nav>
     );
   }

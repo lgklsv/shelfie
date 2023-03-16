@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Navbar from './components/Navbar/Navbar';
 import LogoIcon from '../../assets/icons/LogoIcon';
+import HamburgerNav from './components/HamburgerNav/HamburgerNav';
 import styles from './Header.module.scss';
 
 class Header extends React.Component {
@@ -18,6 +19,7 @@ class Header extends React.Component {
               </div>
             </Link>
             <Navbar />
+            <HamburgerNav />
           </div>
         </div>
       </header>

@@ -1,5 +1,11 @@
 @import '/src/theme/variable';
 
-.navbar {
+.navbar__list {
   @include flex-center;
+}
+
+@media (max-width: $phone-width) {
+  .navbar {
+    display: none;
+  }
 }
