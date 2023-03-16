@@ -2,6 +2,7 @@
 
 .search {
   position: relative;
+  z-index: 2;
 
   &__input {
     border: 1px solid $border;
