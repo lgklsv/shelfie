@@ -17,6 +17,6 @@
     "noImplicitAny": true,
     "jsx": "react-jsx"
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs", "src"],
+  "include": ["vite.config.ts", ".eslintrc.cjs", "src", "./setupTest.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
