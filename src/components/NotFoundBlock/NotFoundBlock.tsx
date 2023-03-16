@@ -13,7 +13,7 @@ class NotFoundBlock extends React.Component {
             Looks like this page does not exist ( ´•︵•` )
           </p>
           <Link className="btn btn-primary" to="/">
-            Return to home
+            go home
           </Link>
         </div>
       </div>

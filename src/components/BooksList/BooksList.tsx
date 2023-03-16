@@ -16,13 +16,15 @@ class BooksList extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className={styles.bookList}>
-          {this.state.items.map((obj: Book) => (
-            <BookCard key={obj.id} data={obj} />
-          ))}
+      <section>
+        <div className="container">
+          <div className={styles.bookList}>
+            {this.state.items.map((obj: Book) => (
+              <BookCard key={obj.id} data={obj.volumeInfo} />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

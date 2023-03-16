@@ -1,8 +1,12 @@
 @import '/src/theme/variable';
 
 .header {
+  width: 100%;
   height: $header-height;
   background-color: $header-footer;
+  position: fixed;
+  top: 0;
+  z-index: 5;
 
   &__content {
     width: 100%;
