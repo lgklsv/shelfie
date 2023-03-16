@@ -8,7 +8,7 @@ import styles from './Header.module.scss';
 class Header extends React.Component {
   render() {
     return (
-      <div className={styles.header}>
+      <header className={styles.header}>
         <div className="container">
           <div className={styles.header__content}>
             <Link to="/">
@@ -20,7 +20,7 @@ class Header extends React.Component {
             <Navbar />
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }
