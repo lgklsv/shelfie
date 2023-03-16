@@ -8,7 +8,7 @@ type HamburgerNavState = {
 };
 
 class HamburgerNav extends React.Component {
-  readonly state: HamburgerNavState = {
+  readonly state: Readonly<HamburgerNavState> = {
     isOpen: false,
   };
 

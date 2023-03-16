@@ -9,7 +9,7 @@ type BooksListState = {
 };
 
 class BooksList extends React.Component {
-  readonly state: BooksListState = {
+  readonly state: Readonly<BooksListState> = {
     items: books.items,
   };
 
