@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import NotFoundBlock from '../components/NotFoundBlock/NotFoundBlock';
 
 type NotFoundProps = {
   title: string;
@@ -11,12 +12,7 @@ class NotFound extends React.Component<NotFoundProps> {
   }
 
   render() {
-    return (
-      <>
-        <h1>404 Not Found</h1>
-        <Link to="/">GO HOME</Link>
-      </>
-    );
+    return <NotFoundBlock />;
   }
 }
 
