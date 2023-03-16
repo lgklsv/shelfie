@@ -1,5 +1,6 @@
 import React from 'react';
 
+import BooksList from '../components/BooksList/BooksList';
 import Welcome from '../components/Welcome/Welcome';
 
 type HomeProps = {
@@ -12,7 +13,12 @@ class Home extends React.Component<HomeProps> {
   }
 
   render() {
-    return <Welcome />;
+    return (
+      <>
+        <Welcome />
+        <BooksList />
+      </>
+    );
   }
 }
 

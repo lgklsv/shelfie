@@ -1,0 +1,8 @@
+@import '/src/theme/variable';
+
+.bookList {
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}

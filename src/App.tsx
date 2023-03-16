@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import appTitle from './consts/app-title';
+import appTitle from './const/app-title';
 
 import './App.scss';
 import MainLayout from './layouts/MainLayout';
