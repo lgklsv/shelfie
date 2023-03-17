@@ -3,26 +3,27 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import App from './App';
-import Home from './pages/Home';
 
 describe('Home', () => {
-  it('Renders hello world', () => {
+  it('Renders app name', () => {
     // ARRANGE
-    render(<Home />);
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
     // ACT
     // EXPECT
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'Hello World'
+      'Shelfie'
     );
   });
   it('Renders not found if invalid path', () => {
     render(
-      <MemoryRouter initialEntries={['/bad']}>
+      <MemoryRouter initialEntries={['/badroutewfhwgfqwwfhw']}>
         <App />
       </MemoryRouter>
     );
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(
-      'Not Found'
-    );
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('404');
   });
 });

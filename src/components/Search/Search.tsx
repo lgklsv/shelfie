@@ -47,12 +47,14 @@ class Search extends React.Component {
           value={this.state.value}
           className={styles.search__input}
           placeholder="Search..."
+          type="search"
           onChange={this.saveValueHandler.bind(this)}
         />
         {this.state.value && (
           <div
             onClick={this.clearSearchHandler.bind(this)}
             className={styles.search__clear}
+            data-testid="clear-btn"
           >
             <ClearSearchIcon />
           </div>
