@@ -20,7 +20,7 @@ class HamburgerNav extends React.Component {
 
   render() {
     return (
-      <nav className={styles.navbar_hamburger}>
+      <nav data-testid="hamburger-nav" className={styles.navbar_hamburger}>
         <ul
           onClick={this.toggleHamburgerNav}
           className={`${styles.navbar__list_hamburger} ${

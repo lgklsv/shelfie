@@ -44,4 +44,28 @@ describe('searchbar', () => {
     expect(searchInput.value).toBe('');
     expect(clearIcon).not.toBeInTheDocument();
   });
+  it('should save search value in localstorage on unmount and restore on mount', () => {
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+    const searchInput = screen.getByRole('searchbox') as HTMLInputElement;
+    const testValue = 'some input';
+
+    fireEvent.change(searchInput, { target: { value: testValue } });
+
+    render(
+      <MemoryRouter initialEntries={['/about']}>
+        <App />
+      </MemoryRouter>
+    );
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <App />
+      </MemoryRouter>
+    );
+
+    expect(searchInput.value).toBe(testValue);
+  });
 });

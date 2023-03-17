@@ -4,14 +4,14 @@ import { MemoryRouter } from 'react-router-dom';
 
 import App from '../../../../App';
 
-describe('Nav', () => {
-  it('renders 2 navbar items', () => {
+describe('HamburgerNav', () => {
+  it('should not be visible on desktop', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <App />
       </MemoryRouter>
     );
-    const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(2);
+    const hamburgerNav = screen.getByTestId('hamburger-nav');
+    expect(hamburgerNav).not.toBeVisible();
   });
 });

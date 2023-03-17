@@ -12,9 +12,10 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: ['./src/setupTests.ts'],
+    css: true,
     coverage: {
       include: ['src/**/*'],
-      exclude: ['src/assets/*', 'src/const/*'],
+      exclude: ['src/assets/*', 'src/const/*', 'src/main.tsx'],
       enabled: true,
       provider: 'istanbul',
       reporter: ['text'],
