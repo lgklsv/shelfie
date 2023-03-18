@@ -19,7 +19,11 @@ class NavItems extends React.Component {
         {navItems.map((item) => {
           return (
             <li key={item.link}>
-              <NavLink to={item.link} className="btn btn-secondary">
+              <NavLink
+                data-testid="nav-item"
+                to={item.link}
+                className="btn btn-secondary"
+              >
                 {item.text}
               </NavLink>
             </li>

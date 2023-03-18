@@ -2,15 +2,11 @@ import { describe, it } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import App from '../../App';
+import Search from './Search';
 
 describe('searchbar', () => {
   it('should change search input value on user input', () => {
-    render(
-      <MemoryRouter initialEntries={['/']}>
-        <App />
-      </MemoryRouter>
-    );
+    render(<Search />);
     const searchInput = screen.getByRole('searchbox') as HTMLInputElement;
     const testValue = 'some input';
 
@@ -19,21 +15,13 @@ describe('searchbar', () => {
   });
   it('should not show clear btn if input is empty', () => {
     localStorage.clear();
-    render(
-      <MemoryRouter initialEntries={['/']}>
-        <App />
-      </MemoryRouter>
-    );
+    render(<Search />);
     const clearIcon = screen.queryByTestId('clear-btn');
 
     expect(clearIcon).not.toBeInTheDocument();
   });
   it('should clear search input on clicking cross btn and hide clear btn', () => {
-    render(
-      <MemoryRouter initialEntries={['/']}>
-        <App />
-      </MemoryRouter>
-    );
+    render(<Search />);
     const searchInput = screen.getByRole('searchbox') as HTMLInputElement;
     const testValue = 'some input';
 
@@ -47,7 +35,7 @@ describe('searchbar', () => {
   it('should save search value in localstorage on unmount and restore on mount', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
-        <App />
+        <Search />
       </MemoryRouter>
     );
     const searchInput = screen.getByRole('searchbox') as HTMLInputElement;
@@ -57,12 +45,12 @@ describe('searchbar', () => {
 
     render(
       <MemoryRouter initialEntries={['/about']}>
-        <App />
+        <Search />
       </MemoryRouter>
     );
     render(
       <MemoryRouter initialEntries={['/']}>
-        <App />
+        <Search />
       </MemoryRouter>
     );
 

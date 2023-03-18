@@ -10,7 +10,7 @@ type BookCardProps = {
 class BookCard extends React.Component<BookCardProps> {
   render() {
     return (
-      <div className={styles.book_wrapper}>
+      <div data-testid="book-item" className={styles.book_wrapper}>
         <div className={styles.book}>
           <img
             className={styles.book__img}
@@ -22,7 +22,7 @@ class BookCard extends React.Component<BookCardProps> {
               <h4 className={styles.book__title}>
                 {stripText(this.props.data.title, 100)}
               </h4>
-              <p className={styles.book__text}>
+              <p data-testid="subtitle" className={styles.book__text}>
                 {stripText(
                   this.props.data.subtitle
                     ? this.props.data.subtitle

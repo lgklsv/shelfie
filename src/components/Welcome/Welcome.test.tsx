@@ -1,15 +1,10 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import App from '../../App';
+import Welcome from './Welcome';
 
-describe('welcome section', () => {
+describe('Welcome section', () => {
   it('should have search input element', () => {
-    render(
-      <MemoryRouter initialEntries={['/']}>
-        <App />
-      </MemoryRouter>
-    );
+    render(<Welcome />);
     const searchInput = screen.getByRole('searchbox');
     expect(searchInput).toBeInTheDocument();
   });
