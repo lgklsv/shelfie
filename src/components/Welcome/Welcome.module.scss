@@ -1,0 +1,43 @@
+@import '/src/theme/variable';
+
+.welcome {
+  background-color: $background-secondary;
+  padding-top: 10rem;
+  margin-top: -6rem;
+  position: relative;
+  padding-bottom: 3rem;
+
+  @media (max-width: $phone-width) {
+    padding-top: 8rem;
+  }
+
+  &__content {
+    @include flex-center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 120%;
+
+    @media (max-width: $phone-width) {
+      font-size: 2rem;
+    }
+  }
+
+  &__cutout {
+    svg {
+      position: absolute;
+      left: 0;
+      top: auto;
+      right: 0;
+      bottom: -2px;
+      z-index: 1;
+      width: 100%;
+      height: 4vw;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import '/src/theme/variable';
+
+.navbar__list {
+  @include flex-center;
+  list-style: none;
+}
+
+@media (max-width: $phone-width) {
+  .navbar {
+    display: none;
+  }
+}
