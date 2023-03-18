@@ -1,0 +1,16 @@
+@import '/src/theme/colors';
+
+$desktop: 1140px;
+$header-height: 88px;
+$footer-height: 70px;
+
+$iphoneSE: 375px;
+$iphoneXR: 414px;
+$phone-width: 768px;
+$tablet-width: 1000px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
