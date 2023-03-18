@@ -8,6 +8,7 @@
 @media (max-width: $phone-width) {
   .navbar__list_hamburger {
     position: fixed;
+    list-style: none;
     right: -100%;
     top: 65px;
     display: flex;
@@ -35,6 +36,7 @@
     cursor: pointer;
     flex-direction: column;
     margin-left: 1rem;
+    margin-right: 0.5rem;
   }
 
   .hamburger__line {
