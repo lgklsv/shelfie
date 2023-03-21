@@ -7,6 +7,10 @@ const navItems = [
     text: 'home',
   },
   {
+    link: '/suggest',
+    text: 'suggest book',
+  },
+  {
     link: '/about',
     text: 'about us',
   },

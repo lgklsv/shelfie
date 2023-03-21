@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import About from './About.mdx';
 
+import About from './About.mdx';
 import styles from './AboutBlock.module.scss';
 
 class AboutBlock extends React.Component {

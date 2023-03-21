@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
+
 import styles from './Footer.module.scss';
 
 class Footer extends React.Component {
