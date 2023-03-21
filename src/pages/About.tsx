@@ -1,17 +1,17 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import AboutBlock from '../components/AboutBlock/AboutBlock';
 
-type AboutProps = {
-  title: string;
-};
-
-class About extends React.Component<AboutProps> {
-  componentDidMount() {
-    document.title = this.props.title;
-  }
-
+class About extends React.Component {
   render() {
-    return <AboutBlock />;
+    return (
+      <>
+        <Helmet>
+          <title>About</title>
+        </Helmet>
+        <AboutBlock />
+      </>
+    );
   }
 }
 

@@ -1,18 +1,18 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import NotFoundBlock from '../components/NotFoundBlock/NotFoundBlock';
 
-type NotFoundProps = {
-  title: string;
-};
-
-class NotFound extends React.Component<NotFoundProps> {
-  componentDidMount() {
-    document.title = this.props.title;
-  }
-
+class NotFound extends React.Component {
   render() {
-    return <NotFoundBlock />;
+    return (
+      <>
+        <Helmet>
+          <title>404</title>
+        </Helmet>
+        <NotFoundBlock />
+      </>
+    );
   }
 }
 

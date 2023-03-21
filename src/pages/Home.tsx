@@ -1,20 +1,16 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import BooksList from '../components/BooksList/BooksList';
 import Welcome from '../components/Welcome/Welcome';
 
-type HomeProps = {
-  title: string;
-};
-
-class Home extends React.Component<HomeProps> {
-  componentDidMount() {
-    document.title = this.props.title;
-  }
-
+class Home extends React.Component {
   render() {
     return (
       <>
+        <Helmet>
+          <title>Home</title>
+        </Helmet>
         <Welcome />
         <BooksList />
       </>
