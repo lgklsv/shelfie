@@ -2,6 +2,7 @@
 
 .image {
   width: 100%;
+  font-size: 14px;
   --field-padding: 12px;
   &__input {
     position: absolute;
@@ -18,7 +19,7 @@
     background: $input-bg;
     border: 2px dashed $input-border;
     border-radius: 3px;
-    color: $text-inverted;
+    color: $input-text;
     text-align: center;
     text-transform: none;
     cursor: pointer;
@@ -26,7 +27,7 @@
   }
 
   &__input:focus ~ &__label {
-    border: 2px dashed $background-primary;
+    border: 2px dashed $input-active;
   }
 
   &__input:valid ~ &__label {

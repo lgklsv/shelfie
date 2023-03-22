@@ -4,7 +4,7 @@
   display: inline-block;
   border-radius: 999px;
   margin: 5px;
-  color: $text-inverted;
+  color: $input-text;
   font-size: 14px;
 
   &__input {
@@ -13,9 +13,9 @@
   }
 
   &__input:focus ~ &__label {
-    background-color: rgba($background-primary, 0.1);
+    background-color: rgba($input-active, 0.1);
     &::before {
-      border: 2px solid $background-primary;
+      border: 2px solid $input-active;
     }
   }
 
@@ -54,18 +54,18 @@
     }
 
     &:hover {
-      background-color: rgba($background-primary, 0.1);
+      background-color: rgba($input-active, 0.1);
 
       &::before {
-        border: 2px solid $background-primary;
+        border: 2px solid $input-active;
       }
     }
   }
 
   &__input:checked ~ &__label {
     &::before {
-      background-color: $background-primary;
-      border: 2px solid $background-primary;
+      background-color: $input-active;
+      border: 2px solid $input-active;
     }
 
     &::after {

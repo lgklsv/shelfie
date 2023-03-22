@@ -1,5 +1,6 @@
 import React from 'react';
 import { bookCategories } from '../../const/book-categories';
+import CheckBoxInput from '../UI/CheckboxInput/CheckBoxInput';
 import ImageInput from '../UI/ImageInput/ImageInput';
 import RadioInput from '../UI/RadioInput/RadioInput';
 import SelectInput from '../UI/SelectInput/SelectInput';
@@ -46,7 +47,13 @@ class BookForm extends React.Component {
               </div>
               <ImageInput name="image" id="image" text="Choose image" />
             </div>
-            {/* <input type="checkbox" name="" id="" /> */}
+            <div className={styles.form__checkboxarea}>
+              <CheckBoxInput
+                name="agreement"
+                id="agreement"
+                text="Notify me when the book is available"
+              />
+            </div>
             <button
               type="submit"
               className={`btn btn-primary ${styles.form__btn}`}

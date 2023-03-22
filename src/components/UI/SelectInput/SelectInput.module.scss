@@ -1,6 +1,21 @@
 @import '/src/theme/variable';
 
 .select {
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 14px;
+  display: inline-block;
+  padding: var(--field-padding);
+  border-radius: 3px;
+  width: 100%;
+  outline: none;
+  background: $input-bg;
+  border: 2px solid $input-border;
+  transition: border-color 0.3s ease;
+  color: $input-text;
+
   &_wrapper {
     position: relative;
     font-size: 14px;
@@ -35,23 +50,8 @@
     }
   }
 
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: 14px;
-  display: inline-block;
-  padding: var(--field-padding);
-  border-radius: 3px;
-  width: 100%;
-  outline: none;
-  background: $input-bg;
-  border: 2px solid $input-border;
-  transition: border-color 0.3s ease;
-  color: $text-inverted;
-
   &:focus {
-    border-color: $background-primary;
+    border-color: $input-active;
     transition-delay: 0.1s;
   }
 }
