@@ -1,4 +1,6 @@
 import React from 'react';
+import { bookCategories } from '../../const/book-categories';
+import SelectInput from '../SelectInput/SelectInput';
 import StyledInput from '../StyledInput/StyledInput';
 import styles from './BookForm.module.scss';
 
@@ -26,13 +28,13 @@ class BookForm extends React.Component {
                 type="date"
                 name="published"
                 id="published"
-                placeholder="Date"
+                placeholder="Published date"
               />
-              <select name="category" id="category">
-                <option value="Application software">
-                  Application software
-                </option>
-              </select>
+              <SelectInput
+                name="category"
+                id="category"
+                options={bookCategories}
+              />
             </div>
             <button
               type="submit"

@@ -3,7 +3,6 @@
 .input {
   position: relative;
   font-size: 14px;
-  border-top: 20px solid transparent;
   margin-bottom: 5px;
   display: inline-block;
   --field-padding: 12px;
@@ -24,7 +23,7 @@
     border: 2px solid rgb(191, 191, 191);
     transition: border-color 0.3s ease;
   }
-
+  
   .placeholder {
     position: absolute;
     left: var(--field-padding);
@@ -46,7 +45,7 @@
   }
 
   input.dirty,
-  input:not(:placeholder-shown),
+  // input:not(:placeholder-shown),
   input:focus {
     border-color: $background-primary;
     transition-delay: 0.1s;
