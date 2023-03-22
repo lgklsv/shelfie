@@ -1,0 +1,48 @@
+@import '/src/theme/variable';
+
+.image {
+  width: 100%;
+  --field-padding: 12px;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    padding: var(--field-padding);
+    width: 100%;
+    background: $input-bg;
+    border: 2px dashed $input-border;
+    border-radius: 3px;
+    color: $text-inverted;
+    text-align: center;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &__input:focus ~ &__label {
+    border: 2px dashed $background-primary;
+  }
+
+  &__input:valid ~ &__label {
+    border-color: $button-primary;
+    background: $button-primary;
+    color: $button-primary;
+
+    &:before {
+      content: '✅';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: $input-bg;
+      line-height: 45px;
+    }
+  }
+}

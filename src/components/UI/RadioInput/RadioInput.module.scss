@@ -12,12 +12,20 @@
     position: absolute;
   }
 
+  &__input:focus ~ &__label {
+    background-color: rgba($background-primary, 0.1);
+    &::before {
+      border: 2px solid $background-primary;
+    }
+  }
+
   &__label {
     border-radius: 9999px;
     padding: 7px 15px 7px 40px;
     cursor: pointer;
     position: relative;
     transition: all 0.5s;
+
     &::before,
     &::after {
       content: '';
@@ -28,6 +36,7 @@
       position: absolute;
       z-index: 1;
     }
+
     &::before {
       background-color: #dcdcdc;
       border: 2px solid $input-border;
@@ -35,6 +44,7 @@
       left: 10px;
       transition: all 0.5s;
     }
+
     &::after {
       background-color: $input-bg;
       top: 6px;
@@ -45,6 +55,7 @@
 
     &:hover {
       background-color: rgba($background-primary, 0.1);
+
       &::before {
         border: 2px solid $background-primary;
       }
@@ -56,6 +67,7 @@
       background-color: $background-primary;
       border: 2px solid $background-primary;
     }
+
     &::after {
       width: 8px;
       height: 8px;

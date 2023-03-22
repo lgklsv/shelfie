@@ -1,5 +1,6 @@
 import React from 'react';
 import { bookCategories } from '../../const/book-categories';
+import ImageInput from '../UI/ImageInput/ImageInput';
 import RadioInput from '../UI/RadioInput/RadioInput';
 import SelectInput from '../UI/SelectInput/SelectInput';
 import StyledInput from '../UI/StyledInput/StyledInput';
@@ -39,11 +40,11 @@ class BookForm extends React.Component {
               />
             </div>
             <div className={styles.form__split}>
-              <div>
+              <div className={styles.form__radio}>
                 <RadioInput name="book-type" id="e-book" text="eBook" />
                 <RadioInput name="book-type" id="print" text="Printed Book" />
               </div>
-              {/* <input type="file" name="" id="" /> */}
+              <ImageInput name="image" id="image" text="Choose image" />
             </div>
             {/* <input type="checkbox" name="" id="" /> */}
             <button
