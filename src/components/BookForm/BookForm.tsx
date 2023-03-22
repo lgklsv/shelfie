@@ -33,6 +33,7 @@ class BookForm extends React.Component {
               <SelectInput
                 name="category"
                 id="category"
+                defaultText="Choose category"
                 options={bookCategories}
               />
             </div>

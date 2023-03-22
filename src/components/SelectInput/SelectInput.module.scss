@@ -8,6 +8,31 @@
     display: inline-block;
     --field-padding: 13px;
     width: 50%;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: 17.5px;
+      right: 15px;
+      width: 0;
+      height: 0;
+      border: 4px dashed;
+      border-color: $input-text-inactive transparent;
+      pointer-events: none;
+    }
+
+    &:before {
+      border-bottom-style: solid;
+      border-top: none;
+    }
+
+    &:after {
+      margin-top: 7px;
+      border-top-style: solid;
+      border-bottom: none;
+    }
   }
 
   -webkit-appearance: none;
@@ -20,8 +45,8 @@
   border-radius: 3px;
   width: 100%;
   outline: none;
-  background: #f2f2f2;
-  border: 2px solid rgb(191, 191, 191);
+  background: $input-bg;
+  border: 2px solid $input-border;
   transition: border-color 0.3s ease;
   color: $background-primary;
 

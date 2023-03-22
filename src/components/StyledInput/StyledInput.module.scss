@@ -19,11 +19,11 @@
     width: 100%;
     outline: none;
     font-size: 14px;
-    background: #f2f2f2;
-    border: 2px solid rgb(191, 191, 191);
+    background: $input-bg;
+    border: 2px solid $input-border;
     transition: border-color 0.3s ease;
   }
-  
+
   .placeholder {
     position: absolute;
     left: var(--field-padding);
@@ -34,7 +34,7 @@
     top: 22px;
     line-height: 100%;
     transform: translateY(-50%);
-    color: #aaa;
+    color: $input-text-inactive;
     cursor: text;
     transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
   }
@@ -58,7 +58,7 @@
     font-size: 10px;
     color: $background-primary;
     top: 0;
-    background: #f2f2f2;
+    background: $input-bg;
     border-radius: 5px;
     width: auto;
   }
