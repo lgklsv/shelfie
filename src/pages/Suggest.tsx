@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import BookForm from '../components/BookForm/BookForm';
 import HeroSection from '../components/HeroSection/HeroSection';
 
 class Suggest extends React.Component {
@@ -10,6 +11,7 @@ class Suggest extends React.Component {
           <title>Suggest Book</title>
         </Helmet>
         <HeroSection />
+        <BookForm />
       </>
     );
   }

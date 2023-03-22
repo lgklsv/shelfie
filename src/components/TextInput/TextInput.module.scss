@@ -1,0 +1,64 @@
+@import '/src/theme/variable';
+
+.input {
+  position: relative;
+  font-size: 14px;
+  border-top: 20px solid transparent;
+  margin-bottom: 5px;
+  display: inline-block;
+  --field-padding: 12px;
+
+  input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: var(--field-padding);
+    border-radius: 3px;
+    width: 400px;
+    outline: none;
+    font-size: 14px;
+    background: #f2f2f2;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+  }
+
+  .placeholder {
+    position: absolute;
+    left: var(--field-padding);
+    width: calc(100% - (var(--field-padding) * 2));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 22px;
+    line-height: 100%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+  }
+
+  input + .placeholder {
+    left: 8px;
+    padding: 0 5px;
+  }
+
+  input.dirty,
+  input:not(:placeholder-shown),
+  input:focus {
+    border-color: $background-primary;
+    transition-delay: 0.1s;
+  }
+
+  input.dirty + .placeholder,
+  input:not(:placeholder-shown) + .placeholder,
+  input:focus + .placeholder {
+    top: -10px;
+    font-size: 10px;
+    color: $background-primary;
+    top: 0;
+    background: #f2f2f2;
+    border-radius: 5px;
+    width: auto;
+  }
+}
