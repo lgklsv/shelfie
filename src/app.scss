@@ -13,6 +13,10 @@
   }
 }
 
+.container_sm {
+  max-width: $container-sm;
+}
+
 a.active {
   text-decoration: underline;
 }

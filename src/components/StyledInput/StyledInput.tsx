@@ -1,18 +1,19 @@
-import React from 'react';
-import styles from './TextInput.module.scss';
+import React, { HTMLInputTypeAttribute } from 'react';
+import styles from './StyledInput.module.scss';
 
-type TextInputProps = {
+type StyledInputProps = {
+  type: HTMLInputTypeAttribute;
   name: string;
   id: string;
   placeholder: string;
 };
 
-class TextInput extends React.Component<TextInputProps> {
+class StyledInput extends React.Component<StyledInputProps> {
   render() {
     return (
       <label className={styles.input} htmlFor={this.props.id}>
         <input
-          type="text"
+          type={this.props.type}
           name={this.props.name}
           id={this.props.id}
           placeholder=" "
@@ -23,4 +24,4 @@ class TextInput extends React.Component<TextInputProps> {
   }
 }
 
-export default TextInput;
+export default StyledInput;

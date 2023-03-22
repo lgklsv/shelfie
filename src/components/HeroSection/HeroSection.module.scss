@@ -4,7 +4,7 @@
   padding-top: 2rem;
 
   &__content {
-    display: flex;
+    @include flex-center;
     flex-direction: column;
     gap: 2rem;
   }
@@ -17,5 +17,6 @@
   &__message {
     font-size: 1.3rem;
     line-height: 140%;
+    text-align: center;
   }
 }

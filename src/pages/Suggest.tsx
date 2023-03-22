@@ -10,7 +10,7 @@ class Suggest extends React.Component {
         <Helmet>
           <title>Suggest Book</title>
         </Helmet>
-        <HeroSection />
+        <HeroSection size="sm" />
         <BookForm />
       </>
     );

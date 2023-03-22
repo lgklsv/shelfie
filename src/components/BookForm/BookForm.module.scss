@@ -2,20 +2,34 @@
 
 .form_container {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .form {
+  width: 100%;
   border-radius: 10px;
   background-color: #f2f2f2;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   &__title {
     color: $background-primary;
+    align-self: flex-start;
+  }
+
+  &__split {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__btn {
+    width: 100%;
+    margin-top: 20px;
   }
 }

@@ -7,6 +7,7 @@
   margin-bottom: 5px;
   display: inline-block;
   --field-padding: 12px;
+  width: 100%;
 
   input {
     border: none;
@@ -16,11 +17,11 @@
     appearance: none;
     padding: var(--field-padding);
     border-radius: 3px;
-    width: 400px;
+    width: 100%;
     outline: none;
     font-size: 14px;
     background: #f2f2f2;
-    border: 2px solid #ddd;
+    border: 2px solid rgb(191, 191, 191);
     transition: border-color 0.3s ease;
   }
 
@@ -35,6 +36,7 @@
     line-height: 100%;
     transform: translateY(-50%);
     color: #aaa;
+    cursor: text;
     transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
   }
 
