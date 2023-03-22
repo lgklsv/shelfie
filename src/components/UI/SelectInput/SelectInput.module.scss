@@ -48,7 +48,7 @@
   background: $input-bg;
   border: 2px solid $input-border;
   transition: border-color 0.3s ease;
-  color: $background-primary;
+  color: $text-inverted;
 
   &:focus {
     border-color: $background-primary;
