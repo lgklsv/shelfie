@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './RadioInput.module.scss';
 
 type RadioInputProps = {
+  innerRef: React.RefObject<HTMLInputElement>;
   name: string;
   id: string;
   text: string;
@@ -12,6 +13,7 @@ class RadioInput extends React.Component<RadioInputProps> {
     return (
       <div className={styles.radio}>
         <input
+          ref={this.props.innerRef}
           type="radio"
           name={this.props.name}
           id={this.props.id}

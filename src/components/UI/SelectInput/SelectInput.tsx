@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './SelectInput.module.scss';
 
 type SelectInputProps = {
+  innerRef: React.RefObject<HTMLSelectElement>;
   name: string;
   id: string;
   defaultText: string;
@@ -17,6 +18,7 @@ class SelectInput extends React.Component<SelectInputProps> {
     return (
       <div className={styles.select_wrapper}>
         <select
+          ref={this.props.innerRef}
           className={styles.select}
           name={this.props.name}
           id={this.props.id}

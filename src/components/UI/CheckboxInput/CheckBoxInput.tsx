@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './CheckboxInput.module.scss';
 
 type CheckBoxInputProps = {
+  innerRef: React.RefObject<HTMLInputElement>;
   id: string;
   name: string;
   text: string;
@@ -12,6 +13,7 @@ class CheckBoxInput extends React.Component<CheckBoxInputProps> {
     return (
       <div className={styles.checkbox}>
         <input
+          ref={this.props.innerRef}
           className={styles.checkbox__input}
           type="checkbox"
           id={this.props.id}

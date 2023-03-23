@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/lines-between-class-members */
 import React from 'react';
+
 import { bookCategories } from '../../const/book-categories';
 import CheckBoxInput from '../UI/CheckboxInput/CheckBoxInput';
 import ImageInput from '../UI/ImageInput/ImageInput';
@@ -8,32 +10,75 @@ import StyledInput from '../UI/StyledInput/StyledInput';
 import styles from './BookForm.module.scss';
 
 class BookForm extends React.Component {
+  private titleInputRef = React.createRef<HTMLInputElement>();
+  private authorInputRef = React.createRef<HTMLInputElement>();
+  private dateInputRef = React.createRef<HTMLInputElement>();
+  private categoryInputRef = React.createRef<HTMLSelectElement>();
+  private typeEBookInputRef = React.createRef<HTMLInputElement>();
+  private typePrintedInputRef = React.createRef<HTMLInputElement>();
+  private imageInputRef = React.createRef<HTMLInputElement>();
+  private agreementInputRef = React.createRef<HTMLInputElement>();
+
+  submitHandler(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const enteredTitle = this.titleInputRef.current;
+    const enteredAuthor = this.authorInputRef.current;
+    const enteredDate = this.dateInputRef.current;
+    const enteredCategory = this.categoryInputRef.current;
+    const enteredTypeEbook = this.typeEBookInputRef.current;
+    const enteredTypePrited = this.typePrintedInputRef.current;
+    const enteredImage = this.imageInputRef.current;
+    const enteredAgreement = this.agreementInputRef.current;
+
+    // Validate
+    console.log(
+      enteredTitle,
+      enteredAuthor,
+      enteredDate,
+      enteredCategory,
+      enteredTypeEbook,
+      enteredTypePrited,
+      enteredImage,
+      enteredAgreement
+    );
+
+    // Clear form
+    // Render card
+  }
+
   render() {
     return (
       <section className="container">
         <div className={styles.form_container}>
-          <form className={`${styles.form} container_sm`}>
+          <form
+            onSubmit={this.submitHandler.bind(this)}
+            className={`${styles.form} container_sm`}
+          >
             <h3 className={styles.form__title}>Book details</h3>
             <StyledInput
+              innerRef={this.titleInputRef}
               type="text"
               name="title"
               id="title"
               placeholder="Title"
             />
             <StyledInput
+              innerRef={this.authorInputRef}
               type="text"
               name="author"
               id="author"
-              placeholder="Authors"
+              placeholder="Author"
             />
             <div className={styles.form__split}>
               <StyledInput
+                innerRef={this.dateInputRef}
                 type="date"
                 name="published"
                 id="published"
                 placeholder="Published date"
               />
               <SelectInput
+                innerRef={this.categoryInputRef}
                 name="category"
                 id="category"
                 defaultText="Choose category"
@@ -42,13 +87,29 @@ class BookForm extends React.Component {
             </div>
             <div className={styles.form__split}>
               <div className={styles.form__radio}>
-                <RadioInput name="book-type" id="e-book" text="eBook" />
-                <RadioInput name="book-type" id="print" text="Printed Book" />
+                <RadioInput
+                  innerRef={this.typeEBookInputRef}
+                  name="book-type"
+                  id="e-book"
+                  text="eBook"
+                />
+                <RadioInput
+                  innerRef={this.typePrintedInputRef}
+                  name="book-type"
+                  id="print"
+                  text="Printed Book"
+                />
               </div>
-              <ImageInput name="image" id="image" text="Choose image" />
+              <ImageInput
+                innerRef={this.imageInputRef}
+                name="image"
+                id="image"
+                text="Choose image"
+              />
             </div>
             <div className={styles.form__checkboxarea}>
               <CheckBoxInput
+                innerRef={this.agreementInputRef}
                 name="agreement"
                 id="agreement"
                 text="Notify me when the book is available"

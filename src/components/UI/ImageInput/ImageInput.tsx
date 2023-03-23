@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ImageInput.module.scss';
 
 type ImageInputProps = {
+  innerRef: React.RefObject<HTMLInputElement>;
   id: string;
   name: string;
   text: string;
@@ -12,6 +13,7 @@ class ImageInput extends React.Component<ImageInputProps> {
     return (
       <div className={styles.image}>
         <input
+          ref={this.props.innerRef}
           className={styles.image__input}
           type="file"
           accept="image/*"
