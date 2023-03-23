@@ -8,6 +8,7 @@ import RadioInput from '../UI/RadioInput/RadioInput';
 import SelectInput from '../UI/SelectInput/SelectInput';
 import StyledInput from '../UI/StyledInput/StyledInput';
 import styles from './BookForm.module.scss';
+import { validateBookForm } from './handlers/validateBookForm';
 
 class BookForm extends React.Component {
   private titleInputRef = React.createRef<HTMLInputElement>();
@@ -21,9 +22,9 @@ class BookForm extends React.Component {
 
   submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const enteredTitle = this.titleInputRef.current;
-    const enteredAuthor = this.authorInputRef.current;
-    const enteredDate = this.dateInputRef.current;
+    const enteredTitle = this.titleInputRef.current?.value;
+    const enteredAuthor = this.authorInputRef.current?.value;
+    const enteredDate = this.dateInputRef.current?.value;
     const enteredCategory = this.categoryInputRef.current;
     const enteredTypeEbook = this.typeEBookInputRef.current;
     const enteredTypePrited = this.typePrintedInputRef.current;
@@ -41,6 +42,8 @@ class BookForm extends React.Component {
       enteredImage,
       enteredAgreement
     );
+    const { isValid, inputs } = validateBookForm(enteredTitle, enteredAuthor);
+    console.log(isValid, inputs);
 
     // Clear form
     // Render card
