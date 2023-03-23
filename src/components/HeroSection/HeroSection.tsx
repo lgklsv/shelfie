@@ -6,6 +6,10 @@ type HeroSectionProps = {
 };
 
 class HeroSection extends React.Component<HeroSectionProps> {
+  constructor(props: HeroSectionProps) {
+    super(props);
+  }
+
   render() {
     return (
       <section className={styles.hero}>

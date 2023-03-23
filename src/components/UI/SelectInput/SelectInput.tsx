@@ -14,6 +14,10 @@ type SelectInputProps = {
 };
 
 class SelectInput extends React.Component<SelectInputProps> {
+  constructor(props: SelectInputProps) {
+    super(props);
+  }
+
   render() {
     return (
       <div className={styles.select_wrapper}>

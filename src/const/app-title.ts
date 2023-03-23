@@ -1,3 +1,1 @@
-const appTitle = 'Shelfie';
-
-export default appTitle;
+export const appTitle = 'Shelfie';

@@ -7,10 +7,16 @@ type HamburgerNavState = {
   isOpen: boolean;
 };
 
-class HamburgerNav extends React.Component {
-  readonly state: Readonly<HamburgerNavState> = {
-    isOpen: false,
-  };
+class HamburgerNav extends React.Component<
+  Record<string, never>,
+  HamburgerNavState
+> {
+  constructor() {
+    super({});
+    this.state = {
+      isOpen: false,
+    };
+  }
 
   toggleHamburgerNav = () => {
     this.setState((prevState: HamburgerNavState) => ({

@@ -10,6 +10,10 @@ type StyledInputProps = {
 };
 
 class StyledInput extends React.Component<StyledInputProps> {
+  constructor(props: StyledInputProps) {
+    super(props);
+  }
+
   render() {
     return (
       <label className={styles.input} htmlFor={this.props.id}>

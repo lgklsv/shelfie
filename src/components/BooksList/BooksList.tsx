@@ -8,10 +8,13 @@ type BooksListState = {
   items: Book[];
 };
 
-class BooksList extends React.Component {
-  readonly state: Readonly<BooksListState> = {
-    items: books.items,
-  };
+class BooksList extends React.Component<Record<string, never>, BooksListState> {
+  constructor() {
+    super({});
+    this.state = {
+      items: books.items,
+    };
+  }
 
   render() {
     return (

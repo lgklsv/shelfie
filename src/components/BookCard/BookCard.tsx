@@ -8,6 +8,10 @@ type BookCardProps = {
 };
 
 class BookCard extends React.Component<BookCardProps> {
+  constructor(props: BookCardProps) {
+    super(props);
+  }
+
   render() {
     return (
       <div data-testid="book-item" className={styles.book_wrapper}>

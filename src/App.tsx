@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import appTitle from './const/app-title';
+import { appTitle } from './const/app-title';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';

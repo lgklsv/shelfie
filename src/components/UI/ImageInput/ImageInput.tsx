@@ -9,6 +9,10 @@ type ImageInputProps = {
 };
 
 class ImageInput extends React.Component<ImageInputProps> {
+  constructor(props: ImageInputProps) {
+    super(props);
+  }
+
   render() {
     return (
       <div className={styles.image}>

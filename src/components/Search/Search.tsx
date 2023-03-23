@@ -8,10 +8,16 @@ type SearchState = {
   value: string;
 };
 
-class Search extends React.Component {
-  readonly state: Readonly<SearchState> = {
-    value: '',
-  };
+class Search extends React.Component<Record<string, never>, SearchState> {
+  constructor() {
+    super({});
+    this.state = {
+      value: '',
+    };
+
+    this.clearSearchHandler = this.clearSearchHandler.bind(this);
+    this.saveValueHandler = this.saveValueHandler.bind(this);
+  }
 
   componentDidMount() {
     const savedSearch = localStorage.getItem('search');
@@ -25,9 +31,9 @@ class Search extends React.Component {
   }
 
   saveValueHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    const useInputValue = e.target.value;
+    const inputValue = e.target.value;
     this.setState(() => ({
-      value: useInputValue,
+      value: inputValue,
     }));
   }
 
@@ -48,11 +54,11 @@ class Search extends React.Component {
           className={styles.search__input}
           placeholder="Search..."
           type="search"
-          onChange={this.saveValueHandler.bind(this)}
+          onChange={this.saveValueHandler}
         />
         {this.state.value && (
           <div
-            onClick={this.clearSearchHandler.bind(this)}
+            onClick={this.clearSearchHandler}
             className={styles.search__clear}
             data-testid="clear-btn"
           >

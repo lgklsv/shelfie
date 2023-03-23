@@ -9,6 +9,10 @@ type CheckBoxInputProps = {
 };
 
 class CheckBoxInput extends React.Component<CheckBoxInputProps> {
+  constructor(props: CheckBoxInputProps) {
+    super(props);
+  }
+
   render() {
     return (
       <div className={styles.checkbox}>
