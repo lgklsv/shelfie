@@ -39,35 +39,35 @@ export const validateBookForm = (
 
   return {
     isValid,
-    inputs: [
-      {
+    inputs: {
+      title: {
         titleIsValid,
         message: titleErrorMessage,
       },
-      {
+      author: {
         authorIsValid,
         message: authorErrorMessage,
       },
-      {
+      date: {
         dateIsValid,
         message: dateErrorMessage,
       },
-      {
+      select: {
         selectIsValid,
         message: selectErrorMessage,
       },
-      {
+      radio: {
         radioIsValid,
         message: radioErrorMessage,
       },
-      {
+      image: {
         imageIsValid,
         message: imageErrorMessage,
       },
-      {
+      checkbox: {
         checkboxIsValid,
         message: checkboxErrorMessage,
       },
-    ],
+    },
   };
 };

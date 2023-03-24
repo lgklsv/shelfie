@@ -40,19 +40,31 @@
     transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
   }
 
+  .error__message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 8px 0 8px;
+    font-size: 12px;
+    background: transparent;
+    color: $red;
+    height: 10px;
+  }
+
+  .error__message:empty {
+    opacity: 0;
+  }
+
   input + .placeholder {
     left: 8px;
     padding: 0 5px;
   }
 
-  input.dirty,
-  // input:not(:placeholder-shown),
   input:focus {
     border-color: $input-active;
     transition-delay: 0.1s;
   }
 
-  input.dirty + .placeholder,
   input:not(:placeholder-shown) + .placeholder,
   input:focus + .placeholder {
     top: -10px;

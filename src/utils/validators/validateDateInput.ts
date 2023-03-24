@@ -16,6 +16,6 @@ export const validateDateInput = (dateInput: HTMLInputElement | null) => {
   }
   return {
     dateIsValid: false,
-    dateErrorMessage: 'Published should not be empty',
+    dateErrorMessage: 'Published date should not be empty',
   };
 };

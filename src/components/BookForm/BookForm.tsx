@@ -10,7 +10,17 @@ import styles from './BookForm.module.scss';
 import { clearForm } from './handlers/clearForm';
 import { validateBookForm } from './handlers/validateBookForm';
 
-class BookForm extends React.Component {
+type BookFormState = {
+  [key: string]: string;
+};
+
+class BookForm extends React.Component<BookFormState> {
+  readonly state: Readonly<BookFormState> = {
+    titleMessage: '',
+    authorMessage: '',
+    dateMessage: '',
+  };
+
   private titleInputRef = React.createRef<HTMLInputElement>();
   private authorInputRef = React.createRef<HTMLInputElement>();
   private dateInputRef = React.createRef<HTMLInputElement>();
@@ -42,6 +52,13 @@ class BookForm extends React.Component {
       enteredImage,
       enteredAgreement
     );
+
+    this.setState(() => ({
+      titleMessage: inputs.title.message,
+      authorMessage: inputs.author.message,
+      dateMessage: inputs.date.message,
+    }));
+
     console.log(isValid, inputs);
     if (!isValid) {
       return;
@@ -74,6 +91,7 @@ class BookForm extends React.Component {
               type="text"
               name="title"
               id="title"
+              message={this.state.titleMessage}
               placeholder="Title"
             />
             <StyledInput
@@ -81,6 +99,7 @@ class BookForm extends React.Component {
               type="text"
               name="author"
               id="author"
+              message={this.state.authorMessage}
               placeholder="Author"
             />
             <div className={styles.form__split}>
@@ -89,6 +108,7 @@ class BookForm extends React.Component {
                 type="date"
                 name="published"
                 id="published"
+                message={this.state.dateMessage}
                 placeholder="Published date"
               />
               <SelectInput
