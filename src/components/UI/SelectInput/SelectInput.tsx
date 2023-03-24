@@ -7,6 +7,7 @@ type SelectInputProps = {
   name: string;
   id: string;
   defaultText: string;
+  message: string;
   options: {
     value: string;
     text: string;
@@ -37,6 +38,7 @@ class SelectInput extends React.Component<SelectInputProps> {
             </option>
           ))}
         </select>
+        <span className={styles.error__message}>{this.props.message}</span>
       </div>
     );
   }

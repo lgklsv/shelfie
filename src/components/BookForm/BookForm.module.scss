@@ -32,7 +32,9 @@
   &__radio {
     width: 80%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   &__checkboxarea {
@@ -43,4 +45,20 @@
   &__btn {
     width: 100%;
   }
+}
+
+.error__message {
+  margin-left: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 8px 0 8px;
+  font-size: 12px;
+  background: transparent;
+  color: $red;
+  height: 10px;
+}
+
+.error__message:empty {
+  opacity: 0;
 }

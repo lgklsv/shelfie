@@ -30,20 +30,25 @@
     border: 2px dashed $input-active;
   }
 
-  // &__input:valid ~ &__label {
-  //   border-color: $button-primary;
-  //   background: $button-primary;
-  //   color: $button-primary;
+  .error__message {
+    border-color: $red;
+    color: $red;
+  }
 
-  //   &:before {
-  //     content: '✅';
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     left: 0;
-  //     color: $input-bg;
-  //     line-height: 45px;
-  //   }
-  // }
+  &__input:valid ~ &__label {
+    border-color: $button-primary;
+    background: $button-primary;
+    color: $button-primary;
+
+    &:before {
+      content: '✅';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: $input-bg;
+      line-height: 45px;
+    }
+  }
 }

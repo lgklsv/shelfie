@@ -41,4 +41,19 @@
       border-color: $button-primary;
     }
   }
+
+  .error__message {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 8px 0 8px;
+    font-size: 12px;
+    background: transparent;
+    color: $red;
+    height: 10px;
+  }
+
+  .error__message:empty {
+    opacity: 0;
+  }
 }

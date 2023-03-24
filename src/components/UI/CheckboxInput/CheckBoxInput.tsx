@@ -6,6 +6,7 @@ type CheckBoxInputProps = {
   id: string;
   name: string;
   text: string;
+  message: string;
 };
 
 class CheckBoxInput extends React.Component<CheckBoxInputProps> {
@@ -26,6 +27,7 @@ class CheckBoxInput extends React.Component<CheckBoxInputProps> {
         <label className={styles.checkbox__label} htmlFor={this.props.id}>
           {this.props.text}
         </label>
+        <span className={styles.error__message}>{this.props.message}</span>
       </div>
     );
   }

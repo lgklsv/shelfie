@@ -6,6 +6,7 @@ type ImageInputProps = {
   id: string;
   name: string;
   text: string;
+  message: string;
 };
 
 class ImageInput extends React.Component<ImageInputProps> {
@@ -23,10 +24,17 @@ class ImageInput extends React.Component<ImageInputProps> {
           accept="image/*"
           name={this.props.name}
           id={this.props.id}
-          // required
+          required
         />
-        <label className={styles.image__label} htmlFor={this.props.id}>
-          {this.props.text}
+        <label
+          className={`${
+            this.props.message
+              ? `${styles.image__label} ${styles.error__message}`
+              : styles.image__label
+          }`}
+          htmlFor={this.props.id}
+        >
+          {this.props.message ? this.props.message : this.props.text}
         </label>
       </div>
     );

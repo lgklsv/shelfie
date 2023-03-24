@@ -19,6 +19,10 @@ class BookForm extends React.Component<BookFormState> {
     titleMessage: '',
     authorMessage: '',
     dateMessage: '',
+    selectMessage: '',
+    radioMessage: '',
+    imageMessage: '',
+    checkboxMessage: '',
   };
 
   private titleInputRef = React.createRef<HTMLInputElement>();
@@ -57,6 +61,10 @@ class BookForm extends React.Component<BookFormState> {
       titleMessage: inputs.title.message,
       authorMessage: inputs.author.message,
       dateMessage: inputs.date.message,
+      selectMessage: inputs.select.message,
+      radioMessage: inputs.radio.message,
+      imageMessage: inputs.image.message,
+      checkboxMessage: inputs.checkbox.message,
     }));
 
     console.log(isValid, inputs);
@@ -84,6 +92,7 @@ class BookForm extends React.Component<BookFormState> {
           <form
             onSubmit={this.submitHandler.bind(this)}
             className={`${styles.form} container_sm`}
+            noValidate
           >
             <h3 className={styles.form__title}>Book details</h3>
             <StyledInput
@@ -116,29 +125,36 @@ class BookForm extends React.Component<BookFormState> {
                 name="category"
                 id="category"
                 defaultText="Choose category"
+                message={this.state.selectMessage}
                 options={bookCategories}
               />
             </div>
             <div className={styles.form__split}>
               <div className={styles.form__radio}>
-                <RadioInput
-                  innerRef={this.typeEBookInputRef}
-                  name="book-type"
-                  id="e-book"
-                  text="eBook"
-                />
-                <RadioInput
-                  innerRef={this.typePrintedInputRef}
-                  name="book-type"
-                  id="print"
-                  text="Printed Book"
-                />
+                <div>
+                  <RadioInput
+                    innerRef={this.typeEBookInputRef}
+                    name="book-type"
+                    id="e-book"
+                    text="eBook"
+                  />
+                  <RadioInput
+                    innerRef={this.typePrintedInputRef}
+                    name="book-type"
+                    id="print"
+                    text="Printed Book"
+                  />
+                </div>
+                <span className={styles.error__message}>
+                  {this.state.radioMessage}
+                </span>
               </div>
               <ImageInput
                 innerRef={this.imageInputRef}
                 name="image"
                 id="image"
                 text="Choose image"
+                message={this.state.imageMessage}
               />
             </div>
             <div className={styles.form__checkboxarea}>
@@ -147,6 +163,7 @@ class BookForm extends React.Component<BookFormState> {
                 name="agreement"
                 id="agreement"
                 text="Notify me when the book is available"
+                message={this.state.checkboxMessage}
               />
             </div>
             <button
