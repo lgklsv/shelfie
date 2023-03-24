@@ -23,7 +23,7 @@ class ImageInput extends React.Component<ImageInputProps> {
           accept="image/*"
           name={this.props.name}
           id={this.props.id}
-          required
+          // required
         />
         <label className={styles.image__label} htmlFor={this.props.id}>
           {this.props.text}

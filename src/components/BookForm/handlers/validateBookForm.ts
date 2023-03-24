@@ -6,10 +6,10 @@ import { validateSelectInput } from '../../../utils/validators/validateSelectInp
 import { validateTextInput } from '../../../utils/validators/validateTextInput';
 
 export const validateBookForm = (
-  title: string | undefined,
-  author: string | undefined,
-  date: string | undefined,
-  category: string | undefined,
+  title: HTMLInputElement | null,
+  author: HTMLInputElement | null,
+  date: HTMLInputElement | null,
+  category: HTMLSelectElement | null,
   ebook: HTMLInputElement | null,
   printed: HTMLInputElement | null,
   image: HTMLInputElement | null,

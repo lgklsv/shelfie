@@ -1,6 +1,6 @@
-export const validateDateInput = (date: string | undefined) => {
-  if (date) {
-    const enteredDate = Date.parse(date);
+export const validateDateInput = (dateInput: HTMLInputElement | null) => {
+  if (dateInput && dateInput.value) {
+    const enteredDate = Date.parse(dateInput.value);
     const now = new Date().getTime();
     const difference = now - enteredDate;
     if (difference < 0) {
