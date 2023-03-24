@@ -65,11 +65,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
       title: report.title.value,
       authors: [report.author.value],
       publishedDate: report.date.value,
-      saleInfo: {
-        country: '',
-        saleability: '',
-        isEbook: report.radio.value,
-      },
+      isEbook: report.radio.value,
       categories: [report.select.value],
       imageLinks: {
         thumbnail: report.image.value,
@@ -171,7 +167,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
                 innerRef={this.agreementInputRef}
                 name="agreement"
                 id="agreement"
-                text="Notify me when the book is available"
+                text="I have read and agree to the Terms of Service"
                 message={this.state.checkboxMessage}
               />
             </div>

@@ -2,7 +2,7 @@ interface SuggestedBook {
   title: string;
   authors: string[];
   publishedDate: string;
-  saleInfo: SalesInfo;
+  isEbook: boolean;
   categories: string[];
   imageLinks: {
     thumbnail: string;

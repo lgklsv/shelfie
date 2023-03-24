@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { bookCategories } from '../../const/book-categories';
 import { stripText } from '../../utils/strip-text';
 import { isVolume } from '../../utils/type-checkers';
 import styles from './BookCard.module.scss';
@@ -14,14 +15,24 @@ class BookCard extends React.Component<BookCardProps> {
   }
 
   render() {
+    const category = isVolume(this.props.data)
+      ? this.props.data.categories.join(', ')
+      : bookCategories.find((el) => el.value === this.props.data.categories[0])
+          ?.text;
+
     return (
       <div data-testid="book-item" className={styles.book_wrapper}>
         <div className={styles.book}>
-          <img
-            className={styles.book__img}
-            src={this.props.data.imageLinks.thumbnail}
-            alt="book"
-          />
+          <div className={styles.book__imgcont}>
+            <img
+              className={styles.book__img}
+              src={this.props.data.imageLinks.thumbnail}
+              alt="book"
+            />
+            {!isVolume(this.props.data) && this.props.data.isEbook && (
+              <div className={styles.book__ebook}>E-Book</div>
+            )}
+          </div>
           <div className={styles.book__info}>
             <div className={styles.book__top}>
               <h4 className={styles.book__title}>
@@ -38,6 +49,7 @@ class BookCard extends React.Component<BookCardProps> {
                 </p>
               )}
 
+              <p className={styles.book__text_light}>Category: {category}</p>
               <p className={styles.book__text_light}>
                 By: {this.props.data.authors.join(', ')}
               </p>
