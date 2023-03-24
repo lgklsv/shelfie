@@ -13,7 +13,11 @@ type BookFormState = {
   [key: string]: string;
 };
 
-class BookForm extends React.Component<BookFormState> {
+type BooksFromProps = {
+  addBook: (book: SuggestedBook) => void;
+};
+
+class BookForm extends React.Component<BooksFromProps, BookFormState> {
   readonly state: Readonly<BookFormState> = {
     titleMessage: '',
     authorMessage: '',
@@ -46,7 +50,7 @@ class BookForm extends React.Component<BookFormState> {
     const enteredAgreement = this.agreementInputRef.current;
 
     // Validate
-    const { isValid, inputs } = validateBookForm(
+    const { isValid, report } = validateBookForm(
       enteredTitle,
       enteredAuthor,
       enteredDate,
@@ -57,23 +61,36 @@ class BookForm extends React.Component<BookFormState> {
       enteredAgreement
     );
 
+    const newBook: SuggestedBook = {
+      title: report.title.value,
+      authors: [report.author.value],
+      publishedDate: report.date.value,
+      saleInfo: {
+        country: '',
+        saleability: '',
+        isEbook: report.radio.value,
+      },
+      categories: [report.select.value],
+      imageLinks: {
+        thumbnail: report.image.value,
+      },
+    };
+
     this.setState(() => ({
-      titleMessage: inputs.title.message,
-      authorMessage: inputs.author.message,
-      dateMessage: inputs.date.message,
-      selectMessage: inputs.select.message,
-      radioMessage: inputs.radio.message,
-      imageMessage: inputs.image.message,
-      checkboxMessage: inputs.checkbox.message,
+      titleMessage: report.title.message,
+      authorMessage: report.author.message,
+      dateMessage: report.date.message,
+      selectMessage: report.select.message,
+      radioMessage: report.radio.message,
+      imageMessage: report.image.message,
+      checkboxMessage: report.checkbox.message,
     }));
 
-    console.log(isValid, inputs);
     if (!isValid) {
       return;
     }
-
     this.formRef.current?.reset();
-    // Render card
+    this.props.addBook(newBook);
   }
 
   render() {

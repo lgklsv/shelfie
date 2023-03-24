@@ -4,11 +4,13 @@ export const validateRadioInputs = (
 ) => {
   if (input && input2 && (input.checked || input2.checked)) {
     return {
+      radioValue: input.checked,
       radioIsValid: true,
       radioErrorMessage: '',
     };
   }
   return {
+    radioValue: false,
     radioIsValid: false,
     radioErrorMessage: 'Type should be choosen',
   };

@@ -15,18 +15,27 @@ export const validateBookForm = (
   image: HTMLInputElement | null,
   agreement: HTMLInputElement | null
 ) => {
-  const { textIsValid: titleIsValid, errorMessage: titleErrorMessage } =
-    validateTextInput(title, 'Title');
-  const { textIsValid: authorIsValid, errorMessage: authorErrorMessage } =
-    validateTextInput(author, 'Author');
-  const { dateIsValid, dateErrorMessage } = validateDateInput(date);
-  const { selectIsValid, selectErrorMessage } = validateSelectInput(category);
-  const { radioIsValid, radioErrorMessage } = validateRadioInputs(
+  const {
+    value: titleValue,
+    textIsValid: titleIsValid,
+    errorMessage: titleErrorMessage,
+  } = validateTextInput(title, 'Title');
+  const {
+    value: authorValue,
+    textIsValid: authorIsValid,
+    errorMessage: authorErrorMessage,
+  } = validateTextInput(author, 'Author');
+  const { dateValue, dateIsValid, dateErrorMessage } = validateDateInput(date);
+  const { selectValue, selectIsValid, selectErrorMessage } =
+    validateSelectInput(category);
+  const { radioValue, radioIsValid, radioErrorMessage } = validateRadioInputs(
     ebook,
     printed
   );
-  const { imageIsValid, imageErrorMessage } = validateImageInput(image);
-  const { checkboxIsValid, checkboxErrorMessage } = validateCheckbox(agreement);
+  const { imageValue, imageIsValid, imageErrorMessage } =
+    validateImageInput(image);
+  const { checkboxValue, checkboxIsValid, checkboxErrorMessage } =
+    validateCheckbox(agreement);
 
   const isValid =
     titleIsValid &&
@@ -39,32 +48,39 @@ export const validateBookForm = (
 
   return {
     isValid,
-    inputs: {
+    report: {
       title: {
+        value: titleValue,
         titleIsValid,
         message: titleErrorMessage,
       },
       author: {
+        value: authorValue,
         authorIsValid,
         message: authorErrorMessage,
       },
       date: {
+        value: dateValue,
         dateIsValid,
         message: dateErrorMessage,
       },
       select: {
+        value: selectValue,
         selectIsValid,
         message: selectErrorMessage,
       },
       radio: {
+        value: radioValue,
         radioIsValid,
         message: radioErrorMessage,
       },
       image: {
+        value: imageValue,
         imageIsValid,
         message: imageErrorMessage,
       },
       checkbox: {
+        value: checkboxValue,
         checkboxIsValid,
         message: checkboxErrorMessage,
       },

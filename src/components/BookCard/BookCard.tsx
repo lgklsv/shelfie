@@ -1,10 +1,11 @@
 import React from 'react';
 
 import { stripText } from '../../utils/strip-text';
+import { isVolume } from '../../utils/type-checkers';
 import styles from './BookCard.module.scss';
 
 type BookCardProps = {
-  data: Volume;
+  data: Volume | SuggestedBook;
 };
 
 class BookCard extends React.Component<BookCardProps> {
@@ -26,14 +27,17 @@ class BookCard extends React.Component<BookCardProps> {
               <h4 className={styles.book__title}>
                 {stripText(this.props.data.title, 100)}
               </h4>
-              <p data-testid="subtitle" className={styles.book__text}>
-                {stripText(
-                  this.props.data.subtitle
-                    ? this.props.data.subtitle
-                    : this.props.data.description,
-                  100
-                )}
-              </p>
+              {isVolume(this.props.data) && (
+                <p data-testid="subtitle" className={styles.book__text}>
+                  {stripText(
+                    this.props.data.subtitle
+                      ? this.props.data.subtitle
+                      : this.props.data.description,
+                    100
+                  )}
+                </p>
+              )}
+
               <p className={styles.book__text_light}>
                 By: {this.props.data.authors.join(', ')}
               </p>
@@ -41,16 +45,18 @@ class BookCard extends React.Component<BookCardProps> {
                 Published: {this.props.data.publishedDate.slice(0, 4)}
               </p>
             </div>
-            <div className={styles.book__actions}>
-              <a
-                className="btn btn-primary"
-                target="_blank"
-                href={this.props.data.previewLink}
-                rel="noreferrer"
-              >
-                read more
-              </a>
-            </div>
+            {isVolume(this.props.data) && (
+              <div className={styles.book__actions}>
+                <a
+                  className="btn btn-primary"
+                  target="_blank"
+                  href={this.props.data.previewLink}
+                  rel="noreferrer"
+                >
+                  read more
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
