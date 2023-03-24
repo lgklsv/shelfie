@@ -7,7 +7,6 @@ import RadioInput from '../UI/RadioInput/RadioInput';
 import SelectInput from '../UI/SelectInput/SelectInput';
 import StyledInput from '../UI/StyledInput/StyledInput';
 import styles from './BookForm.module.scss';
-import { clearForm } from './handlers/clearForm';
 import { validateBookForm } from './handlers/validateBookForm';
 
 type BookFormState = {
@@ -25,6 +24,7 @@ class BookForm extends React.Component<BookFormState> {
     checkboxMessage: '',
   };
 
+  private formRef = React.createRef<HTMLFormElement>();
   private titleInputRef = React.createRef<HTMLInputElement>();
   private authorInputRef = React.createRef<HTMLInputElement>();
   private dateInputRef = React.createRef<HTMLInputElement>();
@@ -72,16 +72,7 @@ class BookForm extends React.Component<BookFormState> {
       return;
     }
 
-    clearForm(
-      enteredTitle,
-      enteredAuthor,
-      enteredDate,
-      enteredCategory,
-      enteredTypeEbook,
-      enteredTypePrited,
-      enteredImage,
-      enteredAgreement
-    );
+    this.formRef.current?.reset();
     // Render card
   }
 
@@ -90,6 +81,7 @@ class BookForm extends React.Component<BookFormState> {
       <section className="container">
         <div className={styles.form_container}>
           <form
+            ref={this.formRef}
             onSubmit={this.submitHandler.bind(this)}
             className={`${styles.form} container_sm`}
             noValidate

@@ -49,8 +49,7 @@
       background-color: $input-bg;
       top: 6px;
       left: 12px;
-      transition: all 0.15s;
-      transition-timing-function: ease-out;
+      transition: all 0.15s ease-out;
     }
 
     &:hover {
