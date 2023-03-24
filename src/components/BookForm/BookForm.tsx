@@ -31,7 +31,7 @@ class BookForm extends React.Component {
     const enteredAgreement = this.agreementInputRef.current;
 
     // Validate
-    console.log(
+    const { isValid, inputs } = validateBookForm(
       enteredTitle,
       enteredAuthor,
       enteredDate,
@@ -40,12 +40,6 @@ class BookForm extends React.Component {
       enteredTypePrited,
       enteredImage,
       enteredAgreement
-    );
-    const { isValid, inputs } = validateBookForm(
-      enteredTitle,
-      enteredAuthor,
-      enteredDate,
-      enteredCategory
     );
     console.log(isValid, inputs);
 

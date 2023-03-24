@@ -18,6 +18,7 @@ class RadioInput extends React.Component<RadioInputProps> {
       <div className={styles.radio}>
         <input
           ref={this.props.innerRef}
+          value={this.props.id}
           type="radio"
           name={this.props.name}
           id={this.props.id}

@@ -6,7 +6,7 @@ export const validateDateInput = (date: string | undefined) => {
     if (difference < 0) {
       return {
         dateIsValid: false,
-        dateErrorMessage: 'Published date could not be in the future',
+        dateErrorMessage: 'Published date should not be in the future',
       };
     }
     return {

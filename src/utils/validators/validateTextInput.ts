@@ -1,7 +1,4 @@
-export const validateTextInput = (
-  text: string | undefined,
-  type: string
-): { textIsValid: boolean; errorMessage: string } => {
+export const validateTextInput = (text: string | undefined, type: string) => {
   if (text) {
     if (text.length < 3) {
       return {
