@@ -3,31 +3,14 @@ import React from 'react';
 import { bookCategories } from '../../const/book-categories';
 import CheckBoxInput from '../UI/CheckboxInput/CheckBoxInput';
 import ImageInput from '../UI/ImageInput/ImageInput';
+import PopupNotification from '../UI/PopupNotification/PopupNotification';
 import RadioInput from '../UI/RadioInput/RadioInput';
 import SelectInput from '../UI/SelectInput/SelectInput';
 import StyledInput from '../UI/StyledInput/StyledInput';
-import styles from './BookForm.module.scss';
 import { validateBookForm } from './handlers/validateBookForm';
-
-type BookFormState = {
-  [key: string]: string;
-};
-
-type BooksFromProps = {
-  addBook: (book: SuggestedBook) => void;
-};
+import styles from './BookForm.module.scss';
 
 class BookForm extends React.Component<BooksFromProps, BookFormState> {
-  readonly state: Readonly<BookFormState> = {
-    titleMessage: '',
-    authorMessage: '',
-    dateMessage: '',
-    selectMessage: '',
-    radioMessage: '',
-    imageMessage: '',
-    checkboxMessage: '',
-  };
-
   private formRef = React.createRef<HTMLFormElement>();
   private titleInputRef = React.createRef<HTMLInputElement>();
   private authorInputRef = React.createRef<HTMLInputElement>();
@@ -37,6 +20,35 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
   private typePrintedInputRef = React.createRef<HTMLInputElement>();
   private imageInputRef = React.createRef<HTMLInputElement>();
   private agreementInputRef = React.createRef<HTMLInputElement>();
+  constructor(props: BooksFromProps) {
+    super(props);
+    this.state = {
+      titleMessage: '',
+      authorMessage: '',
+      dateMessage: '',
+      selectMessage: '',
+      radioMessage: '',
+      imageMessage: '',
+      checkboxMessage: '',
+      popup: {
+        isVisible: false,
+        type: 'error',
+        message: '',
+      },
+    };
+
+    this.handlePopUpunmount = this.handlePopUpunmount.bind(this);
+  }
+
+  handlePopUpunmount() {
+    this.setState(() => ({
+      popup: {
+        isVisible: false,
+        type: 'error',
+        message: 'Error',
+      },
+    }));
+  }
 
   submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -83,10 +95,26 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
     }));
 
     if (!isValid) {
+      this.setState(() => ({
+        popup: {
+          isVisible: true,
+          type: 'error',
+          message: 'All form fields are required',
+        },
+      }));
       return;
     }
+
     this.formRef.current?.reset();
     this.props.addBook(newBook);
+
+    this.setState(() => ({
+      popup: {
+        isVisible: true,
+        type: 'success',
+        message: 'Your suggestion successfully added!',
+      },
+    }));
   }
 
   render() {
@@ -179,6 +207,13 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
             </button>
           </form>
         </div>
+        {this.state.popup.isVisible && (
+          <PopupNotification
+            type={this.state.popup.type}
+            message={this.state.popup.message}
+            unmountMe={this.handlePopUpunmount}
+          />
+        )}
       </section>
     );
   }

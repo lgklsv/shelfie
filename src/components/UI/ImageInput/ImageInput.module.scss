@@ -4,11 +4,13 @@
   width: 100%;
   font-size: 14px;
   --field-padding: 12px;
+
   &__input {
     position: absolute;
     opacity: 0;
     overflow: hidden;
     z-index: -1;
+    width: 0;
   }
 
   &__label {
