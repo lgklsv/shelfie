@@ -5,14 +5,14 @@ import { MemoryRouter } from 'react-router-dom';
 import NavItems from './NavItems';
 
 describe('NavItems', () => {
-  it('renders 2 navbar items', () => {
+  it('renders 3 navbar items', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
         <NavItems />
       </MemoryRouter>
     );
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(2);
+    expect(listItems.length).toBe(3);
   });
   it('should activate nav item on click', () => {
     render(

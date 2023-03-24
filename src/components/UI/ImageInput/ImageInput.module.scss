@@ -2,6 +2,7 @@
 
 .image {
   width: 100%;
+  height: 100%;
   font-size: 14px;
   --field-padding: 12px;
 
@@ -14,10 +15,11 @@
   }
 
   &__label {
+    @include flex-center;
     position: relative;
-    display: block;
     padding: var(--field-padding);
     width: 100%;
+    height: 100%;
     background: $input-bg;
     border: 2px dashed $input-border;
     border-radius: 3px;
@@ -44,13 +46,13 @@
 
     &:before {
       content: '✅';
+      @include flex-center;
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       color: $input-bg;
-      line-height: 45px;
     }
   }
 }

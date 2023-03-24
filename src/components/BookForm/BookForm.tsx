@@ -99,7 +99,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
         popup: {
           isVisible: true,
           type: 'error',
-          message: 'All form fields are required',
+          message: 'All form fields are required !',
         },
       }));
       return;
@@ -112,7 +112,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
       popup: {
         isVisible: true,
         type: 'success',
-        message: 'Your suggestion successfully added!',
+        message: 'Your suggestion successfully added! 🎉',
       },
     }));
   }
@@ -162,9 +162,9 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
                 options={bookCategories}
               />
             </div>
-            <div className={styles.form__split}>
+            <div className={styles.form__split_half}>
               <div className={styles.form__radio}>
-                <div>
+                <div className={styles.form__radio__group}>
                   <RadioInput
                     innerRef={this.typeEBookInputRef}
                     name="book-type"

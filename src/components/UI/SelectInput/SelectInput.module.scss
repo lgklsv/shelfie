@@ -22,7 +22,6 @@
     margin-bottom: 5px;
     display: inline-block;
     --field-padding: 13px;
-    width: 50%;
 
     &:after,
     &:before {
@@ -57,14 +56,7 @@
 }
 
 .error__message {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 10px 8px 0 8px;
-  font-size: 12px;
-  background: transparent;
-  color: $red;
-  height: 10px;
+  @include form-error-message;
 }
 
 .error__message:empty {

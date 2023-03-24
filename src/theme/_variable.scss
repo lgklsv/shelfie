@@ -16,3 +16,14 @@ $tablet-width: 1000px;
   justify-content: center;
   align-items: center;
 }
+
+@mixin form-error-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 8px 0 8px;
+  font-size: 12px;
+  background: transparent;
+  color: $red;
+  height: 10px;
+}
