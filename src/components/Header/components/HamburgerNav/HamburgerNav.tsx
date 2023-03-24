@@ -11,8 +11,8 @@ class HamburgerNav extends React.Component<
   Record<string, never>,
   HamburgerNavState
 > {
-  constructor() {
-    super({});
+  constructor(props: never) {
+    super(props);
     this.state = {
       isOpen: false,
     };

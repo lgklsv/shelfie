@@ -9,8 +9,8 @@ type SearchState = {
 };
 
 class Search extends React.Component<Record<string, never>, SearchState> {
-  constructor() {
-    super({});
+  constructor(props: never) {
+    super(props);
     this.state = {
       value: '',
     };

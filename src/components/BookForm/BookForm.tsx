@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/lines-between-class-members */
 import React from 'react';
 
 import { bookCategories } from '../../const/book-categories';
@@ -25,7 +24,7 @@ class BookForm extends React.Component {
     const enteredTitle = this.titleInputRef.current?.value;
     const enteredAuthor = this.authorInputRef.current?.value;
     const enteredDate = this.dateInputRef.current?.value;
-    const enteredCategory = this.categoryInputRef.current;
+    const enteredCategory = this.categoryInputRef.current?.value;
     const enteredTypeEbook = this.typeEBookInputRef.current;
     const enteredTypePrited = this.typePrintedInputRef.current;
     const enteredImage = this.imageInputRef.current;
@@ -42,7 +41,12 @@ class BookForm extends React.Component {
       enteredImage,
       enteredAgreement
     );
-    const { isValid, inputs } = validateBookForm(enteredTitle, enteredAuthor);
+    const { isValid, inputs } = validateBookForm(
+      enteredTitle,
+      enteredAuthor,
+      enteredDate,
+      enteredCategory
+    );
     console.log(isValid, inputs);
 
     // Clear form

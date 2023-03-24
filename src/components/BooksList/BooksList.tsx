@@ -9,8 +9,8 @@ type BooksListState = {
 };
 
 class BooksList extends React.Component<Record<string, never>, BooksListState> {
-  constructor() {
-    super({});
+  constructor(props: never) {
+    super(props);
     this.state = {
       items: books.items,
     };
