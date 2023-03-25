@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { bookCategories } from '../../const/book-categories';
-import CheckBoxInput from '../UI/CheckboxInput/CheckBoxInput';
-import ImageInput from '../UI/ImageInput/ImageInput';
-import PopupNotification from '../UI/PopupNotification/PopupNotification';
-import RadioInput from '../UI/RadioInput/RadioInput';
-import SelectInput from '../UI/SelectInput/SelectInput';
-import StyledInput from '../UI/StyledInput/StyledInput';
+import CheckBoxInput from '../../UI/CheckboxInput/CheckBoxInput';
+import ImageInput from '../../UI/ImageInput/ImageInput';
+import PopupNotification from '../../UI/PopupNotification/PopupNotification';
+import RadioInput from '../../UI/RadioInput/RadioInput';
+import SelectInput from '../../UI/SelectInput/SelectInput';
+import StyledInput from '../../UI/StyledInput/StyledInput';
 import { validateBookForm } from './handlers/validateBookForm';
 import styles from './BookForm.module.scss';
 
