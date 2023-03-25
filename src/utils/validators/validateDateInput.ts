@@ -1,17 +1,17 @@
-export const validateDateInput = (dateInput: HTMLInputElement | null) => {
-  if (dateInput && dateInput.value) {
-    const enteredDate = Date.parse(dateInput.value);
+export const validateDateInput = (dateValue: string | undefined) => {
+  if (dateValue && !Number.isNaN(Date.parse(dateValue))) {
+    const enteredDate = Date.parse(dateValue);
     const now = new Date().getTime();
     const difference = now - enteredDate;
     if (difference < 0) {
       return {
-        dateValue: dateInput.value,
+        dateValue,
         dateIsValid: false,
         dateErrorMessage: 'Published date should not be in the future',
       };
     }
     return {
-      dateValue: dateInput.value,
+      dateValue,
       dateIsValid: true,
       dateErrorMessage: '',
     };

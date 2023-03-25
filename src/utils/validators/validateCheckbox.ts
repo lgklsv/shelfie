@@ -1,7 +1,7 @@
-export const validateCheckbox = (checkbox: HTMLInputElement | null) => {
-  if (checkbox && checkbox.checked) {
+export const validateCheckbox = (checkboxValue: boolean | undefined) => {
+  if (checkboxValue) {
     return {
-      checkboxValue: checkbox.checked,
+      checkboxValue,
       checkboxIsValid: true,
       checkboxErrorMessage: '',
     };

@@ -1,24 +1,22 @@
-export const validateTextInput = (
-  input: HTMLInputElement | null,
-  type: string
-) => {
-  if (input && input.value) {
-    if (input.value.length < 3) {
+export const validateTextInput = (text: string | undefined, type: string) => {
+  if (text) {
+    const cleanText = text.trim();
+    if (cleanText.length < 3) {
       return {
-        value: input.value,
+        value: cleanText,
         textIsValid: false,
         errorMessage: `${type} should be at least 3 characters`,
       };
     }
-    if (input.value.length > 40) {
+    if (cleanText.length > 40) {
       return {
-        value: input.value,
+        value: cleanText,
         textIsValid: false,
         errorMessage: `${type} is too long`,
       };
     }
     return {
-      value: input.value,
+      value: cleanText,
       textIsValid: true,
       errorMessage: '',
     };

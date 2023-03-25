@@ -1,13 +1,16 @@
-export const validateSelectInput = (input: HTMLSelectElement | null) => {
-  if (!input || !input.value || input.value === 'DEFAULT') {
+export const validateSelectInput = (
+  value: string | undefined,
+  type: string
+) => {
+  if (!value || value === 'DEFAULT') {
     return {
       selectValue: 'DEFAULT',
       selectIsValid: false,
-      selectErrorMessage: 'Category should be selected',
+      selectErrorMessage: `${type} should be selected`,
     };
   }
   return {
-    selectValue: input.value,
+    selectValue: value,
     selectIsValid: true,
     selectErrorMessage: '',
   };

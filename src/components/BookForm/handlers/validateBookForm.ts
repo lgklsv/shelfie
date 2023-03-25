@@ -19,23 +19,32 @@ export const validateBookForm = (
     value: titleValue,
     textIsValid: titleIsValid,
     errorMessage: titleErrorMessage,
-  } = validateTextInput(title, 'Title');
+  } = validateTextInput(title?.value, 'Title');
+
   const {
     value: authorValue,
     textIsValid: authorIsValid,
     errorMessage: authorErrorMessage,
-  } = validateTextInput(author, 'Author');
-  const { dateValue, dateIsValid, dateErrorMessage } = validateDateInput(date);
-  const { selectValue, selectIsValid, selectErrorMessage } =
-    validateSelectInput(category);
-  const { radioValue, radioIsValid, radioErrorMessage } = validateRadioInputs(
-    ebook,
-    printed
+  } = validateTextInput(author?.value, 'Author');
+
+  const { dateValue, dateIsValid, dateErrorMessage } = validateDateInput(
+    date?.value
   );
-  const { imageValue, imageIsValid, imageErrorMessage } =
-    validateImageInput(image);
+
+  const { selectValue, selectIsValid, selectErrorMessage } =
+    validateSelectInput(category?.value, 'Category');
+
+  const { radioValue, radioIsValid, radioErrorMessage } = validateRadioInputs(
+    ebook?.checked,
+    printed?.checked
+  );
+
+  const { imageValue, imageIsValid, imageErrorMessage } = validateImageInput(
+    image?.files
+  );
+
   const { checkboxValue, checkboxIsValid, checkboxErrorMessage } =
-    validateCheckbox(agreement);
+    validateCheckbox(agreement?.checked);
 
   const isValid =
     titleIsValid &&
@@ -75,7 +84,7 @@ export const validateBookForm = (
         message: radioErrorMessage,
       },
       image: {
-        value: imageValue,
+        value: URL.createObjectURL(imageValue),
         imageIsValid,
         message: imageErrorMessage,
       },

@@ -1,10 +1,15 @@
 export const validateRadioInputs = (
-  input: HTMLInputElement | null,
-  input2: HTMLInputElement | null
+  checkedFirst: boolean | undefined,
+  checkedSecond: boolean | undefined
 ) => {
-  if (input && input2 && (input.checked || input2.checked)) {
+  if (
+    checkedFirst !== undefined &&
+    checkedSecond !== undefined &&
+    !(checkedFirst && checkedSecond) &&
+    (checkedFirst || checkedSecond)
+  ) {
     return {
-      radioValue: input.checked,
+      radioValue: checkedFirst,
       radioIsValid: true,
       radioErrorMessage: '',
     };

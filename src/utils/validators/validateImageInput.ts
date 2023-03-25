@@ -1,13 +1,13 @@
-export const validateImageInput = (imageInput: HTMLInputElement | null) => {
-  if (imageInput && imageInput.files && imageInput.files.length !== 0) {
+export const validateImageInput = (imageValue: FileList | null | undefined) => {
+  if (imageValue && imageValue.length !== 0) {
     return {
-      imageValue: URL.createObjectURL(imageInput.files[0]),
+      imageValue: imageValue[0],
       imageIsValid: true,
       imageErrorMessage: '',
     };
   }
   return {
-    imageValue: '',
+    imageValue: new File(['1234'], 'test.jpg', { type: 'image/jpeg' }),
     imageIsValid: false,
     imageErrorMessage: 'Image should be provided',
   };
