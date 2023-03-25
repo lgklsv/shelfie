@@ -25,6 +25,6 @@ describe('SelectInput', () => {
     );
     expect(screen.getByText(/Custom error select/i)).toBeInTheDocument();
     expect(screen.getByText(/choose category/i)).toBeInTheDocument();
-    expect(screen.getAllByRole('option').length).toBe(mockOptions.length);
+    expect(screen.getAllByRole('option')).toHaveLength(mockOptions.length);
   });
 });

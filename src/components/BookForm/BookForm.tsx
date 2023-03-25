@@ -38,6 +38,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
     };
 
     this.handlePopUpunmount = this.handlePopUpunmount.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
   }
 
   handlePopUpunmount() {
@@ -123,7 +124,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
         <div className={styles.form_container}>
           <form
             ref={this.formRef}
-            onSubmit={this.submitHandler.bind(this)}
+            onSubmit={this.submitHandler}
             className={`${styles.form} container_sm`}
             noValidate
           >

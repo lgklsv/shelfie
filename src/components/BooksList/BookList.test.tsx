@@ -9,6 +9,6 @@ describe('BooksList', () => {
     render(<BooksList />);
     const renderedBooks = screen.getAllByTestId('book-item');
 
-    expect(renderedBooks.length).toBe(books.items.length);
+    expect(renderedBooks).toHaveLength(books.items.length);
   });
 });

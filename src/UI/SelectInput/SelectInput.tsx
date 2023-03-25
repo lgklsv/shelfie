@@ -23,6 +23,7 @@ class SelectInput extends React.Component<SelectInputProps> {
     return (
       <div className={styles.select_wrapper}>
         <select
+          data-testid="select-input"
           ref={this.props.innerRef}
           className={styles.select}
           name={this.props.name}

@@ -33,6 +33,6 @@ describe('SuggestedBooks', () => {
     render(<SuggestedBooks books={suggestedBooksMock} />);
     const renderedBooks = screen.getAllByTestId('book-item');
 
-    expect(renderedBooks.length).toBe(suggestedBooksMock.length);
+    expect(renderedBooks).toHaveLength(suggestedBooksMock.length);
   });
 });

@@ -23,6 +23,10 @@
     color: $input-text;
     border: 2px solid $input-border;
     transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: transparent;
+    }
   }
 
   .placeholder {

@@ -7,7 +7,7 @@ export const validateImageInput = (imageValue: FileList | null | undefined) => {
     };
   }
   return {
-    imageValue: new File(['1234'], 'test.jpg', { type: 'image/jpeg' }),
+    imageValue: '',
     imageIsValid: false,
     imageErrorMessage: 'Image should be provided',
   };

@@ -84,7 +84,10 @@ export const validateBookForm = (
         message: radioErrorMessage,
       },
       image: {
-        value: URL.createObjectURL(imageValue),
+        value:
+          typeof imageValue === 'string'
+            ? imageValue
+            : URL.createObjectURL(imageValue),
         imageIsValid,
         message: imageErrorMessage,
       },

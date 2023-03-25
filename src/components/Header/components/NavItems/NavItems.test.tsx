@@ -12,7 +12,7 @@ describe('NavItems', () => {
       </MemoryRouter>
     );
     const listItems = screen.getAllByRole('listitem');
-    expect(listItems.length).toBe(3);
+    expect(listItems).toHaveLength(3);
   });
   it('should activate nav item on click', () => {
     render(

@@ -23,7 +23,7 @@ class StyledInput extends React.Component<StyledInputProps> {
           type={this.props.type}
           name={this.props.name}
           id={this.props.id}
-          placeholder=" "
+          placeholder={this.props.id}
         />
         <span className={styles.placeholder}>{this.props.placeholder}</span>
         <span className={styles.error__message}>{this.props.message}</span>
