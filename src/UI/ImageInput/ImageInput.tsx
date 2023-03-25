@@ -18,6 +18,7 @@ class ImageInput extends React.Component<ImageInputProps> {
     return (
       <div className={styles.image}>
         <input
+          data-testid="img-input"
           ref={this.props.innerRef}
           className={styles.image__input}
           type="file"
