@@ -21,7 +21,7 @@ class SuggestedBooks extends React.Component<BooksListProps> {
               <h3>Suggested books</h3>
               <div className={styles.bookList}>
                 {this.props.books.map((obj: SuggestedBook) => (
-                  <BookCard key={obj.title} data={obj} />
+                  <BookCard key={obj.id} data={obj} />
                 ))}
               </div>
             </>

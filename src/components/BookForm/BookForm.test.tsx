@@ -59,6 +59,7 @@ describe('Book form', () => {
     expect(inputImage.files).toHaveLength(1);
 
     expect(mockAddBookFn).toHaveBeenCalledWith({
+      id: expect.any(String),
       title: 'The best new book',
       authors: ['Artemij Fedosejev'],
       publishedDate: '1999-01-04',

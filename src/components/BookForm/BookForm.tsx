@@ -62,7 +62,6 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
     const enteredImage = this.imageInputRef.current;
     const enteredAgreement = this.agreementInputRef.current;
 
-    // Validate
     const { isValid, report } = validateBookForm(
       enteredTitle,
       enteredAuthor,
@@ -75,6 +74,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
     );
 
     const newBook: SuggestedBook = {
+      id: new Date().getTime().toString(),
       title: report.title.value,
       authors: [report.author.value],
       publishedDate: report.date.value,

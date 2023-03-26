@@ -5,6 +5,7 @@ import SuggestedBooks from './SuggestedBooks';
 
 const suggestedBooksMock: SuggestedBook[] = [
   {
+    id: '43242342423',
     title: 'book1',
     authors: ['best author'],
     publishedDate: '2020-02-02',
@@ -16,6 +17,7 @@ const suggestedBooksMock: SuggestedBook[] = [
     },
   },
   {
+    id: '23442432432',
     title: 'book2',
     authors: ['best author again'],
     publishedDate: '2000-02-02',
