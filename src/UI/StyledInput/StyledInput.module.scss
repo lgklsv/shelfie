@@ -1,0 +1,75 @@
+@import '/src/theme/variable';
+
+.input {
+  position: relative;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: inline-block;
+  --field-padding: 12px;
+  width: 100%;
+
+  input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: var(--field-padding);
+    border-radius: 3px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    background: $input-bg;
+    color: $input-text;
+    border: 2px solid $input-border;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  .placeholder {
+    position: absolute;
+    left: var(--field-padding);
+    width: calc(100% - (var(--field-padding) * 2));
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    top: 22px;
+    line-height: 100%;
+    transform: translateY(-50%);
+    color: $input-text-inactive;
+    cursor: text;
+    transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
+  }
+
+  .error__message {
+    @include form-error-message;
+  }
+
+  .error__message:empty {
+    opacity: 0;
+  }
+
+  input + .placeholder {
+    left: 8px;
+    padding: 0 5px;
+  }
+
+  input:focus {
+    border-color: $input-active;
+    transition-delay: 0.1s;
+  }
+
+  input:not(:placeholder-shown) + .placeholder,
+  input:focus + .placeholder {
+    top: -10px;
+    font-size: 10px;
+    color: $input-text;
+    top: 0;
+    background: $input-bg;
+    border-radius: 5px;
+    width: auto;
+  }
+}
