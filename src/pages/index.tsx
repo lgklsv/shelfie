@@ -6,8 +6,11 @@ import Home from './home/Home';
 import About from './about/About';
 import Suggest from './suggest/Suggest';
 import NotFound from './notfound/NotFound';
+import { useResetScroll } from './hooks';
 
 const Routing: React.FC = () => {
+  useResetScroll();
+
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
