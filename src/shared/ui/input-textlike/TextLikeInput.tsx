@@ -1,7 +1,7 @@
 import React, { HTMLInputTypeAttribute } from 'react';
-import styles from './StyledInput.module.scss';
+import styles from './TextLikeInput.module.scss';
 
-type StyledInputProps = {
+type TextLikeInputProps = {
   innerRef: React.RefObject<HTMLInputElement>;
   type: HTMLInputTypeAttribute;
   name: string;
@@ -10,8 +10,8 @@ type StyledInputProps = {
   placeholder: string;
 };
 
-class StyledInput extends React.Component<StyledInputProps> {
-  constructor(props: StyledInputProps) {
+class TextLikeInput extends React.Component<TextLikeInputProps> {
+  constructor(props: TextLikeInputProps) {
     super(props);
   }
 
@@ -32,4 +32,4 @@ class StyledInput extends React.Component<StyledInputProps> {
   }
 }
 
-export default StyledInput;
+export default TextLikeInput;

@@ -33,7 +33,7 @@
       width: 0;
       height: 0;
       border: 4px dashed;
-      border-color: var(--input-text-inactive transparent);
+      border-color: (var(--input-text-inactive) transparent);
       pointer-events: none;
     }
 

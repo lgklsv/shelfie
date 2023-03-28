@@ -2,13 +2,13 @@ import React from 'react';
 
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import CheckBoxInput from './CheckBoxInput';
+import { Checkbox } from '..';
 
 describe('Checkbox input', () => {
   const ref = React.createRef<HTMLInputElement>();
   it('should have checkbox input parts', () => {
     render(
-      <CheckBoxInput
+      <Checkbox
         innerRef={ref}
         name="agreement"
         id="agreement"

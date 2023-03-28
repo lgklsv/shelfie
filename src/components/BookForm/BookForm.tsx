@@ -1,12 +1,14 @@
 import React from 'react';
 
+import {
+  CheckboxInput,
+  ImageInput,
+  RadioInput,
+  SelectInput,
+  TextLikeInput,
+  PopupNotification,
+} from 'shared/ui';
 import { bookCategories } from '../../const/book-categories';
-import CheckBoxInput from '../../UI/CheckboxInput/CheckBoxInput';
-import ImageInput from '../../UI/ImageInput/ImageInput';
-import PopupNotification from '../../UI/PopupNotification/PopupNotification';
-import RadioInput from '../../UI/RadioInput/RadioInput';
-import SelectInput from '../../UI/SelectInput/SelectInput';
-import StyledInput from '../../UI/StyledInput/StyledInput';
 import { validateBookForm } from './handlers/validateBookForm';
 import styles from './BookForm.module.scss';
 
@@ -129,7 +131,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
             noValidate
           >
             <h3 className={styles.form__title}>Book details</h3>
-            <StyledInput
+            <TextLikeInput
               innerRef={this.titleInputRef}
               type="text"
               name="title"
@@ -137,7 +139,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
               message={this.state.titleMessage}
               placeholder="Title"
             />
-            <StyledInput
+            <TextLikeInput
               innerRef={this.authorInputRef}
               type="text"
               name="author"
@@ -146,7 +148,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
               placeholder="Author"
             />
             <div className={styles.form__split}>
-              <StyledInput
+              <TextLikeInput
                 innerRef={this.dateInputRef}
                 type="date"
                 name="published"
@@ -192,7 +194,7 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
               />
             </div>
             <div className={styles.form__checkboxarea}>
-              <CheckBoxInput
+              <CheckboxInput
                 innerRef={this.agreementInputRef}
                 name="agreement"
                 id="agreement"

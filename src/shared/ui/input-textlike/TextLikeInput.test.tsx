@@ -2,7 +2,7 @@ import React from 'react';
 
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import StyledInput from './StyledInput';
+import StyledInput from './TextLikeInput';
 
 describe('Styled input', () => {
   const ref = React.createRef<HTMLInputElement>();
