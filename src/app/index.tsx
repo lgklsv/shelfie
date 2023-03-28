@@ -2,12 +2,13 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import { appTitle } from './const/app-title';
-import MainLayout from './layouts/MainLayout';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
-import About from './pages/About';
-import Suggest from './pages/Suggest';
+import { appTitle } from '../const/app-title';
+import MainLayout from '../layouts/MainLayout';
+import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
+import About from '../pages/About';
+import Suggest from '../pages/Suggest';
+import './index.scss';
 
 class App extends React.Component {
   render() {

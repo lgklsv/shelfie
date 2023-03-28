@@ -1,4 +1,4 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .input {
   position: relative;
@@ -19,9 +19,9 @@
     width: 100%;
     outline: none;
     font-size: 14px;
-    background: $input-bg;
-    color: $input-text;
-    border: 2px solid $input-border;
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: 2px solid var(--input-border);
     transition: border-color 0.3s ease;
 
     &::placeholder {
@@ -39,7 +39,7 @@
     top: 22px;
     line-height: 100%;
     transform: translateY(-50%);
-    color: $input-text-inactive;
+    color: var(--input-text-inactive);
     cursor: text;
     transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
   }
@@ -58,7 +58,7 @@
   }
 
   input:focus {
-    border-color: $input-active;
+    border-color: var(--input-active);
     transition-delay: 0.1s;
   }
 
@@ -66,9 +66,9 @@
   input:focus + .placeholder {
     top: -10px;
     font-size: 10px;
-    color: $input-text;
+    color: var(--input-text);
     top: 0;
-    background: $input-bg;
+    background: var(--input-bg);
     border-radius: 5px;
     width: auto;
   }

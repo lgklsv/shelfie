@@ -1,13 +1,13 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .welcome {
-  background-color: $background-secondary;
+  background-color: var(--background-secondary);
   padding-top: 10rem;
   margin-top: -6rem;
   position: relative;
   padding-bottom: 3rem;
 
-  @media (max-width: $phone-width) {
+  @media (max-width: var(--phone-width)) {
     padding-top: 8rem;
   }
 
@@ -23,7 +23,7 @@
     text-align: center;
     line-height: 120%;
 
-    @media (max-width: $phone-width) {
+    @media (max-width: var(--phone-width)) {
       font-size: 2rem;
     }
   }

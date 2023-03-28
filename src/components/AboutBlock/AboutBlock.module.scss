@@ -1,5 +1,3 @@
-@import '/src/theme/variable';
-
 .about {
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -36,17 +34,17 @@
   }
 
   pre {
-    background-color: $code-bg;
+    background-color: var(--code-bg);
     max-width: min-content;
     padding: 1rem;
     border-radius: 10px;
 
-    @media (max-width: $phone-width) {
+    @media (max-width: var(--phone-width)) {
       max-width: 100%;
     }
   }
 
-  @media (max-width: $phone-width) {
+  @media (max-width: var(--phone-width)) {
     code {
       overflow-x: auto;
       white-space: pre-wrap;

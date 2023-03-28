@@ -1,8 +1,8 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .notFound {
   @include flex-center;
-  height: calc(100vh - $header-height - $footer-height);
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   flex-direction: column;
   padding: auto 0;
   gap: 2rem;

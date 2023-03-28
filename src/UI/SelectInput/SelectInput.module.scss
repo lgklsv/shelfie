@@ -1,4 +1,4 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .select {
   -webkit-appearance: none;
@@ -11,10 +11,10 @@
   border-radius: 3px;
   width: 100%;
   outline: none;
-  background: $input-bg;
-  border: 2px solid $input-border;
+  background: var(--input-bg);
+  border: 2px solid var(--input-border);
   transition: border-color 0.3s ease;
-  color: $input-text;
+  color: var(--input-text);
 
   &_wrapper {
     position: relative;
@@ -33,7 +33,7 @@
       width: 0;
       height: 0;
       border: 4px dashed;
-      border-color: $input-text-inactive transparent;
+      border-color: var(--input-text-inactive transparent);
       pointer-events: none;
     }
 
@@ -50,7 +50,7 @@
   }
 
   &:focus {
-    border-color: $input-active;
+    border-color: var(--input-active);
     transition-delay: 0.1s;
   }
 }

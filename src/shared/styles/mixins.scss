@@ -1,16 +1,3 @@
-@import '/src/theme/colors';
-
-$desktop: 1140px;
-$header-height: 88px;
-$footer-height: 70px;
-
-$container-sm: 700px;
-
-$iphoneSE: 375px;
-$iphoneXR: 414px;
-$phone-width: 768px;
-$tablet-width: 1000px;
-
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -24,6 +11,6 @@ $tablet-width: 1000px;
   padding: 10px 8px 0 8px;
   font-size: 12px;
   background: transparent;
-  color: $red;
+  color: var(--red);
   height: 10px;
 }

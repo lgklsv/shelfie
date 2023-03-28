@@ -1,11 +1,11 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .hamburger,
 .navbar_hamburger {
   display: none;
 }
 
-@media (max-width: $phone-width) {
+@media (max-width: var(--phone-width)) {
   .navbar__list_hamburger {
     position: fixed;
     list-style: none;
@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background-color: $header-footer;
+    background-color: var(--header-footer);
     width: 100%;
     padding: 2rem 0;
     text-align: center;
@@ -43,7 +43,7 @@
     display: block;
     height: 3px;
     width: 100%;
-    background-color: $white;
+    background-color: var(--white);
     border-radius: 5px;
   }
 

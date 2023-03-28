@@ -1,8 +1,8 @@
-@import '/src/theme/variable';
+@import './styles/index.scss';
 
 .container {
   width: calc(100vw - 100px);
-  max-width: $desktop;
+  max-width: var(--desktop);
   height: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -14,7 +14,7 @@
 }
 
 .container_sm {
-  max-width: $container-sm;
+  max-width: var(--container-sm);
 }
 
 a.active {
@@ -35,19 +35,19 @@ a.active {
 }
 
 .btn-primary {
-  color: $text-primary;
-  background-color: $button-primary;
+  color: var(--text-primary);
+  background-color: var(--button-primary);
 
   &:hover {
-    background-color: $button-primary-hover;
+    background-color: var(--button-primary-hover);
   }
 }
 
 .btn-secondary {
-  color: $text-primary;
-  background-color: $button-secondary;
+  color: var(--text-primary);
+  background-color: var(--button-secondary);
 
   &:hover {
-    background-color: $button-secondary-hover;
+    background-color: var(--button-secondary-hover);
   }
 }

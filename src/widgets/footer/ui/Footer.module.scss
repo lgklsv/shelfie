@@ -1,18 +1,16 @@
-@import '/src/theme/variable';
-
 .footer {
   display: flex;
-  height: $footer-height;
+  height: var(--footer-height);
   width: 100%;
-  background-color: $header-footer;
+  background-color: var(--header-footer);
   text-transform: uppercase;
-  color: $text-ternary;
+  color: var(--text-ternary);
   font-size: 0.7rem;
 
   &__container {
     padding-right: 15px;
     padding-left: 15px;
-    max-width: $desktop;
+    max-width: var(--desktop);
     margin-right: auto;
     margin-left: auto;
     display: flex;
@@ -25,14 +23,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: $text-ternary;
+    color: var(--text-ternary);
   }
 
   &__link {
-    color: $text-ternary;
+    color: var(--text-ternary);
 
     &:hover {
-      color: $text-primary-hover;
+      color: var(--text-primary-hover);
     }
   }
 

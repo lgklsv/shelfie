@@ -1,4 +1,4 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .form_container {
   display: flex;
@@ -11,7 +11,7 @@
 .form {
   width: 100%;
   border-radius: 10px;
-  background-color: $input-bg;
+  background-color: var(--input-bg);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   }
 
   &__title {
-    color: $input-active;
+    color: var(--input-active);
     align-self: flex-start;
   }
 

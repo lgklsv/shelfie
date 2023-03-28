@@ -1,12 +1,12 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .checkbox {
-  color: $input-text;
+  color: var(--input-text);
   font-size: 14px;
 
   &__input {
     position: relative;
-    border: 2px solid $input-border;
+    border: 2px solid var(--input-border);
     border-radius: 2px;
     background: none;
     cursor: pointer;
@@ -26,7 +26,7 @@
       top: 50%;
       width: 4px;
       height: 10px;
-      border: solid $input-bg;
+      border: solid var(--input-bg);
       border-width: 0 2px 2px 0;
       margin: -1px -1px 0 -1px;
       transform: rotate(45deg) translate(-50%, -50%);
@@ -34,12 +34,12 @@
     }
 
     &:focus {
-      border-color: $button-primary;
+      border-color: var(--button-primary);
     }
 
     &:checked {
-      background-color: $button-primary;
-      border-color: $button-primary;
+      background-color: var(--button-primary);
+      border-color: var(--button-primary);
     }
   }
 

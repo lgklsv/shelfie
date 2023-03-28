@@ -1,7 +1,7 @@
-@import '/src/theme/variable';
+@import '../../shared/styles/mixins.scss';
 
 .book {
-  background-color: $background-secondary;
+  background-color: var(--background-secondary);
   width: 100%;
   position: relative;
   border-radius: 10px;
@@ -36,7 +36,7 @@
   }
 
   &__ebook {
-    background-color: $button-primary;
+    background-color: var(--button-primary);
     position: absolute;
     font-size: 0.9rem;
     padding: 5px;
@@ -65,12 +65,12 @@
   }
 
   &__text {
-    color: $text-secondary;
+    color: var(--text-secondary);
     font-size: 0.9rem;
   }
 
   &__text_light {
-    color: $text-ternary;
+    color: var(--text-ternary);
     font-size: 0.8rem;
   }
 

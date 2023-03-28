@@ -1,11 +1,11 @@
-@import '/src/theme/variable';
+@import '/src/shared/styles/mixins.scss';
 
 .navbar__list {
   @include flex-center;
   list-style: none;
 }
 
-@media (max-width: $phone-width) {
+@media (max-width: var(--phone-width)) {
   .navbar {
     display: none;
   }
