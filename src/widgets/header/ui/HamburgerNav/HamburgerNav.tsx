@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavItems from '../NavItems/NavItems';
+import { NavItems } from '../NavItems';
 import styles from './HamburgerNav.module.scss';
 
 type HamburgerNavState = {

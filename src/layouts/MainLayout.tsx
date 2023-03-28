@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { Footer } from 'widgets/footer';
-import Header from '../components/Header/Header';
+import { Header } from 'widgets/header';
 import styles from './MainLayout.module.scss';
 
 class MainLayout extends React.Component {
