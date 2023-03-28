@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { About } from './about';
+import { Home } from './home';
 
-import Home from './home/Home';
 import Suggest from './suggest/Suggest';
 import NotFound from './notfound/NotFound';
 

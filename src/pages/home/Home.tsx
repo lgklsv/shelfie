@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import BooksList from '../../components/BooksList/BooksList';
-import Welcome from '../../components/Welcome/Welcome';
+import { BookListSection } from './book-list';
+import { WelcomeSection } from './welcome';
 
 class Home extends React.Component {
   render() {
@@ -11,8 +11,8 @@ class Home extends React.Component {
         <Helmet>
           <title>Home</title>
         </Helmet>
-        <Welcome />
-        <BooksList />
+        <WelcomeSection />
+        <BookListSection />
       </>
     );
   }

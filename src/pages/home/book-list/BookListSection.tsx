@@ -1,10 +1,11 @@
 import React from 'react';
 
-import books from 'shared/api/books.json';
-import BookCard from '../BookCard/BookCard';
-import styles from './BookList.module.scss';
+import BookCard from 'components/BookCard/BookCard';
 
-class BooksList extends React.Component {
+import books from 'shared/api/books.json';
+import styles from './BookListSection.module.scss';
+
+class BookListSection extends React.Component {
   render() {
     return (
       <section>
@@ -20,4 +21,4 @@ class BooksList extends React.Component {
   }
 }
 
-export default BooksList;
+export default BookListSection;

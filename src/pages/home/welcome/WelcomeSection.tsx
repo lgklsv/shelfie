@@ -1,10 +1,12 @@
 import React from 'react';
 
-import Cutout from '../../assets/icons/Cutout.asset';
-import Search from '../Search/Search';
-import styles from './Welcome.module.scss';
+// Search is a feature
+import Search from 'components/Search/Search';
 
-class Welcome extends React.Component {
+import Cutout from './Cutout.asset';
+import styles from './WelcomeSection.module.scss';
+
+class WelcomeSection extends React.Component {
   render() {
     return (
       <section className={styles.welcome}>
@@ -24,4 +26,4 @@ class Welcome extends React.Component {
   }
 }
 
-export default Welcome;
+export default WelcomeSection;
