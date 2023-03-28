@@ -4,9 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './home';
 import { About } from './about';
 import { NotFound } from './notfound';
-
-import Suggest from './suggest/Suggest';
-
+import { Suggest } from './suggest';
 import { useResetScroll } from './hooks';
 import { Layout } from './layout';
 

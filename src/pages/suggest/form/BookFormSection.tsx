@@ -8,11 +8,11 @@ import {
   TextLikeInput,
   PopupNotification,
 } from 'shared/ui';
-import { bookCategories } from '../../const/book-categories';
 import { validateBookForm } from './handlers/validateBookForm';
-import styles from './BookForm.module.scss';
+import { bookCategories } from './model/book-categories';
+import styles from './BookFormSection.module.scss';
 
-class BookForm extends React.Component<BooksFromProps, BookFormState> {
+class BookFormSection extends React.Component<BooksFromProps, BookFormState> {
   private formRef = React.createRef<HTMLFormElement>();
   private titleInputRef = React.createRef<HTMLInputElement>();
   private authorInputRef = React.createRef<HTMLInputElement>();
@@ -222,4 +222,4 @@ class BookForm extends React.Component<BooksFromProps, BookFormState> {
   }
 }
 
-export default BookForm;
+export default BookFormSection;

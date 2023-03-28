@@ -1,13 +1,13 @@
 import React from 'react';
 
-import BookCard from '../BookCard/BookCard';
-import styles from './SuggestedBooks.module.scss';
+import BookCard from 'components/BookCard/BookCard';
+import styles from './SuggestedSection.module.scss';
 
 type BooksListProps = {
   books: SuggestedBook[];
 };
 
-class SuggestedBooks extends React.Component<BooksListProps> {
+class SuggestedSection extends React.Component<BooksListProps> {
   constructor(props: BooksListProps) {
     super(props);
   }
@@ -32,4 +32,4 @@ class SuggestedBooks extends React.Component<BooksListProps> {
   }
 }
 
-export default SuggestedBooks;
+export default SuggestedSection;

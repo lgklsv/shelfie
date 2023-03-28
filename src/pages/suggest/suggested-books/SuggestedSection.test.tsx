@@ -1,7 +1,7 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import SuggestedBooks from './SuggestedBooks';
+import SuggestedSection from './SuggestedSection';
 
 const suggestedBooksMock: SuggestedBook[] = [
   {
@@ -30,9 +30,9 @@ const suggestedBooksMock: SuggestedBook[] = [
   },
 ];
 
-describe('SuggestedBooks', () => {
+describe('SuggestedSection', () => {
   it('should render all suggested books', () => {
-    render(<SuggestedBooks books={suggestedBooksMock} />);
+    render(<SuggestedSection books={suggestedBooksMock} />);
     const renderedBooks = screen.getAllByTestId('book-item');
 
     expect(renderedBooks).toHaveLength(suggestedBooksMock.length);

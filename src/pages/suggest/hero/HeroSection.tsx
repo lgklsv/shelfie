@@ -1,19 +1,11 @@
 import React from 'react';
 import styles from './HeroSection.module.scss';
 
-type HeroSectionProps = {
-  size: string;
-};
-
-class HeroSection extends React.Component<HeroSectionProps> {
-  constructor(props: HeroSectionProps) {
-    super(props);
-  }
-
+class HeroSection extends React.Component {
   render() {
     return (
       <section className={styles.hero}>
-        <div className={`container container_${this.props.size}`}>
+        <div className="container container_sm">
           <div className={styles.hero__content}>
             <h2 className={styles.hero__heading}>Suggest book</h2>
             <p className={styles.hero__message}>

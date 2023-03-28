@@ -2,12 +2,12 @@ import { describe, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import BookForm from './BookForm';
+import BookFormSection from './BookFormSection';
 
 describe('Book form', () => {
   const mockAddBookFn = vi.fn();
   it('should show error messages if from is not filled in', () => {
-    render(<BookForm addBook={mockAddBookFn} />);
+    render(<BookFormSection addBook={mockAddBookFn} />);
 
     const submitBtn = screen.getByRole('button');
     fireEvent.click(submitBtn);
@@ -25,7 +25,7 @@ describe('Book form', () => {
     ).toBeInTheDocument();
   });
   it('should send data to render if form validation is successfully passed', async () => {
-    render(<BookForm addBook={mockAddBookFn} />);
+    render(<BookFormSection addBook={mockAddBookFn} />);
 
     const submitBtn = screen.getByRole('button');
     const mockImg = new File(['image'], 'test.png', { type: 'image/png' });

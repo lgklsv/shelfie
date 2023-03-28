@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import BookForm from '../../components/BookForm/BookForm';
-import HeroSection from '../../components/HeroSection/HeroSection';
-import SuggestedBooks from '../../components/SuggestedBooks/SuggestedBooks';
+
+import { HeroSection } from './hero';
+import { BookFormSection } from './form';
+import { SuggestedSection } from './suggested-books';
 
 class Suggest extends React.Component<Record<string, never>, BooksList> {
   constructor(props: never) {
@@ -26,9 +27,9 @@ class Suggest extends React.Component<Record<string, never>, BooksList> {
         <Helmet>
           <title>Suggest Book</title>
         </Helmet>
-        <HeroSection size="sm" />
-        <BookForm addBook={this.addBook} />
-        <SuggestedBooks books={this.state.items} />
+        <HeroSection />
+        <BookFormSection addBook={this.addBook} />
+        <SuggestedSection books={this.state.items} />
       </>
     );
   }

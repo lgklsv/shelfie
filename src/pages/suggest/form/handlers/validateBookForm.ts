@@ -1,9 +1,9 @@
-import { validateCheckbox } from '../../../utils/validators/validateCheckbox';
-import { validateDateInput } from '../../../utils/validators/validateDateInput';
-import { validateImageInput } from '../../../utils/validators/validateImageInput';
-import { validateRadioInputs } from '../../../utils/validators/validateRadioInputs';
-import { validateSelectInput } from '../../../utils/validators/validateSelectInput';
-import { validateTextInput } from '../../../utils/validators/validateTextInput';
+import { validateCheckbox } from 'utils/validators/validateCheckbox';
+import { validateDateInput } from 'utils/validators/validateDateInput';
+import { validateImageInput } from 'utils/validators/validateImageInput';
+import { validateRadioInputs } from 'utils/validators/validateRadioInputs';
+import { validateSelectInput } from 'utils/validators/validateSelectInput';
+import { validateTextInput } from 'utils/validators/validateTextInput';
 
 export const validateBookForm = (
   title: HTMLInputElement | null,
