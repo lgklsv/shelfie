@@ -1,6 +1,6 @@
 import React from 'react';
 
-import books from '../../books.json';
+import books from 'shared/api/books.json';
 import BookCard from '../BookCard/BookCard';
 import styles from './BookList.module.scss';
 
