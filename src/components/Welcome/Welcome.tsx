@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Cutout from '../../assets/icons/Cutout';
+import Cutout from '../../assets/icons/Cutout.asset';
 import Search from '../Search/Search';
 import styles from './Welcome.module.scss';
 

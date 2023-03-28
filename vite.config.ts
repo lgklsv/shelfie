@@ -17,7 +17,11 @@ export default defineConfig({
     css: true,
     coverage: {
       include: ['src/**/*'],
-      exclude: ['src/assets/*', 'src/const/*', 'src/main.tsx'],
+      exclude: [
+        'src/const/*',
+        '**/*/@(index|config).@(tsx|ts)',
+        '**/*/.@(asset|icon).@(tsx|ts)',
+      ],
       enabled: true,
       provider: 'istanbul',
       reporter: ['text'],

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import LogoIcon from 'assets/icons/LogoIcon';
 import { Navbar } from './Navbar';
 import { HamburgerNav } from './HamburgerNav';
+
+import LogoIcon from './Logo.icon';
 import styles from './Header.module.scss';
 
 class Header extends React.Component {
