@@ -1,13 +1,14 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import MainLayout from './MainLayout';
 
-describe('MainLayout', () => {
+import Layout from './Layout';
+
+describe('Layout', () => {
   it('should render main container', () => {
     render(
       <MemoryRouter initialEntries={['/']}>
-        <MainLayout />
+        <Layout />
       </MemoryRouter>
     );
     expect(screen.getByRole('main')).toBeInTheDocument();

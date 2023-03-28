@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom';
 
 import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
-import styles from './MainLayout.module.scss';
+import styles from './Layout.module.scss';
 
-class MainLayout extends React.Component {
+class Layout extends React.Component {
   render() {
     return (
       <>
@@ -19,4 +19,4 @@ class MainLayout extends React.Component {
   }
 }
 
-export default MainLayout;
+export default Layout;
