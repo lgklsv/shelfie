@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import BookForm from '../components/BookForm/BookForm';
-import HeroSection from '../components/HeroSection/HeroSection';
-import SuggestedBooks from '../components/SuggestedBooks/SuggestedBooks';
+import BookForm from '../../components/BookForm/BookForm';
+import HeroSection from '../../components/HeroSection/HeroSection';
+import SuggestedBooks from '../../components/SuggestedBooks/SuggestedBooks';
 
 class Suggest extends React.Component<Record<string, never>, BooksList> {
   constructor(props: never) {

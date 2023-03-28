@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import AboutBlock from '../components/AboutBlock/AboutBlock';
+import AboutBlock from '../../components/AboutBlock/AboutBlock';
 
 class About extends React.Component {
   render() {

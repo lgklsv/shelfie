@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import NotFoundBlock from '../components/NotFoundBlock/NotFoundBlock';
+import NotFoundBlock from '../../components/NotFoundBlock/NotFoundBlock';
 
 class NotFound extends React.Component {
   render() {
