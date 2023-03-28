@@ -1,16 +1,16 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import About from './About.mdx';
-import styles from './AboutBlock.module.scss';
+import Readme from '../assets/Readme.mdx';
+import styles from './ReadmeSection.module.scss';
 
-class AboutBlock extends React.Component {
+class ReadmeSection extends React.Component {
   render() {
     return (
       <div className="container">
         <div className={styles.about}>
           <MDXProvider>
-            <About />
+            <Readme />
           </MDXProvider>
         </div>
       </div>
@@ -18,4 +18,4 @@ class AboutBlock extends React.Component {
   }
 }
 
-export default AboutBlock;
+export default ReadmeSection;

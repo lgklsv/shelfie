@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import AboutBlock from '../../components/AboutBlock/AboutBlock';
+
+import ReadmeSection from './readme/ReadmeSection';
 
 class About extends React.Component {
   render() {
@@ -9,7 +10,7 @@ class About extends React.Component {
         <Helmet>
           <title>About</title>
         </Helmet>
-        <AboutBlock />
+        <ReadmeSection />
       </>
     );
   }

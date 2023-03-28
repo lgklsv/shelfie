@@ -1,10 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import { About } from './about';
+
 import Home from './home/Home';
-import About from './about/About';
 import Suggest from './suggest/Suggest';
 import NotFound from './notfound/NotFound';
+
 import { useResetScroll } from './hooks';
 import { Layout } from './layout';
 
