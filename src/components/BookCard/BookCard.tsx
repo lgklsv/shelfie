@@ -1,8 +1,7 @@
 import React from 'react';
 
+import { string, check } from 'shared/lib';
 import { bookCategories } from '../../const/book-categories';
-import { stripText } from '../../utils/strip-text';
-import { isVolume } from '../../utils/type-checkers';
 import styles from './BookCard.module.scss';
 
 type BookCardProps = {
@@ -15,7 +14,7 @@ class BookCard extends React.Component<BookCardProps> {
   }
 
   render() {
-    const category = isVolume(this.props.data)
+    const category = check.isVolume(this.props.data)
       ? this.props.data.categories.join(', ')
       : bookCategories.find((el) => el.value === this.props.data.categories[0])
           ?.text;
@@ -29,18 +28,18 @@ class BookCard extends React.Component<BookCardProps> {
               src={this.props.data.imageLinks.thumbnail}
               alt="book"
             />
-            {!isVolume(this.props.data) && this.props.data.isEbook && (
+            {!check.isVolume(this.props.data) && this.props.data.isEbook && (
               <div className={styles.book__ebook}>E-Book</div>
             )}
           </div>
           <div className={styles.book__info}>
             <div className={styles.book__top}>
               <h4 className={styles.book__title}>
-                {stripText(this.props.data.title, 100)}
+                {string.sliceText(this.props.data.title, 100)}
               </h4>
-              {isVolume(this.props.data) && (
+              {check.isVolume(this.props.data) && (
                 <p data-testid="subtitle" className={styles.book__text}>
-                  {stripText(
+                  {string.sliceText(
                     this.props.data.subtitle
                       ? this.props.data.subtitle
                       : this.props.data.description,
@@ -57,7 +56,7 @@ class BookCard extends React.Component<BookCardProps> {
                 Published: {this.props.data.publishedDate.slice(0, 4)}
               </p>
             </div>
-            {isVolume(this.props.data) && (
+            {check.isVolume(this.props.data) && (
               <div className={styles.book__actions}>
                 <a
                   className="btn btn-primary"

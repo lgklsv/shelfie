@@ -20,7 +20,7 @@ export default defineConfig({
       exclude: [
         'src/const/*',
         '**/*/@(index|config).@(tsx|ts)',
-        '**/*/.@(asset|icon).@(tsx|ts)',
+        '**/*/*.@(icon|asset).@(tsx|ts)',
       ],
       enabled: true,
       provider: 'istanbul',

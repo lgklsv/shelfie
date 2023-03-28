@@ -1,8 +1,8 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+import { string } from 'shared/lib';
 import BookCard from './BookCard';
-import { stripText } from '../../utils/strip-text';
 
 const mockData = {
   kind: 'books#volume',
@@ -168,13 +168,13 @@ describe('BookCard', () => {
   it('should render subtitle', () => {
     render(<BookCard data={mockData2.volumeInfo} />);
     expect(screen.getByTestId('subtitle')).toHaveTextContent(
-      stripText(mockData2.volumeInfo.subtitle, 100)
+      string.sliceText(mockData2.volumeInfo.subtitle, 100)
     );
   });
   it('should render description if there is not subtitle', () => {
     render(<BookCard data={mockData.volumeInfo} />);
     expect(screen.getByTestId('subtitle')).toHaveTextContent(
-      stripText(mockData.volumeInfo.description, 100)
+      string.sliceText(mockData.volumeInfo.description, 100)
     );
   });
 });

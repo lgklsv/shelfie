@@ -1,7 +1,7 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import books from '../../books.json';
+import books from 'shared/api/books.json';
 import BooksList from './BooksList';
 
 describe('BooksList', () => {
