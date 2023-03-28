@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import NotFoundBlock from '../../components/NotFoundBlock/NotFoundBlock';
+import { Content } from './content';
 
 class NotFound extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class NotFound extends React.Component {
         <Helmet>
           <title>404</title>
         </Helmet>
-        <NotFoundBlock />
+        <Content />
       </>
     );
   }
