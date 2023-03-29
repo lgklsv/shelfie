@@ -1,7 +1,8 @@
 import React from 'react';
 
-import ClearSearchIcon from '../../assets/icons/ClearSearch.icon';
-import SearchIcon from '../../assets/icons/Search.icon';
+import ClearSearchIcon from './assets/ClearSearch.icon';
+import SearchIcon from './assets/Search.icon';
+
 import styles from './Search.module.scss';
 
 type SearchState = {

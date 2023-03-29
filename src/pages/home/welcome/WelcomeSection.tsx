@@ -1,8 +1,6 @@
 import React from 'react';
 
-// Search is a feature
-import Search from 'components/Search/Search';
-
+import { Searchbar } from 'features/searchbar';
 import Cutout from './Cutout.asset';
 import styles from './WelcomeSection.module.scss';
 
@@ -15,7 +13,7 @@ class WelcomeSection extends React.Component {
             <h2 className={styles.welcome__heading}>
               This week you can`t search, but here are some books on React.js ⚛️
             </h2>
-            <Search />
+            <Searchbar.Search />
           </div>
         </div>
         <div className={styles.welcome__cutout}>
