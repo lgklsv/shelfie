@@ -1,5 +1,5 @@
 import { describe, it } from 'vitest';
-import { string } from 'shared/lib/';
+import { string } from 'shared/lib';
 
 describe('sliceText', () => {
   it('should slice input text if it exceeds the allowed length', () => {

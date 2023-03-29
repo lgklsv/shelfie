@@ -1,5 +1,5 @@
 import { describe, it } from 'vitest';
-import { validateImageInput } from '../../../utils/validators/validateImageInput';
+import { validate } from '../..';
 
 interface MockFile {
   name: string;
@@ -25,7 +25,7 @@ const createFileFromMockFile = (file: MockFile): File => {
 describe('validateImageInput', () => {
   it('should return true in report if there is something in file list', () => {
     expect(
-      validateImageInput([
+      validate.ImageInput([
         createFileFromMockFile({
           body: 'test',
           mimeType: 'image/png',
@@ -36,10 +36,10 @@ describe('validateImageInput', () => {
   });
 
   it('should provide nice error message when failed', () => {
-    expect(validateImageInput(null).imageErrorMessage).toBe(
+    expect(validate.ImageInput(null).imageErrorMessage).toBe(
       'Image should be provided'
     );
-    expect(validateImageInput(undefined).imageErrorMessage).toBe(
+    expect(validate.ImageInput(undefined).imageErrorMessage).toBe(
       'Image should be provided'
     );
   });

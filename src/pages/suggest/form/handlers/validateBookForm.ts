@@ -1,9 +1,4 @@
-import { validateCheckbox } from 'utils/validators/validateCheckbox';
-import { validateDateInput } from 'utils/validators/validateDateInput';
-import { validateImageInput } from 'utils/validators/validateImageInput';
-import { validateRadioInputs } from 'utils/validators/validateRadioInputs';
-import { validateSelectInput } from 'utils/validators/validateSelectInput';
-import { validateTextInput } from 'utils/validators/validateTextInput';
+import { validate } from '../lib';
 
 export const validateBookForm = (
   title: HTMLInputElement | null,
@@ -19,32 +14,32 @@ export const validateBookForm = (
     value: titleValue,
     textIsValid: titleIsValid,
     errorMessage: titleErrorMessage,
-  } = validateTextInput(title?.value, 'Title');
+  } = validate.TextInput(title?.value, 'Title');
 
   const {
     value: authorValue,
     textIsValid: authorIsValid,
     errorMessage: authorErrorMessage,
-  } = validateTextInput(author?.value, 'Author');
+  } = validate.TextInput(author?.value, 'Author');
 
-  const { dateValue, dateIsValid, dateErrorMessage } = validateDateInput(
+  const { dateValue, dateIsValid, dateErrorMessage } = validate.DateInput(
     date?.value
   );
 
   const { selectValue, selectIsValid, selectErrorMessage } =
-    validateSelectInput(category?.value, 'Category');
+    validate.SelectInput(category?.value, 'Category');
 
-  const { radioValue, radioIsValid, radioErrorMessage } = validateRadioInputs(
+  const { radioValue, radioIsValid, radioErrorMessage } = validate.RadioInputs(
     ebook?.checked,
     printed?.checked
   );
 
-  const { imageValue, imageIsValid, imageErrorMessage } = validateImageInput(
+  const { imageValue, imageIsValid, imageErrorMessage } = validate.ImageInput(
     image?.files
   );
 
   const { checkboxValue, checkboxIsValid, checkboxErrorMessage } =
-    validateCheckbox(agreement?.checked);
+    validate.CheckboxInput(agreement?.checked);
 
   const isValid =
     titleIsValid &&
