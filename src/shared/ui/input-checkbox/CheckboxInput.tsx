@@ -10,28 +10,28 @@ type CheckboxInputProps = {
   message: string;
 };
 
-class CheckboxInput extends React.Component<CheckboxInputProps> {
-  constructor(props: CheckboxInputProps) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className={styles.checkbox}>
-        <input
-          ref={this.props.innerRef}
-          className={styles.checkbox__input}
-          type="checkbox"
-          id={this.props.id}
-          name={this.props.name}
-        />
-        <label className={styles.checkbox__label} htmlFor={this.props.id}>
-          {this.props.text}
-        </label>
-        <span className={styles.error__message}>{this.props.message}</span>
-      </div>
-    );
-  }
-}
+const CheckboxInput: React.FC<CheckboxInputProps> = ({
+  innerRef,
+  name,
+  id,
+  text,
+  message,
+}) => {
+  return (
+    <div className={styles.checkbox}>
+      <input
+        ref={innerRef}
+        className={styles.checkbox__input}
+        type="checkbox"
+        id={id}
+        name={name}
+      />
+      <label className={styles.checkbox__label} htmlFor={id}>
+        {text}
+      </label>
+      <span className={styles.error__message}>{message}</span>
+    </div>
+  );
+};
 
 export default CheckboxInput;

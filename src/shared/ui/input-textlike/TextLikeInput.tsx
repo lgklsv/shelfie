@@ -10,26 +10,21 @@ type TextLikeInputProps = {
   placeholder: string;
 };
 
-class TextLikeInput extends React.Component<TextLikeInputProps> {
-  constructor(props: TextLikeInputProps) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <label className={styles.input} htmlFor={this.props.id}>
-        <input
-          ref={this.props.innerRef}
-          type={this.props.type}
-          name={this.props.name}
-          id={this.props.id}
-          placeholder={this.props.id}
-        />
-        <span className={styles.placeholder}>{this.props.placeholder}</span>
-        <span className={styles.error__message}>{this.props.message}</span>
-      </label>
-    );
-  }
-}
+const TextLikeInput: React.FC<TextLikeInputProps> = ({
+  innerRef,
+  type,
+  name,
+  id,
+  message,
+  placeholder,
+}) => {
+  return (
+    <label className={styles.input} htmlFor={id}>
+      <input ref={innerRef} type={type} name={name} id={id} placeholder={id} />
+      <span className={styles.placeholder}>{placeholder}</span>
+      <span className={styles.error__message}>{message}</span>
+    </label>
+  );
+};
 
 export default TextLikeInput;

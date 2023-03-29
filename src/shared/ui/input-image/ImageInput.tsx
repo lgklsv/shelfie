@@ -9,37 +9,37 @@ type ImageInputProps = {
   message: string;
 };
 
-class ImageInput extends React.Component<ImageInputProps> {
-  constructor(props: ImageInputProps) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className={styles.image}>
-        <input
-          data-testid="img-input"
-          ref={this.props.innerRef}
-          className={styles.image__input}
-          type="file"
-          accept="image/*"
-          name={this.props.name}
-          id={this.props.id}
-          required
-        />
-        <label
-          className={`${
-            this.props.message
-              ? `${styles.image__label} ${styles.error__message}`
-              : styles.image__label
-          }`}
-          htmlFor={this.props.id}
-        >
-          {this.props.message ? this.props.message : this.props.text}
-        </label>
-      </div>
-    );
-  }
-}
+const ImageInput: React.FC<ImageInputProps> = ({
+  innerRef,
+  name,
+  id,
+  text,
+  message,
+}) => {
+  return (
+    <div className={styles.image}>
+      <input
+        data-testid="img-input"
+        ref={innerRef}
+        className={styles.image__input}
+        type="file"
+        accept="image/*"
+        name={name}
+        id={id}
+        required
+      />
+      <label
+        className={`${
+          message
+            ? `${styles.image__label} ${styles.error__message}`
+            : styles.image__label
+        }`}
+        htmlFor={id}
+      >
+        {message || text}
+      </label>
+    </div>
+  );
+};
 
 export default ImageInput;

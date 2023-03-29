@@ -8,24 +8,18 @@ type PopupNotificationProps = {
   unmountMe: () => void;
 };
 
-class PopupNotification extends React.Component<PopupNotificationProps> {
-  constructor(props: PopupNotificationProps) {
-    super(props);
-  }
-
-  componentDidMount() {
+const PopupNotification: React.FC<PopupNotificationProps> = ({
+  type,
+  message,
+  unmountMe,
+}) => {
+  React.useEffect(() => {
     setTimeout(() => {
-      this.props.unmountMe();
+      unmountMe();
     }, 3000);
-  }
+  }, [unmountMe]);
 
-  render() {
-    return (
-      <div className={`${styles.popup} ${styles[this.props.type]}`}>
-        {this.props.message}
-      </div>
-    );
-  }
-}
+  return <div className={`${styles.popup} ${styles[type]}`}>{message}</div>;
+};
 
 export default PopupNotification;
