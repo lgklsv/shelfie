@@ -3,17 +3,15 @@ import { Helmet } from 'react-helmet';
 
 import ReadmeSection from './readme/ReadmeSection';
 
-class About extends React.Component {
-  render() {
-    return (
-      <>
-        <Helmet>
-          <title>About</title>
-        </Helmet>
-        <ReadmeSection />
-      </>
-    );
-  }
-}
+const About: React.FC = () => {
+  return (
+    <>
+      <Helmet>
+        <title>About</title>
+      </Helmet>
+      <ReadmeSection />
+    </>
+  );
+};
 
 export default About;

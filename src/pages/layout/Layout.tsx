@@ -5,18 +5,16 @@ import { Footer } from 'widgets/footer';
 import { Header } from 'widgets/header';
 import styles from './Layout.module.scss';
 
-class Layout extends React.Component {
-  render() {
-    return (
-      <>
-        <Header />
-        <main className={styles.main}>
-          <Outlet />
-        </main>
-        <Footer />
-      </>
-    );
-  }
-}
+const Layout: React.FC = () => {
+  return (
+    <>
+      <Header />
+      <main className={styles.main}>
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default Layout;
