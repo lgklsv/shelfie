@@ -5,70 +5,52 @@ import SearchIcon from './assets/Search.icon';
 
 import styles from './Search.module.scss';
 
-type SearchState = {
-  value: string;
-};
+const Search: React.FC = () => {
+  const [value, setValue] = React.useState('');
+  const searchRef = React.useRef<string>('');
 
-class Search extends React.Component<Record<string, never>, SearchState> {
-  constructor(props: never) {
-    super(props);
-    this.state = {
-      value: '',
-    };
-
-    this.clearSearchHandler = this.clearSearchHandler.bind(this);
-    this.saveValueHandler = this.saveValueHandler.bind(this);
-  }
-
-  componentDidMount() {
+  React.useEffect(() => {
     const savedSearch = localStorage.getItem('search');
-    this.setState(() => ({
-      value: savedSearch || '',
-    }));
-  }
+    setValue(savedSearch || '');
 
-  componentWillUnmount() {
-    localStorage.setItem('search', this.state.value);
-  }
+    return () => {
+      localStorage.setItem('search', searchRef.current);
+    };
+  }, []);
 
-  saveValueHandler(e: React.ChangeEvent<HTMLInputElement>) {
+  const saveValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
-    this.setState(() => ({
-      value: inputValue,
-    }));
-  }
+    setValue(inputValue);
+    searchRef.current = inputValue;
+  };
 
-  clearSearchHandler() {
-    this.setState(() => ({
-      value: '',
-    }));
-  }
+  const clearSearchHandler = () => {
+    setValue('');
+  };
 
-  render() {
-    return (
-      <div className={styles.search}>
-        <div className={styles.search__icon}>
-          <SearchIcon />
-        </div>
-        <input
-          value={this.state.value}
-          className={styles.search__input}
-          placeholder="Search..."
-          type="search"
-          onChange={this.saveValueHandler}
-        />
-        {this.state.value && (
-          <div
-            onClick={this.clearSearchHandler}
-            className={styles.search__clear}
-            data-testid="clear-btn"
-          >
-            <ClearSearchIcon />
-          </div>
-        )}
+  return (
+    <div className={styles.search}>
+      <div className={styles.search__icon}>
+        <SearchIcon />
       </div>
-    );
-  }
-}
+      <input
+        value={value}
+        className={styles.search__input}
+        placeholder="Search..."
+        type="search"
+        onChange={saveValueHandler}
+      />
+      {value && (
+        <div
+          onClick={clearSearchHandler}
+          className={styles.search__clear}
+          data-testid="clear-btn"
+        >
+          <ClearSearchIcon />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Search;
