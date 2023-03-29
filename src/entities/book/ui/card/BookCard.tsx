@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { bookCategories } from 'shared/model/book-categories';
 import { string, check } from 'shared/lib';
-import { bookCategories } from '../../pages/suggest/form/model/book-categories';
 import styles from './BookCard.module.scss';
 
 type BookCardProps = {

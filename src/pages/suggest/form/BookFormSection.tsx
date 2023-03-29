@@ -8,8 +8,8 @@ import {
   TextLikeInput,
   PopupNotification,
 } from 'shared/ui';
+import { bookCategories } from 'shared/model/book-categories';
 import { validateBookForm } from './handlers/validateBookForm';
-import { bookCategories } from './model/book-categories';
 import styles from './BookFormSection.module.scss';
 
 class BookFormSection extends React.Component<BooksFromProps, BookFormState> {

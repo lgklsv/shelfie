@@ -1,7 +1,6 @@
 import React from 'react';
 
-import BookCard from 'components/BookCard/BookCard';
-
+import { BookCard } from 'entities/book';
 import books from 'shared/api/books.json';
 import styles from './BookListSection.module.scss';
 

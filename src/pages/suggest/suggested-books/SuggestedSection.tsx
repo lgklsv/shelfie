@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BookCard from 'components/BookCard/BookCard';
+import { BookCard } from 'entities/book';
 import styles from './SuggestedSection.module.scss';
 
 type BooksListProps = {
