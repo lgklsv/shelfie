@@ -39,12 +39,12 @@
     padding: 1rem;
     border-radius: 10px;
 
-    @media (max-width: var(--phone-width)) {
+    @media (max-width: 768px) {
       max-width: 100%;
     }
   }
 
-  @media (max-width: var(--phone-width)) {
+  @media (max-width: 768px) {
     code {
       overflow-x: auto;
       white-space: pre-wrap;

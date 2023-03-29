@@ -16,7 +16,7 @@
     align-items: center;
     gap: 2rem;
 
-    @media (max-width: var(--phone-width)) {
+    @media (max-width: 768px) {
       justify-content: space-between;
     }
   }
