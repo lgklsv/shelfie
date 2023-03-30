@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { describe, it } from 'vitest';
+import { describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import SelectInput from './SelectInput';
 
@@ -11,11 +9,11 @@ export const mockOptions = [
 ];
 
 describe('SelectInput', () => {
-  const ref = React.createRef<HTMLSelectElement>();
+  const mockRegister = vi.fn();
   it('should have select input parts', () => {
     render(
       <SelectInput
-        innerRef={ref}
+        register={mockRegister}
         name="category"
         id="category"
         defaultText="choose category"

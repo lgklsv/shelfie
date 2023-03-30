@@ -1,15 +1,13 @@
-import React from 'react';
-
-import { describe, it } from 'vitest';
+import { describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import StyledInput from './TextLikeInput';
+import TextLikeInput from './TextLikeInput';
 
 describe('Styled input', () => {
-  const ref = React.createRef<HTMLInputElement>();
+  const mockRegister = vi.fn();
   it('should have custom placeholder and error message', () => {
     render(
-      <StyledInput
-        innerRef={ref}
+      <TextLikeInput
+        register={mockRegister}
         type="text"
         name="title"
         id="title"
@@ -22,8 +20,8 @@ describe('Styled input', () => {
   });
   it('should have input element setup', () => {
     render(
-      <StyledInput
-        innerRef={ref}
+      <TextLikeInput
+        register={mockRegister}
         type="text"
         name="title"
         id="title"
