@@ -1,15 +1,17 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 import styles from './RadioInput.module.scss';
 
 type RadioInputProps = {
-  innerRef: React.RefObject<HTMLInputElement>;
-  name: string;
+  register: UseFormRegister<FormInputs>;
+  name: AvailableNames;
   id: string;
   text: string;
 };
 
 const RadioInput: React.FC<RadioInputProps> = ({
-  innerRef,
+  register,
   name,
   id,
   text,
@@ -18,12 +20,11 @@ const RadioInput: React.FC<RadioInputProps> = ({
     <div className={styles.radio}>
       <input
         data-testid="radio-input"
-        ref={innerRef}
         value={id}
         type="radio"
-        name={name}
         id={id}
         className={styles.radio__input}
+        {...register(name)}
       />
       <label htmlFor={id} className={styles.radio__label}>
         {text}

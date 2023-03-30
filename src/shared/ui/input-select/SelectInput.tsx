@@ -1,13 +1,15 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 
 import styles from './SelectInput.module.scss';
 
 type SelectInputProps = {
-  innerRef: React.RefObject<HTMLSelectElement>;
-  name: string;
+  register: UseFormRegister<FormInputs>;
+  name: AvailableNames;
   id: string;
   defaultText: string;
-  message: string;
+  message: string | undefined;
   options: {
     value: string;
     text: string;
@@ -15,7 +17,7 @@ type SelectInputProps = {
 };
 
 const SelectInput: React.FC<SelectInputProps> = ({
-  innerRef,
+  register,
   name,
   id,
   defaultText,
@@ -26,11 +28,10 @@ const SelectInput: React.FC<SelectInputProps> = ({
     <div className={styles.select_wrapper}>
       <select
         data-testid="select-input"
-        ref={innerRef}
         className={styles.select}
-        name={name}
         id={id}
         defaultValue="DEFAULT"
+        {...register(name)}
       >
         <option value="DEFAULT" disabled hidden>
           {defaultText}

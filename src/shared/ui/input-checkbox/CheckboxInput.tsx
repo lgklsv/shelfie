@@ -1,17 +1,19 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 
 import styles from './CheckboxInput.module.scss';
 
 type CheckboxInputProps = {
-  innerRef: React.RefObject<HTMLInputElement>;
+  register: UseFormRegister<FormInputs>;
+  name: AvailableNames;
   id: string;
-  name: string;
   text: string;
-  message: string;
+  message: string | undefined;
 };
 
 const CheckboxInput: React.FC<CheckboxInputProps> = ({
-  innerRef,
+  register,
   name,
   id,
   text,
@@ -20,11 +22,10 @@ const CheckboxInput: React.FC<CheckboxInputProps> = ({
   return (
     <div className={styles.checkbox}>
       <input
-        ref={innerRef}
         className={styles.checkbox__input}
         type="checkbox"
         id={id}
-        name={name}
+        {...register(name)}
       />
       <label className={styles.checkbox__label} htmlFor={id}>
         {text}

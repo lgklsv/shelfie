@@ -1,17 +1,19 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { HTMLInputTypeAttribute } from 'react';
+import { UseFormRegister } from 'react-hook-form';
 import styles from './TextLikeInput.module.scss';
 
 type TextLikeInputProps = {
-  innerRef: React.RefObject<HTMLInputElement>;
+  register: UseFormRegister<FormInputs>;
   type: HTMLInputTypeAttribute;
-  name: string;
+  name: AvailableNames;
   id: string;
-  message: string;
+  message: string | undefined;
   placeholder: string;
 };
 
 const TextLikeInput: React.FC<TextLikeInputProps> = ({
-  innerRef,
+  register,
   type,
   name,
   id,
@@ -20,7 +22,7 @@ const TextLikeInput: React.FC<TextLikeInputProps> = ({
 }) => {
   return (
     <label className={styles.input} htmlFor={id}>
-      <input ref={innerRef} type={type} name={name} id={id} placeholder={id} />
+      <input type={type} id={id} placeholder={id} {...register(name)} />
       <span className={styles.placeholder}>{placeholder}</span>
       <span className={styles.error__message}>{message}</span>
     </label>

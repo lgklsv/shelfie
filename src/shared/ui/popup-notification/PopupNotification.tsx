@@ -14,10 +14,16 @@ const PopupNotification: React.FC<PopupNotificationProps> = ({
   unmountMe,
 }) => {
   React.useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       unmountMe();
     }, 3000);
-  }, [unmountMe]);
+    return () => {
+      if (type === 'error') {
+        unmountMe();
+        clearTimeout(timer);
+      }
+    };
+  }, [unmountMe, type]);
 
   return <div className={`${styles.popup} ${styles[type]}`}>{message}</div>;
 };

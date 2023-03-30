@@ -1,16 +1,18 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 import styles from './ImageInput.module.scss';
 
 type ImageInputProps = {
-  innerRef: React.RefObject<HTMLInputElement>;
+  register: UseFormRegister<FormInputs>;
   id: string;
-  name: string;
+  name: AvailableNames;
   text: string;
-  message: string;
+  message: string | undefined;
 };
 
 const ImageInput: React.FC<ImageInputProps> = ({
-  innerRef,
+  register,
   name,
   id,
   text,
@@ -20,12 +22,11 @@ const ImageInput: React.FC<ImageInputProps> = ({
     <div className={styles.image}>
       <input
         data-testid="img-input"
-        ref={innerRef}
         className={styles.image__input}
         type="file"
         accept="image/*"
-        name={name}
         id={id}
+        {...register(name)}
         required
       />
       <label

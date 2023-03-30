@@ -1,4 +1,6 @@
 import React from 'react';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import {
   CheckboxInput,
@@ -9,7 +11,7 @@ import {
   PopupNotification,
 } from 'shared/ui';
 import { bookCategories } from 'shared/model/book-categories';
-import { validateBookForm } from './handlers/validateBookForm';
+import { form } from './model';
 import styles from './BookFormSection.module.scss';
 
 type PopupState = {
@@ -23,30 +25,33 @@ type BooksFromProps = {
 };
 
 const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
-  const formRef = React.useRef<HTMLFormElement>(null);
-  const titleInputRef = React.useRef<HTMLInputElement>(null);
-  const authorInputRef = React.useRef<HTMLInputElement>(null);
-  const dateInputRef = React.useRef<HTMLInputElement>(null);
-  const categoryInputRef = React.useRef<HTMLSelectElement>(null);
-  const typeEBookInputRef = React.useRef<HTMLInputElement>(null);
-  const typePrintedInputRef = React.useRef<HTMLInputElement>(null);
-  const imageInputRef = React.useRef<HTMLInputElement>(null);
-  const agreementInputRef = React.useRef<HTMLInputElement>(null);
-
-  const [formState, setFormState] = React.useState({
-    titleMessage: '',
-    authorMessage: '',
-    dateMessage: '',
-    selectMessage: '',
-    radioMessage: '',
-    imageMessage: '',
-    checkboxMessage: '',
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isValid, isSubmitting },
+  } = useForm<FormInputs>({
+    mode: 'onSubmit',
+    reValidateMode: 'onSubmit',
+    shouldFocusError: false,
+    resolver: yupResolver(form.formSchema),
   });
+
   const [popupState, setPopupState] = React.useState<PopupState>({
     isVisible: false,
     type: 'error',
     message: '',
   });
+
+  React.useEffect(() => {
+    if (isSubmitting && !isValid) {
+      setPopupState({
+        isVisible: true,
+        type: 'error',
+        message: 'All form fields are required !',
+      });
+    }
+  }, [isSubmitting, isValid]);
 
   const handlePopUpunmount = () => {
     setPopupState({
@@ -56,60 +61,20 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
     });
   };
 
-  const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const enteredTitle = titleInputRef.current;
-    const enteredAuthor = authorInputRef.current;
-    const enteredDate = dateInputRef.current;
-    const enteredCategory = categoryInputRef.current;
-    const enteredTypeEbook = typeEBookInputRef.current;
-    const enteredTypePrited = typePrintedInputRef.current;
-    const enteredImage = imageInputRef.current;
-    const enteredAgreement = agreementInputRef.current;
-
-    const { isValid, report } = validateBookForm(
-      enteredTitle,
-      enteredAuthor,
-      enteredDate,
-      enteredCategory,
-      enteredTypeEbook,
-      enteredTypePrited,
-      enteredImage,
-      enteredAgreement
-    );
-
+  const submitHandler: SubmitHandler<FieldValues> = (data) => {
     const newBook: SuggestedBook = {
       id: new Date().getTime().toString(),
-      title: report.title.value,
-      authors: [report.author.value],
-      publishedDate: report.date.value,
-      isEbook: report.radio.value,
-      categories: [report.select.value],
+      title: data.title,
+      authors: [data.author],
+      publishedDate: data.published,
+      isEbook: data.type,
+      categories: [data.category],
       imageLinks: {
-        thumbnail: report.image.value,
+        thumbnail: URL.createObjectURL(data.image[0]),
       },
     };
 
-    setFormState({
-      titleMessage: report.title.message,
-      authorMessage: report.author.message,
-      dateMessage: report.date.message,
-      selectMessage: report.select.message,
-      radioMessage: report.radio.message,
-      imageMessage: report.image.message,
-      checkboxMessage: report.checkbox.message,
-    });
-
-    if (!isValid) {
-      setPopupState({
-        isVisible: true,
-        type: 'error',
-        message: 'All form fields are required !',
-      });
-      return;
-    }
-
-    formRef.current?.reset();
+    reset();
     addBook(newBook);
 
     setPopupState({
@@ -123,43 +88,42 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
     <section className="container">
       <div className={styles.form_container}>
         <form
-          ref={formRef}
-          onSubmit={submitHandler}
+          onSubmit={handleSubmit(submitHandler)}
           className={`${styles.form} container_sm`}
           noValidate
         >
           <h3 className={styles.form__title}>Book details</h3>
           <TextLikeInput
-            innerRef={titleInputRef}
+            register={register}
+            message={errors.title?.message?.toString()}
             type="text"
             name="title"
             id="title"
-            message={formState.titleMessage}
             placeholder="Title"
           />
           <TextLikeInput
-            innerRef={authorInputRef}
+            register={register}
+            message={errors.author?.message?.toString()}
             type="text"
             name="author"
             id="author"
-            message={formState.authorMessage}
             placeholder="Author"
           />
           <div className={styles.form__split}>
             <TextLikeInput
-              innerRef={dateInputRef}
+              register={register}
+              message={errors.published?.message?.toString()}
               type="date"
               name="published"
               id="published"
-              message={formState.dateMessage}
               placeholder="Published date"
             />
             <SelectInput
-              innerRef={categoryInputRef}
-              name="category"
+              register={register}
               id="category"
+              name="category"
               defaultText="Choose category"
-              message={formState.selectMessage}
+              message={errors.category?.message?.toString()}
               options={bookCategories}
             />
           </div>
@@ -167,37 +131,37 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
             <div className={styles.form__radio}>
               <div className={styles.form__radio__group}>
                 <RadioInput
-                  innerRef={typeEBookInputRef}
-                  name="book-type"
+                  register={register}
+                  name="type"
                   id="e-book"
                   text="eBook"
                 />
                 <RadioInput
-                  innerRef={typePrintedInputRef}
-                  name="book-type"
+                  register={register}
+                  name="type"
                   id="print"
                   text="Printed Book"
                 />
               </div>
               <span className={styles.error__message}>
-                {formState.radioMessage}
+                {errors.type?.message?.toString()}
               </span>
             </div>
             <ImageInput
-              innerRef={imageInputRef}
+              register={register}
               name="image"
               id="image"
               text="Choose image"
-              message={formState.imageMessage}
+              message={errors.image?.message?.toString()}
             />
           </div>
           <div className={styles.form__checkboxarea}>
             <CheckboxInput
-              innerRef={agreementInputRef}
-              name="agreement"
+              register={register}
               id="agreement"
+              name="agreement"
               text="I have read and agree to the Terms of Service"
-              message={formState.checkboxMessage}
+              message={errors.agreement?.message?.toString()}
             />
           </div>
           <button
