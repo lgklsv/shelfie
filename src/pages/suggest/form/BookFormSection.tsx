@@ -67,7 +67,7 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
       title: data.title,
       authors: [data.author],
       publishedDate: data.published,
-      isEbook: data.type,
+      isEbook: data.type === 'e-book',
       categories: [data.category],
       imageLinks: {
         thumbnail: URL.createObjectURL(data.image[0]),

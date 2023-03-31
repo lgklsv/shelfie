@@ -1,28 +1,35 @@
 import { describe, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import BookFormSection from './BookFormSection';
 
 describe('Book form', () => {
   const mockAddBookFn = vi.fn();
-  it('should show error messages if from is not filled in', () => {
+  it('should show error messages if from is not filled in', async () => {
     render(<BookFormSection addBook={mockAddBookFn} />);
 
     const submitBtn = screen.getByRole('button');
     fireEvent.click(submitBtn);
-    expect(screen.getByText(/Title should not be empty/i)).toBeInTheDocument();
-    expect(screen.getByText(/Author should not be empty/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(/Published date should not be empty/i)
-    ).toBeInTheDocument();
-    expect(screen.getByText(/Type should be choosen/i)).toBeInTheDocument();
-    expect(
-      screen.getByText(/Category should be selected/i)
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/Terms should be accepted to submit the form/i)
-    ).toBeInTheDocument();
+    const titleError = await screen.findByText(/Title should not be empty/i);
+    const authorError = await screen.findByText(/Author should not be empty/i);
+    const dateError = await screen.findByText(
+      /Published date should not be empty/i
+    );
+    const typeError = await screen.findByText(/Type should be choosen/i);
+    const categoryError = await screen.findByText(
+      /Category should be selected/i
+    );
+    const termsError = await screen.findByText(
+      /Terms should be accepted to submit the form/i
+    );
+
+    expect(titleError).toBeInTheDocument();
+    expect(authorError).toBeInTheDocument();
+    expect(dateError).toBeInTheDocument();
+    expect(typeError).toBeInTheDocument();
+    expect(categoryError).toBeInTheDocument();
+    expect(termsError).toBeInTheDocument();
   });
   it('should send data to render if form validation is successfully passed', async () => {
     render(<BookFormSection addBook={mockAddBookFn} />);
@@ -58,16 +65,18 @@ describe('Book form', () => {
 
     expect(inputImage.files).toHaveLength(1);
 
-    expect(mockAddBookFn).toHaveBeenCalledWith({
-      id: expect.any(String),
-      title: 'The best new book',
-      authors: ['Artemij Fedosejev'],
-      publishedDate: '1999-01-04',
-      isEbook: true,
-      categories: ['b3'],
-      imageLinks: {
-        thumbnail: 'test.png',
-      },
-    });
+    await waitFor(() =>
+      expect(mockAddBookFn).toHaveBeenCalledWith({
+        id: expect.any(String),
+        title: 'The best new book',
+        authors: ['Artemij Fedosejev'],
+        publishedDate: '1999-01-04',
+        isEbook: true,
+        categories: ['b3'],
+        imageLinks: {
+          thumbnail: 'test.png',
+        },
+      })
+    );
   });
 });
