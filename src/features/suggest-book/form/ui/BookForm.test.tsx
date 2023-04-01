@@ -2,12 +2,21 @@ import { describe, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { SuggestBookContext } from 'features/suggest-book/suggest';
 import BookFormSection from './BookForm';
 
+const mockCtxValue = {
+  books: [],
+  addBook: vi.fn(),
+};
+
 describe('Book form', () => {
-  const mockAddBookFn = vi.fn();
   it('should show error messages if from is not filled in', async () => {
-    render(<BookFormSection addBook={mockAddBookFn} />);
+    render(
+      <SuggestBookContext.Provider value={mockCtxValue}>
+        <BookFormSection />
+      </SuggestBookContext.Provider>
+    );
 
     const submitBtn = screen.getByRole('button');
     fireEvent.click(submitBtn);
@@ -32,7 +41,11 @@ describe('Book form', () => {
     expect(termsError).toBeInTheDocument();
   });
   it('should send data to render if form validation is successfully passed', async () => {
-    render(<BookFormSection addBook={mockAddBookFn} />);
+    render(
+      <SuggestBookContext.Provider value={mockCtxValue}>
+        <BookFormSection />
+      </SuggestBookContext.Provider>
+    );
 
     const submitBtn = screen.getByRole('button');
     const mockImg = new File(['image'], 'test.png', { type: 'image/png' });
@@ -66,7 +79,7 @@ describe('Book form', () => {
     expect(inputImage.files).toHaveLength(1);
 
     await waitFor(() =>
-      expect(mockAddBookFn).toHaveBeenCalledWith({
+      expect(mockCtxValue.addBook).toHaveBeenCalledWith({
         id: expect.any(String),
         title: 'The best new book',
         authors: ['Artemij Fedosejev'],
