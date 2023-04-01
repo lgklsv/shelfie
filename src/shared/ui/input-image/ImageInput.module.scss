@@ -1,0 +1,58 @@
+@import '/src/shared/styles/mixins.scss';
+
+.image {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  --field-padding: 12px;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+    width: 0;
+  }
+
+  &__label {
+    @include flex-center;
+    position: relative;
+    padding: var(--field-padding);
+    width: 100%;
+    height: 100%;
+    background: var(--input-bg);
+    border: 2px dashed var(--input-border);
+    border-radius: 3px;
+    color: var(--input-text);
+    text-align: center;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  &__input:focus ~ &__label {
+    border: 2px dashed var(--input-active);
+  }
+
+  .error__message {
+    border-color: var(--red);
+    color: var(--red);
+  }
+
+  &__input:valid ~ &__label {
+    border-color: var(--button-primary);
+    background: var(--button-primary);
+    color: var(--button-primary);
+
+    &:before {
+      content: '✅';
+      @include flex-center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      color: var(--input-bg);
+    }
+  }
+}

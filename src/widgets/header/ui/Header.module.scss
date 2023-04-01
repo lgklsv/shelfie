@@ -1,0 +1,34 @@
+@import '/src/shared/styles/mixins.scss';
+
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--header-footer);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    @include flex-center;
+  }
+
+  &__title {
+    font-size: 2rem;
+    letter-spacing: 1%;
+    text-transform: capitalize;
+    font-weight: 800;
+  }
+}

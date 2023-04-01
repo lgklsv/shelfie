@@ -4,11 +4,12 @@
 
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import mdx from '@mdx-js/rollup';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), mdx()],
+  plugins: [react(), mdx(), tsconfigPaths()],
   test: {
     globals: true,
     environment: 'jsdom',
@@ -16,7 +17,11 @@ export default defineConfig({
     css: true,
     coverage: {
       include: ['src/**/*'],
-      exclude: ['src/assets/*', 'src/const/*', 'src/main.tsx'],
+      exclude: [
+        'src/const/*',
+        '**/*/@(index|config).@(tsx|ts)',
+        '**/*/*.@(icon|asset).@(tsx|ts)',
+      ],
       enabled: true,
       provider: 'istanbul',
       reporter: ['text'],

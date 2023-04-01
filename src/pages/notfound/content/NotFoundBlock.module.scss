@@ -1,0 +1,20 @@
+@import '/src/shared/styles/mixins.scss';
+
+.notFound {
+  @include flex-center;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+  flex-direction: column;
+  padding: auto 0;
+  gap: 2rem;
+
+  &__errorCode {
+    font-size: 4.5rem;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  &__message {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+}

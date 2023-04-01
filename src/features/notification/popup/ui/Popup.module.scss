@@ -1,0 +1,30 @@
+.popup {
+  position: fixed;
+  top: -100px;
+  right: 10px;
+  background: #33a6e8;
+  padding: 15px 40px;
+  font-size: 15px;
+  font-family: sans-serif;
+  color: #ffffff;
+  border-radius: 10px;
+  animation: popup 3s ease;
+}
+
+.success {
+  background: var(--green);
+}
+
+.error {
+  background: var(--red);
+}
+
+@keyframes popup {
+  10%,
+  90% {
+    top: 100px;
+  }
+  100% {
+    top: -10px;
+  }
+}

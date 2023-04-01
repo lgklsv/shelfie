@@ -24,7 +24,6 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/no-useless-constructor': 0,
     '@typescript-eslint/lines-between-class-members': 0,
 
     'import/prefer-default-export': 0,
@@ -38,5 +37,7 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/no-noninteractive-element-interactions': 0,
+    'jsx-a11y/control-has-associated-label': 0,
+    'jsx-a11y/anchor-has-content': 0,
   },
 };

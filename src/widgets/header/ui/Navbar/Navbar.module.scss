@@ -1,0 +1,12 @@
+@import '/src/shared/styles/mixins.scss';
+
+.navbar__list {
+  @include flex-center;
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}

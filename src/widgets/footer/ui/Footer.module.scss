@@ -1,0 +1,53 @@
+.footer {
+  display: flex;
+  height: var(--footer-height);
+  width: 100%;
+  background-color: var(--header-footer);
+  text-transform: uppercase;
+  color: var(--text-ternary);
+  font-size: 0.7rem;
+
+  &__container {
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: var(--desktop);
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-ternary);
+  }
+
+  &__link {
+    color: var(--text-ternary);
+
+    &:hover {
+      color: var(--text-primary-hover);
+    }
+  }
+
+  &__link_rs {
+    display: block;
+    background-image: url('./rs_school_js.svg');
+    width: 2.5rem;
+    height: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: invert(100%) sepia(0%) saturate(7479%) hue-rotate(179deg)
+      brightness(40%) contrast(102%);
+
+    &:hover {
+      filter: invert(99%) sepia(1%) saturate(3629%) hue-rotate(253deg)
+        brightness(114%) contrast(91%);
+    }
+  }
+}
