@@ -31,7 +31,11 @@ const Popup: React.FC<PopupProps> = ({ type, message }) => {
     };
   }, [popupCtx, type]);
 
-  return <div className={`${styles.popup} ${styles[type]}`}>{message}</div>;
+  return (
+    <div data-testid="popup" className={`${styles.popup} ${styles[type]}`}>
+      {message}
+    </div>
+  );
 };
 
 export default Popup;

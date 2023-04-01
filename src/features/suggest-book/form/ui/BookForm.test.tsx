@@ -3,7 +3,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { SuggestBookContext } from 'features/suggest-book/suggest';
-import BookFormSection from './BookForm';
+import BookForm from './BookForm';
 
 const mockCtxValue = {
   books: [],
@@ -14,7 +14,7 @@ describe('Book form', () => {
   it('should show error messages if from is not filled in', async () => {
     render(
       <SuggestBookContext.Provider value={mockCtxValue}>
-        <BookFormSection />
+        <BookForm />
       </SuggestBookContext.Provider>
     );
 
@@ -43,7 +43,7 @@ describe('Book form', () => {
   it('should send data to render if form validation is successfully passed', async () => {
     render(
       <SuggestBookContext.Provider value={mockCtxValue}>
-        <BookFormSection />
+        <BookForm />
       </SuggestBookContext.Provider>
     );
 
