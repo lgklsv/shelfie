@@ -8,9 +8,10 @@ digital library app. Here you can find almost every book you want. We use google
 - some books about React.js on the home page
 - save search value to localstorage on component unmount
 - responsive design (up to iphone SE support)
-- (⚙️ new) suggest a book to the library with new form
-- (⚙️ new) notification popup
-- (🚀 comming soon ...) functional components and hooks
+- suggest a book to the library with new form
+- notification popup
+- (⚙️ new) functional components and hooks
+- (⚙️ new) [feature sliced design](https://feature-sliced.design/) architecture
 - (🚀 comming soon ...) books search using google books API
 - (🚀 comming soon ...) state management with Redux
 
