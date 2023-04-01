@@ -2,23 +2,18 @@ import React from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
+import { PopupContext } from 'features/notification/popup';
 import {
   CheckboxInput,
   ImageInput,
   RadioInput,
   SelectInput,
   TextLikeInput,
-  PopupNotification,
 } from 'shared/ui';
 import { bookCategories } from 'shared/model/book-categories';
+import { Notification } from 'features/notification';
 import { form } from './model';
 import styles from './BookFormSection.module.scss';
-
-type PopupState = {
-  isVisible: boolean;
-  type: 'success' | 'error';
-  message: string;
-};
 
 type BooksFromProps = {
   addBook: (book: SuggestedBook) => void;
@@ -37,29 +32,17 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
     resolver: yupResolver(form.formSchema),
   });
 
-  const [popupState, setPopupState] = React.useState<PopupState>({
-    isVisible: false,
-    type: 'error',
-    message: '',
-  });
+  const popupCtx = React.useContext(PopupContext);
 
   React.useEffect(() => {
     if (isSubmitting && !isValid) {
-      setPopupState({
+      popupCtx.emitPopup({
         isVisible: true,
         type: 'error',
         message: 'All form fields are required !',
       });
     }
-  }, [isSubmitting, isValid]);
-
-  const handlePopUpunmount = () => {
-    setPopupState({
-      isVisible: false,
-      type: 'error',
-      message: 'Error',
-    });
-  };
+  }, [popupCtx, isSubmitting, isValid]);
 
   const submitHandler: SubmitHandler<FieldValues> = (data) => {
     const newBook: SuggestedBook = {
@@ -77,7 +60,7 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
     reset();
     addBook(newBook);
 
-    setPopupState({
+    popupCtx.emitPopup({
       isVisible: true,
       type: 'success',
       message: 'Your suggestion successfully added! 🎉',
@@ -172,11 +155,10 @@ const BookFormSection: React.FC<BooksFromProps> = ({ addBook }) => {
           </button>
         </form>
       </div>
-      {popupState.isVisible && (
-        <PopupNotification
-          type={popupState.type}
-          message={popupState.message}
-          unmountMe={handlePopUpunmount}
+      {popupCtx.popup.isVisible && (
+        <Notification.Popup
+          type={popupCtx.popup.type}
+          message={popupCtx.popup.message}
         />
       )}
     </section>

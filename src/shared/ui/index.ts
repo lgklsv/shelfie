@@ -3,4 +3,3 @@ export { default as ImageInput } from './input-image/ImageInput';
 export { default as RadioInput } from './input-radio/RadioInput';
 export { default as SelectInput } from './input-select/SelectInput';
 export { default as TextLikeInput } from './input-textlike/TextLikeInput';
-export { default as PopupNotification } from './popup-notification/PopupNotification';
