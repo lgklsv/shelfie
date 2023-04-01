@@ -1,6 +1,7 @@
-import { describe, it } from 'vitest';
+import { describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+import { SuggestBookContext } from 'features/suggest-book/suggest';
 import SuggestedSection from './SuggestedSection';
 
 const suggestedBooksMock: SuggestedBook[] = [
@@ -30,9 +31,20 @@ const suggestedBooksMock: SuggestedBook[] = [
   },
 ];
 
+const mockAddBook = vi.fn();
+
 describe('SuggestedSection', () => {
   it('should render all suggested books', () => {
-    render(<SuggestedSection books={suggestedBooksMock} />);
+    render(
+      <SuggestBookContext.Provider
+        value={{
+          books: suggestedBooksMock,
+          addBook: mockAddBook,
+        }}
+      >
+        <SuggestedSection />
+      </SuggestBookContext.Provider>
+    );
     const renderedBooks = screen.getAllByTestId('book-item');
 
     expect(renderedBooks).toHaveLength(suggestedBooksMock.length);

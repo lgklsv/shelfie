@@ -1,10 +1,5 @@
 import React from 'react';
 
-type PopupContextObj = {
-  popup: PopupState;
-  emitPopup: (popupType: PopupState) => void;
-};
-
 export const PopupContext = React.createContext<PopupContextObj>({
   popup: {
     isVisible: false,
