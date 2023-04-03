@@ -9,8 +9,9 @@ type BookCardProps = {
 };
 
 const BookCard: React.FC<BookCardProps> = ({ data }) => {
+  const categories = data.categories ? data.categories.join(', ') : '';
   const category = check.isVolume(data)
-    ? data.categories.join(', ')
+    ? categories
     : bookCategories.find((el) => el.value === data.categories[0])?.text;
 
   return (
@@ -31,16 +32,23 @@ const BookCard: React.FC<BookCardProps> = ({ data }) => {
             <h4 className={styles.book__title}>
               {string.sliceText(data.title, 100)}
             </h4>
+
             {check.isVolume(data) && (
               <p data-testid="subtitle" className={styles.book__text}>
                 {string.sliceText(data.subtitle || data.description, 100)}
               </p>
             )}
 
-            <p className={styles.book__text_light}>Category: {category}</p>
-            <p className={styles.book__text_light}>
-              By: {data.authors.join(', ')}
-            </p>
+            {category && (
+              <p className={styles.book__text_light}>Category: {category}</p>
+            )}
+
+            {data.authors && (
+              <p className={styles.book__text_light}>
+                By: {data.authors.join(', ')}
+              </p>
+            )}
+
             <p className={styles.book__text_light}>
               Published: {data.publishedDate.slice(0, 4)}
             </p>
