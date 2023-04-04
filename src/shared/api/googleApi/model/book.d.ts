@@ -67,3 +67,9 @@ interface Book {
     textSnippet: string;
   };
 }
+
+interface SeachBookListRes {
+  kind: string;
+  totalItems: number;
+  items: Book[];
+}
