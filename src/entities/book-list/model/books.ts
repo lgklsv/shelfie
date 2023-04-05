@@ -11,7 +11,7 @@ export const getBookListAsync =
       BOOK_LIST_QUERY_KEY,
       () => googleApi.books.getSearchBooks(searchValue),
       {
-        onSuccess: ({ data }) => setBooks(data.items),
+        onSuccess: ({ data }) => setBooks(data.items || []),
         refetchOnWindowFocus: false,
       }
     );
