@@ -8,7 +8,9 @@ export const SearchContext = React.createContext<SearchContextObj>({
 const SearchContextProvider: React.FC<{
   children: React.ReactNode;
 }> = (props) => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState(
+    localStorage.getItem('search') || ''
+  );
 
   const saveValue = (enteredValue: string) => {
     setValue(enteredValue);
