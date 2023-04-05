@@ -5,9 +5,11 @@ import ArrowIcon from './assets/Arrow.icon';
 import ClearSearchIcon from './assets/ClearSearch.icon';
 import SearchIcon from './assets/Search.icon';
 
+import { SearchContext } from '../model/search-context';
 import styles from './Search.module.scss';
 
 const Search: React.FC = () => {
+  const searchCtx = React.useContext(SearchContext);
   const [value, setValue] = React.useState('');
   const searchRef = React.useRef<string>('');
 
@@ -30,12 +32,17 @@ const Search: React.FC = () => {
     setValue('');
   };
 
+  const submitHandler = (e: React.FormEvent) => {
+    e.preventDefault();
+    searchCtx.saveValue(value);
+  };
+
   return (
     <div className={styles.search}>
       <div className={styles.search__icon}>
         <SearchIcon />
       </div>
-      <form className={styles.search__form}>
+      <form onSubmit={submitHandler} className={styles.search__form}>
         <input
           value={value}
           className={styles.search__input}

@@ -1,14 +1,22 @@
 import React from 'react';
 
 import { LoadingSpinner, Card } from 'shared/ui';
+import { SearchContext } from 'features/searchbar/search';
 import { getBookListAsync } from 'entities/book-list/model';
 import { BookCard } from 'entities/book';
 import styles from './BookList.module.scss';
 
 const BookList: React.FC = () => {
   const [books, setBooks] = React.useState<Book[]>([]);
+  const searchCtx = React.useContext(SearchContext);
 
-  const { isFetching, isError } = getBookListAsync('react')(setBooks);
+  const { isFetching, isError, refetch } = getBookListAsync(
+    searchCtx.value || 'react'
+  )(setBooks);
+
+  React.useEffect(() => {
+    refetch();
+  }, [refetch, searchCtx.value]);
 
   if (isError) {
     return (
