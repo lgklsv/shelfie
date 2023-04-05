@@ -1,5 +1,7 @@
 import React from 'react';
+import cn from 'classnames';
 
+import ArrowIcon from './assets/Arrow.icon';
 import ClearSearchIcon from './assets/ClearSearch.icon';
 import SearchIcon from './assets/Search.icon';
 
@@ -33,22 +35,30 @@ const Search: React.FC = () => {
       <div className={styles.search__icon}>
         <SearchIcon />
       </div>
-      <input
-        value={value}
-        className={styles.search__input}
-        placeholder="Search..."
-        type="search"
-        onChange={saveValueHandler}
-      />
-      {value && (
-        <div
-          onClick={clearSearchHandler}
-          className={styles.search__clear}
-          data-testid="clear-btn"
+      <form className={styles.search__form}>
+        <input
+          value={value}
+          className={styles.search__input}
+          placeholder="Search..."
+          type="search"
+          onChange={saveValueHandler}
+        />
+        {value && (
+          <div
+            onClick={clearSearchHandler}
+            className={styles.search__clear}
+            data-testid="clear-btn"
+          >
+            <ClearSearchIcon />
+          </div>
+        )}
+        <button
+          className={cn('btn', 'btn-primary', styles.search__btn)}
+          type="submit"
         >
-          <ClearSearchIcon />
-        </div>
-      )}
+          <ArrowIcon />
+        </button>
+      </form>
     </div>
   );
 };
