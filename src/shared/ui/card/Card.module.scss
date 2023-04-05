@@ -1,0 +1,23 @@
+@import '/src/shared/styles/mixins.scss';
+
+.card {
+  margin-top: 2rem;
+  padding: 3rem;
+  @include flex-center;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  min-height: 200px;
+  font-size: 2rem;
+  color: var(--input-text);
+  border-radius: 15px;
+  position: relative;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.white {
+  background-color: var(--input-bg);
+}

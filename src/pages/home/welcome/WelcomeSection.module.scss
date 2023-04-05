@@ -16,7 +16,15 @@
   }
 
   @media (max-width: 768px) {
-    padding-top: 8rem;
+    padding-top: 2rem;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4rem;
+      top: -4rem;
+      background-color: var(--background-secondary);
+    }
   }
 
   &__content {
