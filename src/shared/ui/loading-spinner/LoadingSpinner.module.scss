@@ -1,0 +1,63 @@
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: iosIntro .6s;
+
+  svg {
+    fill: #868686;
+    
+    path:nth-of-type(1) {
+      animation: pulse 1s infinite linear;
+    }
+    path:nth-of-type(2) {
+      animation: pulse 1s -.083s infinite linear;
+    }
+    path:nth-of-type(3) {
+      animation: pulse 1s -.166s infinite linear;
+    }
+    path:nth-of-type(4) {
+      animation: pulse 1s -.249s infinite linear;
+    }
+    path:nth-of-type(5) {
+      animation: pulse 1s -.332s infinite linear;
+    }
+    path:nth-of-type(6) {
+      animation: pulse 1s -.415s infinite linear;
+    }
+    path:nth-of-type(7) {
+      animation: pulse 1s -.498s infinite linear;
+    }
+    path:nth-of-type(8) {
+      animation: pulse 1s -.581s infinite linear;
+    }  
+    path:nth-of-type(9) {
+      animation: pulse 1s -.664s infinite linear;
+    }
+    path:nth-of-type(10) {
+      animation: pulse 1s -.747s infinite linear;
+    }
+    path:nth-of-type(11) {
+      animation: pulse 1s -.83s infinite linear;
+    }
+    path:nth-of-type(12) {
+      animation: pulse 1s -.913s infinite linear;
+    }
+  }
+}
+  
+@keyframes pulse {
+  50% { fill: #868686; }
+  to { fill: rgba(134,134,134,.4); }
+}
+
+@keyframes iosIntro {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

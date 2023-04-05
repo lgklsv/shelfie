@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { LoadingSpinner } from 'shared/ui';
 import { BookCard, bookListModel } from 'entities/book';
 import styles from './BookListSection.module.scss';
 
@@ -8,16 +9,18 @@ const BookListSection: React.FC = () => {
 
   const { isFetching } = bookListModel.getBookListAsync('react')(setBooks);
 
-  console.log(isFetching);
-
   return (
     <section>
       <div className="container">
-        <div className={styles.bookList}>
-          {books.map((obj: Book) => (
-            <BookCard key={obj.id} data={obj.volumeInfo} />
-          ))}
-        </div>
+        {isFetching ? (
+          <LoadingSpinner />
+        ) : (
+          <div className={styles.bookList}>
+            {books.map((obj: Book) => (
+              <BookCard key={obj.id} data={obj.volumeInfo} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
