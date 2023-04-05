@@ -9,15 +9,17 @@
   text-align: center;
   min-height: 200px;
   font-size: 2rem;
-  color: var(--input-text);
+
   border-radius: 15px;
   position: relative;
 }
 
 .transparent {
   background-color: transparent;
+  color: var(--text-primary);
 }
 
 .white {
   background-color: var(--input-bg);
+  color: var(--input-text);
 }
