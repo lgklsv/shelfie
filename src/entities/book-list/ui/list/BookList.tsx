@@ -2,8 +2,8 @@ import React from 'react';
 
 import { LoadingSpinner, Card } from 'shared/ui';
 import { SearchContext } from 'features/searchbar/search';
+import { BookCard, BookSimpleCard } from 'entities/book';
 import { getBookListAsync } from 'entities/book-list/model';
-import { BookCard } from 'entities/book';
 import styles from './BookList.module.scss';
 
 const BookList: React.FC = () => {
@@ -44,7 +44,7 @@ const BookList: React.FC = () => {
   return (
     <div className={styles.bookList}>
       {books.map((obj: Book) => (
-        <BookCard key={obj.id} data={obj.volumeInfo} id={obj.id} />
+        <BookSimpleCard key={obj.id} data={obj} />
       ))}
     </div>
   );

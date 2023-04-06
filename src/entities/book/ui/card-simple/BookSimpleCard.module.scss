@@ -1,0 +1,52 @@
+@import '/src/shared/styles/mixins.scss';
+
+.book {
+  @include flex-center;
+  background-color: var(--background-secondary);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &__imgcont {
+    width: 140px;
+    height: 190px;
+    transform: rotate(-3.5deg) translateX(-10px);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.5))
+      drop-shadow(4px 0px 0px #ffffff) drop-shadow(4px 0px 0px #d8d8d8)
+      drop-shadow(4px 0px 0px #ffffff);
+
+    &:hover {
+      transform: scale(1.1) translateX(-10px);
+    }
+  }
+
+  &__ebook {
+    background-color: var(--button-primary);
+    position: absolute;
+    font-size: 0.9rem;
+    padding: 5px;
+    font-weight: 600;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  &__img {
+    position: absolute;
+    width: 140px;
+    height: 190px;
+    object-fit: cover;
+  }
+
+  &__title {
+    text-align: center;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+}
