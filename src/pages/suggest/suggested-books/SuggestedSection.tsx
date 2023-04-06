@@ -15,7 +15,7 @@ const SuggestedSection: React.FC = () => {
             <h3>Suggested books</h3>
             <div className={styles.bookList}>
               {suggestCtx.books.map((obj: SuggestedBook) => (
-                <BookCard key={obj.id} data={obj} />
+                <BookCard key={obj.id} data={obj} id={obj.id} />
               ))}
             </div>
           </>

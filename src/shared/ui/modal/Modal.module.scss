@@ -1,0 +1,33 @@
+@import '/src/shared/styles/mixins.scss';
+
+.modal {
+  @include flex-center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s all ease;
+  pointer-events: none;
+  z-index: 1000;
+
+  &__content {
+    padding: 1.5rem;
+    border-radius: 15px;
+    background-color: var(--background-primary);
+    width: 50vw;
+    transform: scale(0.5);
+    transition: 0.3s all ease;
+  }
+
+  &__content.active {
+    transform: scale(1);
+  }
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}

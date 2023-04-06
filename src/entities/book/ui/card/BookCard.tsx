@@ -2,13 +2,21 @@ import React from 'react';
 
 import { bookCategories } from 'shared/model/book-categories';
 import { string, check } from 'shared/lib';
+import { Modal } from 'shared/ui';
 import styles from './BookCard.module.scss';
 
 type BookCardProps = {
   data: Volume | SuggestedBook;
+  id: string;
 };
 
-const BookCard: React.FC<BookCardProps> = ({ data }) => {
+const BookCard: React.FC<BookCardProps> = ({ data, id }) => {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
+
   const categories = data.categories ? data.categories.join(', ') : '';
   const category = check.isVolume(data)
     ? categories
@@ -64,19 +72,30 @@ const BookCard: React.FC<BookCardProps> = ({ data }) => {
             )}
           </div>
           {check.isVolume(data) && (
-            <div className={styles.book__actions}>
-              <a
-                className="btn btn-primary"
-                target="_blank"
-                href={data.previewLink}
-                rel="noreferrer"
-              >
-                read more
-              </a>
-            </div>
+            <>
+              <div className={styles.book__actions}>
+                <a
+                  className="btn btn-primary"
+                  target="_blank"
+                  href={data.previewLink}
+                  rel="noreferrer"
+                >
+                  read more
+                </a>
+              </div>
+              <div className={styles.book__actions}>
+                <div onClick={toggleModal} className="btn btn-primary">
+                  open
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
+
+      <Modal active={isModalOpen} toggle={toggleModal}>
+        {isModalOpen && <p>{id}</p>}
+      </Modal>
     </div>
   );
 };

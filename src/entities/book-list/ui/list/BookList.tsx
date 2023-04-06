@@ -44,7 +44,7 @@ const BookList: React.FC = () => {
   return (
     <div className={styles.bookList}>
       {books.map((obj: Book) => (
-        <BookCard key={obj.id} data={obj.volumeInfo} />
+        <BookCard key={obj.id} data={obj.volumeInfo} id={obj.id} />
       ))}
     </div>
   );
