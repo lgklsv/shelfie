@@ -2,7 +2,7 @@ import React from 'react';
 
 import { LoadingSpinner, Card } from 'shared/ui';
 import { SearchContext } from 'features/searchbar/search';
-import { BookCard, BookSimpleCard } from 'entities/book';
+import { BookSimpleCard } from 'entities/book';
 import { getBookListAsync } from 'entities/book-list/model';
 import styles from './BookList.module.scss';
 

@@ -1,29 +1,19 @@
 @import '/src/shared/styles/mixins.scss';
 
 .book {
-  @include flex-center;
-  background-color: var(--background-secondary);
-  width: 100%;
-  height: 100%;
+  width: 180px;
+  height: 270px;
   position: relative;
-  padding: 1rem;
-  flex-direction: column;
-  gap: 2rem;
-  border-radius: 10px;
-  cursor: pointer;
+  text-align: center;
+  justify-self: center;
+  margin: 2.5%;
+  box-shadow: 20px 20px 35px -15px rgba(0, 0, 0, 0.7);
 
-  &__imgcont {
-    width: 140px;
-    height: 190px;
-    transform: rotate(-3.5deg) translateX(-10px);
-    transition: all 0.3s ease;
-    filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.5))
-      drop-shadow(4px 0px 0px #ffffff) drop-shadow(4px 0px 0px #d8d8d8)
-      drop-shadow(4px 0px 0px #ffffff);
-
-    &:hover {
-      transform: scale(1.1) translateX(-10px);
-    }
+  &_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include flex-center;
   }
 
   &__ebook {
@@ -34,19 +24,137 @@
     font-weight: 600;
     bottom: 0px;
     left: 0px;
+    border-radius: 0 0 0 2.5px;
   }
 
-  &__img {
+  &__cover {
     position: absolute;
-    width: 140px;
-    height: 190px;
-    object-fit: cover;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 50%;
+    -webkit-transform-origin: 0 50%;
+    background: #111;
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: inset 4px 1px 3px #ffffff60, inset 0 -1px 2px #00000080;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+  }
+
+  &_inside {
+    width: calc(100% - 2px);
+    height: 96%;
+    position: relative;
+    top: 2%;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background: white;
+    box-shadow: 10px 40px 40px -10px #00000030, inset -2px 0 0 grey,
+      inset -3px 0 0 #dbdbdb, inset -4px 0 0 white, inset -5px 0 0 #dbdbdb,
+      inset -6px 0 0 white, inset -7px 0 0 #dbdbdb, inset -8px 0 0 white,
+      inset -9px 0 0 #dbdbdb;
   }
 
   &__title {
-    text-align: center;
+    font-size: 22px;
     width: 100%;
-    padding: 0.5rem;
-    border-radius: 5px;
+    color: #333;
+    text-align: center;
+    position: absolute;
+    top: -15px;
+    height: 1px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    -webkit-transition: all 1s ease-in-out;
   }
+
+  &__title_text {
+    width: 100%;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  & .book__cover {
+    background-size: 100% 100%;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover .book__cover {
+    transform: perspective(2000px) rotateY(-30deg);
+    -webkit-transform: perspective(2000px) rotateY(-30deg);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    box-shadow: inset 4px 1px 3px #ffffff60, inset 0 -1px 2px #00000080,
+      10px 0px 10px -5px #00000030;
+  }
+
+  &:hover .effect {
+    width: 40px;
+  }
+
+  &:hover .light {
+    opacity: 1;
+    width: 70%;
+  }
+
+  &:hover .book__title {
+    opacity: 1;
+  }
+}
+
+.effect {
+  width: 20px;
+  height: 100%;
+  margin-left: 10px;
+  border-left: 2px solid #00000010;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: all 0.5s ease;
+}
+
+.light {
+  width: 90%;
+  height: 100%;
+  position: absolute;
+  border-radius: 3px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  top: 0;
+  right: 0;
+  opacity: 0.1;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.shelf_shadows {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  border-radius: 2px;
+  box-shadow: 0px -5px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 15px 20px 0px rgba(0, 0, 0, 0.7), 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.shelf {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background: var(--background-secondary);
+  border-radius: 2px;
 }

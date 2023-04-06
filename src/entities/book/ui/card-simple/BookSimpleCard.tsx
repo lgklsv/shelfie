@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Modal } from 'shared/ui';
+import { string } from 'shared/lib';
 import BookCard from '../card/BookCard';
 import styles from './BookSimpleCard.module.scss';
 
@@ -17,32 +18,42 @@ const BookSimpleCard: React.FC<BookCardProps> = ({ data }) => {
   const volume = data.volumeInfo;
 
   return (
-    <>
+    <div className={styles.book_wrapper}>
       <div
         data-testid="book-item"
         onClick={toggleModal}
         className={styles.book}
       >
-        <div className={styles.book__imgcont}>
-          <img
-            className={styles.book__img}
-            src={
+        <div className={styles.book__title}>
+          <p className={styles.book__title_text}>
+            {string.sliceText(volume.title, 25)}
+          </p>
+        </div>
+        <div
+          style={{
+            background: `no-repeat center url(${
               volume.imageLinks && volume.imageLinks.thumbnail
                 ? volume.imageLinks.thumbnail
                 : 'https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png'
-            }
-            alt="book"
-          />
+            })`,
+            backgroundSize: 'cover',
+          }}
+          className={styles.book__cover}
+        >
           {data.saleInfo.isEbook && (
             <div className={styles.book__ebook}>E-Book</div>
           )}
+          <div className={styles.effect} />
+          <div className={styles.light} />
         </div>
-        <h4 className={styles.book__title}>{volume.title}</h4>
+        <div className={styles.book_inside} />
       </div>
+      <div className={styles.shelf_shadows} />
+      <div className={styles.shelf} />
       <Modal active={isModalOpen} toggle={toggleModal}>
         {isModalOpen && <BookCard data={volume} />}
       </Modal>
-    </>
+    </div>
   );
 };
 
