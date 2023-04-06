@@ -4,7 +4,6 @@ import cn from 'classnames';
 import ArrowIcon from './assets/Arrow.icon';
 import ClearSearchIcon from './assets/ClearSearch.icon';
 import SearchIcon from './assets/Search.icon';
-
 import { SearchContext } from '../model/search-context';
 import styles from './Search.module.scss';
 

@@ -5,7 +5,7 @@
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   left: 0;
   opacity: 0;
@@ -14,8 +14,7 @@
   z-index: 1000;
 
   &__content {
-    padding: 1.5rem;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: var(--background-primary);
     width: 50vw;
     transform: scale(0.5);
@@ -24,6 +23,21 @@
 
   &__content.active {
     transform: scale(1);
+  }
+
+  &__close {
+    @include flex-center;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.5rem 0.35rem 0.5rem;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: var(--background-primary);
+    }
   }
 }
 

@@ -1,4 +1,5 @@
 @import './styles/index.scss';
+@import '/src/shared/styles/mixins.scss';
 
 .container {
   width: calc(100vw - 100px);
@@ -23,6 +24,8 @@ a.active {
 }
 
 .btn {
+  @include flex-center;
+  gap: 0.5rem;
   padding: 14px 16px;
   border: none;
   font-size: 15px;
@@ -33,6 +36,7 @@ a.active {
   transition: background-color 400ms;
   text-transform: capitalize;
   cursor: pointer;
+
 }
 
 .btn-primary {

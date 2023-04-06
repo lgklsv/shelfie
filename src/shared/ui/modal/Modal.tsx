@@ -25,6 +25,9 @@ const Modal: React.FC<ModalProps> = ({ children, active, toggle }) => {
         className={cn(styles.modal__content, { [styles.active]: active })}
       >
         {children}
+        <div onClick={toggle} className={styles.modal__close}>
+          ╳
+        </div>
       </div>
     </div>,
     document.getElementById('portal') as HTMLElement

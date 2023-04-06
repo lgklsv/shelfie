@@ -2,6 +2,7 @@ import React from 'react';
 
 import { bookCategories } from 'shared/model/book-categories';
 import { string, check } from 'shared/lib';
+import LinkIcon from './LinkIcon.icon';
 import styles from './BookCard.module.scss';
 
 type BookCardProps = {
@@ -33,36 +34,43 @@ const BookCard: React.FC<BookCardProps> = ({ data }) => {
         </div>
         <div className={styles.book__info}>
           <div className={styles.book__top}>
-            <h4 className={styles.book__title}>
-              {string.sliceText(data.title || 'No title available', 100)}
-            </h4>
+            <div className={styles.book__title_wrapper}>
+              <h4 className={styles.book__title}>
+                {check.isVolume(data)
+                  ? data.title || 'No title available'
+                  : string.sliceText(data.title || 'No title available', 100)}
+              </h4>
+              {check.isVolume(data) && data.subtitle && (
+                <h5 className={styles.book__subtitle}>{data.subtitle}</h5>
+              )}
+            </div>
 
-            {check.isVolume(data) && (
-              <p data-testid="subtitle" className={styles.book__text}>
-                {string.sliceText(
-                  data.subtitle ||
-                    data.description ||
-                    'No description available',
-                  100
-                )}
-              </p>
-            )}
+            <div className={styles.book__bubbles}>
+              {category && (
+                <p className={styles.book__text_light}>Category: {category}</p>
+              )}
 
-            {category && (
-              <p className={styles.book__text_light}>Category: {category}</p>
-            )}
-
-            {data.authors && (
-              <p className={styles.book__text_light}>
-                By: {data.authors.join(', ')}
-              </p>
-            )}
-            {data.publishedDate && (
-              <p className={styles.book__text_light}>
-                Published: {data.publishedDate.slice(0, 4)}
-              </p>
-            )}
+              {data.authors && (
+                <p className={styles.book__text_light}>
+                  By: {data.authors.slice(0, 3).join(', ')}
+                </p>
+              )}
+              {data.publishedDate && (
+                <p className={styles.book__text_light}>
+                  Published: {data.publishedDate.slice(0, 4)}
+                </p>
+              )}
+            </div>
           </div>
+
+          {check.isVolume(data) && (
+            <>
+              <h4>Description</h4>
+              <p data-testid="subtitle" className={styles.book__description}>
+                {data.description || 'No description available'}
+              </p>
+            </>
+          )}
           {check.isVolume(data) && (
             <div className={styles.book__actions}>
               <a
@@ -71,7 +79,8 @@ const BookCard: React.FC<BookCardProps> = ({ data }) => {
                 href={data.previewLink}
                 rel="noreferrer"
               >
-                open in google
+                <LinkIcon />
+                google books
               </a>
             </div>
           )}
