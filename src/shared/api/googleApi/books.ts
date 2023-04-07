@@ -7,3 +7,7 @@ export const getSearchBooks = (
 ): AxiosPromise<SeachBookListRes> => {
   return apiInstance.get(`/volumes?q=${searchValue}&key=${API_KEY}`);
 };
+
+export const getBookById = (id: string): AxiosPromise<Book> => {
+  return apiInstance.get(`/volumes/${id}?key=${API_KEY}`);
+};

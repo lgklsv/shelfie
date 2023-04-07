@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Modal } from 'shared/ui';
 import { string } from 'shared/lib';
-import BookCard from '../card/BookCard';
+import BookCardModal from '../card-modal/BookCardModal';
 import styles from './BookSimpleCard.module.scss';
 
 type BookCardProps = {
@@ -51,7 +51,7 @@ const BookSimpleCard: React.FC<BookCardProps> = ({ data }) => {
       <div className={styles.shelf_shadows} />
       <div className={styles.shelf} />
       <Modal active={isModalOpen} toggle={toggleModal}>
-        {isModalOpen && <BookCard data={volume} />}
+        {isModalOpen && <BookCardModal id={data.id} />}
       </Modal>
     </div>
   );

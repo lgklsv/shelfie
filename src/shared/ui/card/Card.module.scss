@@ -1,7 +1,6 @@
 @import '/src/shared/styles/mixins.scss';
 
 .card {
-  margin-top: 2rem;
   padding: 3rem;
   @include flex-center;
   flex-direction: column;

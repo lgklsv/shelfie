@@ -2,7 +2,8 @@ import React from 'react';
 
 import { bookCategories } from 'shared/model/book-categories';
 import { string, check } from 'shared/lib';
-import LinkIcon from './LinkIcon.icon';
+import { Card, LoadingSpinner } from 'shared/ui';
+import LinkIcon from '../card-modal/LinkIcon.icon';
 import styles from './BookCard.module.scss';
 
 type BookCardProps = {
@@ -14,6 +15,15 @@ const BookCard: React.FC<BookCardProps> = ({ data }) => {
   const category = check.isVolume(data)
     ? categories
     : bookCategories.find((el) => el.value === data.categories[0])?.text;
+
+  const test = true;
+  if (test) {
+    return (
+      <Card type="transparent">
+        <LoadingSpinner />
+      </Card>
+    );
+  }
 
   return (
     <div data-testid="book-item" className={styles.book_wrapper}>
