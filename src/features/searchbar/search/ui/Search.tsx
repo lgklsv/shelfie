@@ -15,10 +15,6 @@ const Search: React.FC = () => {
   React.useEffect(() => {
     const savedSearch = localStorage.getItem('search');
     setValue(savedSearch || '');
-
-    return () => {
-      localStorage.setItem('search', searchRef.current);
-    };
   }, []);
 
   const saveValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,6 +30,7 @@ const Search: React.FC = () => {
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     searchCtx.saveValue(value);
+    localStorage.setItem('search', searchRef.current);
   };
 
   return (
