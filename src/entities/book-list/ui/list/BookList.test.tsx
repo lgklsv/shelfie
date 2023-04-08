@@ -1,14 +1,29 @@
+import ReactDOM from 'react-dom';
+import { ReactPortal } from 'react';
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-// import books from 'shared/api/books.json';
+import { fakeApi } from 'shared/api';
 import BookListSection from './BookList';
 
-describe('BooksList', () => {
-  it('should render all books', () => {
-    render(<BookListSection />);
-    const renderedBooks = screen.getAllByTestId('book-item');
+const queryClient = new QueryClient();
 
-    // expect(renderedBooks).toHaveLength(books.items.length);
+describe('BooksList', () => {
+  beforeAll(() => {
+    ReactDOM.createPortal = (node) => node as ReactPortal;
+  });
+
+  it('should render all books', async () => {
+    render(
+      <QueryClientProvider client={queryClient} contextSharing>
+        <BookListSection />
+      </QueryClientProvider>
+    );
+    const renderedBooks = await screen.findAllByTestId('book-item');
+
+    expect(renderedBooks).toHaveLength(
+      fakeApi.books.RES_BOOK_LIST.items.length
+    );
   });
 });
