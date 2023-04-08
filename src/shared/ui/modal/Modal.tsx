@@ -17,6 +17,7 @@ const Modal: React.FC<ModalProps> = ({ children, active, toggle }) => {
 
   return ReactDOM.createPortal(
     <div
+      data-testid="modal"
       onClick={toggle}
       className={cn(styles.modal, { [styles.active]: active })}
     >
