@@ -16,9 +16,21 @@
   &__content {
     border-radius: 10px;
     background-color: var(--background-primary);
-    width: 50vw;
+    width: 60vw;
     transform: scale(0.5);
     transition: 0.3s all ease;
+
+    @media (max-width: 1200px) {
+      width: 80vw;
+    }
+
+    @media (max-width: 768px) {
+      width: 85vw;
+    }
+
+    @media (max-width: 550px) {
+      width: 95vw;
+    }
   }
 
   &__content.active {
