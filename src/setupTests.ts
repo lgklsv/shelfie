@@ -1,16 +1,16 @@
 import matchers from '@testing-library/jest-dom/matchers';
 import { expect } from 'vitest';
 
-import { fakeApi } from 'shared/api';
+import { server } from 'shared/api/fixtures/fake-server/server';
 
 expect.extend(matchers);
 
 beforeAll(() =>
-  fakeApi.server.listen({
+  server.listen({
     onUnhandledRequest: 'error',
   })
 );
 
-afterEach(() => fakeApi.server.resetHandlers());
+afterEach(() => server.resetHandlers());
 
-afterAll(() => fakeApi.server.close());
+afterAll(() => server.close());

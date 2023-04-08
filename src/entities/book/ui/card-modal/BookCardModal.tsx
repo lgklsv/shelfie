@@ -31,7 +31,7 @@ const BookCardModal: React.FC<BookCardModalProps> = ({ id }) => {
   if (isError) {
     return (
       <Card type="transparent">
-        Something went wrong...
+        <p>Something went wrong...</p>
         <button
           type="button"
           onClick={refetchHandler}

@@ -11,6 +11,7 @@ export const getBookListAsync =
       {
         onSuccess: ({ data }) => setBooks(data.items || []),
         refetchOnWindowFocus: false,
+        retry: false,
       }
     );
 
@@ -23,5 +24,6 @@ export const getBookByIdAsync =
       {
         onSuccess: ({ data }) => setBook(data),
         refetchOnWindowFocus: false,
+        retry: false,
       }
     );

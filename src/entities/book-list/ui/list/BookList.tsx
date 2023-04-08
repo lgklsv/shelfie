@@ -21,7 +21,7 @@ const BookList: React.FC = () => {
   if (isError) {
     return (
       <Card type="transparent">
-        Something went wrong...{' '}
+        <p>Something went wrong...</p>
         <a href="/" className="btn btn-primary">
           Try again
         </a>
