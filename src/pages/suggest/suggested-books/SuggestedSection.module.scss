@@ -1,8 +1,8 @@
 .bookList {
   padding: 40px 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);

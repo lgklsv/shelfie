@@ -48,7 +48,7 @@ const BookCardModal: React.FC<BookCardModalProps> = ({ id }) => {
   }
 
   const volume = data.volumeInfo;
-  const category = volume.categories ? volume.categories.join(', ') : '';
+  const category = volume.categories ? volume.categories[0] : '';
 
   return (
     <div data-testid="book-item" className={styles.book_wrapper}>
