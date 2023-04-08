@@ -45,3 +45,7 @@
   opacity: 1;
   pointer-events: all;
 }
+
+body:has(.active) {
+  overflow: hidden;
+}

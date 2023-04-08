@@ -2,7 +2,7 @@ import React from 'react';
 
 const ArrowIcon: React.FC = () => {
   return (
-    <svg width="800px" height="800px" viewBox="0 0 24 24" version="1.1">
+    <svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1">
       <g
         id="🔍-System-Icons"
         stroke="none"
