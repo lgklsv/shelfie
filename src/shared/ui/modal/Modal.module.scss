@@ -16,7 +16,8 @@
   &__content {
     border-radius: 10px;
     background-color: var(--background-primary);
-    width: 60vw;
+    width: 50vw;
+    max-width: var(--desktop);
     transform: scale(0.5);
     transition: 0.3s all ease;
 
