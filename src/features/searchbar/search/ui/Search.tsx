@@ -10,7 +10,6 @@ import styles from './Search.module.scss';
 const Search: React.FC = () => {
   const searchCtx = React.useContext(SearchContext);
   const [value, setValue] = React.useState('');
-  const searchRef = React.useRef<string>('');
 
   React.useEffect(() => {
     const savedSearch = localStorage.getItem('search');
@@ -20,7 +19,6 @@ const Search: React.FC = () => {
   const saveValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setValue(inputValue);
-    searchRef.current = inputValue;
   };
 
   const clearSearchHandler = () => {
@@ -30,7 +28,7 @@ const Search: React.FC = () => {
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     searchCtx.saveValue(value);
-    localStorage.setItem('search', searchRef.current);
+    localStorage.setItem('search', value);
   };
 
   return (

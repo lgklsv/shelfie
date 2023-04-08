@@ -26,7 +26,7 @@ const BookSimpleCard: React.FC<BookCardProps> = ({ data }) => {
       >
         <div className={styles.book__title}>
           <p className={styles.book__title_text}>
-            {string.sliceText(volume.title, 25)}
+            {string.sliceText(volume.title || 'Title is not available', 25)}
           </p>
         </div>
         <div
@@ -40,7 +40,7 @@ const BookSimpleCard: React.FC<BookCardProps> = ({ data }) => {
           }}
           className={styles.book__cover}
         >
-          {data.saleInfo.isEbook && (
+          {data.saleInfo && data.saleInfo.isEbook && (
             <div className={styles.book__ebook}>E-Book</div>
           )}
           <div className={styles.effect} />
