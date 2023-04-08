@@ -2,6 +2,7 @@ import React from 'react';
 
 import { bookCategories } from 'shared/model/book-categories';
 import { string } from 'shared/lib';
+import BookCover from '../book-cover/BookCover';
 import styles from './BookCardSuggested.module.scss';
 
 type BookCardSuggestedProps = {
@@ -13,17 +14,15 @@ const BookCardSuggested: React.FC<BookCardSuggestedProps> = ({ data }) => {
     (el) => el.value === data.categories[0]
   )?.text;
 
-  const img =
-    data.imageLinks && data.imageLinks.thumbnail
-      ? data.imageLinks.thumbnail
-      : 'https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png';
-
   return (
     <div data-testid="book-item" className={styles.book_wrapper}>
       <div className={styles.book}>
         <div className={styles.book__imgcont}>
-          <img className={styles.book__img} src={img} alt="book" />
-          {data.isEbook && <div className={styles.book__ebook}>E-Book</div>}
+          <BookCover
+            image={data.imageLinks && data.imageLinks.thumbnail}
+            isEbook={data.isEbook}
+            isOpen
+          />
         </div>
         <div className={styles.book__info}>
           <div className={styles.book__top}>

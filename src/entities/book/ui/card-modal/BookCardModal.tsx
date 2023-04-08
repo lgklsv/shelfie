@@ -4,6 +4,7 @@ import { Card, LoadingSpinner } from 'shared/ui';
 import { getBookByIdAsync } from 'entities/book-list/model';
 import { string } from 'shared/lib';
 import LinkIcon from './LinkIcon.icon';
+import BookCover from '../book-cover/BookCover';
 import styles from './BookCardModal.module.scss';
 
 type BookCardModalProps = {
@@ -48,19 +49,16 @@ const BookCardModal: React.FC<BookCardModalProps> = ({ id }) => {
 
   const volume = data.volumeInfo;
   const category = volume.categories ? volume.categories.join(', ') : '';
-  const img =
-    volume.imageLinks && volume.imageLinks.thumbnail
-      ? volume.imageLinks.thumbnail
-      : 'https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png';
 
   return (
     <div data-testid="book-item" className={styles.book_wrapper}>
       <div className={styles.book}>
         <div className={styles.book__imgcont}>
-          <img className={styles.book__img} src={img} alt="book" />
-          {data.saleInfo.isEbook && (
-            <div className={styles.book__ebook}>E-Book</div>
-          )}
+          <BookCover
+            image={volume.imageLinks && volume.imageLinks.thumbnail}
+            isEbook={data.saleInfo && data.saleInfo.isEbook}
+            isOpen
+          />
         </div>
         <div className={styles.book__info}>
           <div className={styles.book__top}>
