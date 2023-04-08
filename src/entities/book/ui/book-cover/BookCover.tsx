@@ -23,6 +23,7 @@ const BookCover: React.FC<BookCoverPops> = ({
   return (
     <div className={styles.book} onClick={openModal}>
       <div
+        data-testid="image"
         style={{
           background: `no-repeat center url(${img})`,
           backgroundSize: 'cover',

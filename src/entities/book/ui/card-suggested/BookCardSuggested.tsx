@@ -27,8 +27,7 @@ const BookCardSuggested: React.FC<BookCardSuggestedProps> = ({ data }) => {
         <div className={styles.book__info}>
           <div className={styles.book__top}>
             <h4 className={styles.book__title}>
-              {data.title &&
-                string.sliceText(data.title || 'No title available', 100)}
+              {string.sliceText(data.title || 'No title available', 100)}
             </h4>
             {(category || data.authors || data.publishedDate) && (
               <div className={styles.book__bubbles}>
