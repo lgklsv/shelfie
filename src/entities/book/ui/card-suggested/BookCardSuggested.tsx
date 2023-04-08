@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { bookCategories } from 'shared/model/book-categories';
-import { string } from 'shared/lib';
 import BookCover from '../book-cover/BookCover';
 import styles from './BookCardSuggested.module.scss';
 
@@ -19,36 +18,23 @@ const BookCardSuggested: React.FC<BookCardSuggestedProps> = ({ data }) => {
       <div className={styles.book}>
         <div className={styles.book__imgcont}>
           <BookCover
-            image={data.imageLinks && data.imageLinks.thumbnail}
+            image={data.imageLinks.thumbnail}
             isEbook={data.isEbook}
             isOpen
           />
         </div>
         <div className={styles.book__info}>
           <div className={styles.book__top}>
-            <h4 className={styles.book__title}>
-              {string.sliceText(data.title || 'No title available', 100)}
-            </h4>
-            {(category || data.authors || data.publishedDate) && (
-              <div className={styles.book__bubbles}>
-                {category && (
-                  <p className={styles.book__text_light}>
-                    Category: {category}
-                  </p>
-                )}
-
-                {data.authors && (
-                  <p className={styles.book__text_light}>
-                    By: {data.authors.slice(0, 3).join(', ')}
-                  </p>
-                )}
-                {data.publishedDate && (
-                  <p className={styles.book__text_light}>
-                    Published: {data.publishedDate.slice(0, 4)}
-                  </p>
-                )}
-              </div>
-            )}
+            <h4 className={styles.book__title}>{data.title}</h4>
+            <div className={styles.book__bubbles}>
+              <p className={styles.book__text_light}>Category: {category}</p>
+              <p className={styles.book__text_light}>
+                By: {data.authors.slice(0, 3).join(', ')}
+              </p>
+              <p className={styles.book__text_light}>
+                Published: {data.publishedDate.slice(0, 4)}
+              </p>
+            </div>
           </div>
         </div>
       </div>
