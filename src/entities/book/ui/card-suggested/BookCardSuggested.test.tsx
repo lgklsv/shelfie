@@ -2,7 +2,7 @@ import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
 import { string } from 'shared/lib';
-import BookCard from './BookCard';
+import BookCardSuggested from './BookCardSuggested';
 
 const mockData = {
   kind: 'books#volume',
@@ -160,19 +160,19 @@ const mockData2 = {
   },
 };
 
-describe('BookCard', () => {
+describe('BookCardSuggested', () => {
   it('should have img', () => {
-    render(<BookCard data={mockData.volumeInfo} />);
+    render(<BookCardSuggested data={mockData.volumeInfo} />);
     expect(screen.getByRole('img')).toBeVisible();
   });
   it('should render subtitle', () => {
-    render(<BookCard data={mockData2.volumeInfo} />);
+    render(<BookCardSuggested data={mockData2.volumeInfo} />);
     expect(screen.getByTestId('subtitle')).toHaveTextContent(
       string.sliceText(mockData2.volumeInfo.subtitle, 100)
     );
   });
   it('should render description if there is not subtitle', () => {
-    render(<BookCard data={mockData.volumeInfo} />);
+    render(<BookCardSuggested data={mockData.volumeInfo} />);
     expect(screen.getByTestId('subtitle')).toHaveTextContent(
       string.sliceText(mockData.volumeInfo.description, 100)
     );

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Card, LoadingSpinner } from 'shared/ui';
 import { getBookByIdAsync } from 'entities/book-list/model';
+import { string } from 'shared/lib';
 import LinkIcon from './LinkIcon.icon';
 import styles from './BookCardModal.module.scss';
 
@@ -47,20 +48,16 @@ const BookCardModal: React.FC<BookCardModalProps> = ({ id }) => {
 
   const volume = data.volumeInfo;
   const category = volume.categories ? volume.categories.join(', ') : '';
+  const img =
+    volume.imageLinks && volume.imageLinks.thumbnail
+      ? volume.imageLinks.thumbnail
+      : 'https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png';
 
   return (
     <div data-testid="book-item" className={styles.book_wrapper}>
       <div className={styles.book}>
         <div className={styles.book__imgcont}>
-          <img
-            className={styles.book__img}
-            src={
-              volume.imageLinks && volume.imageLinks.thumbnail
-                ? volume.imageLinks.thumbnail
-                : 'https://bookstoreromanceday.org/wp-content/uploads/2020/08/book-cover-placeholder.png'
-            }
-            alt="book"
-          />
+          <img className={styles.book__img} src={img} alt="book" />
           {data.saleInfo.isEbook && (
             <div className={styles.book__ebook}>E-Book</div>
           )}
@@ -76,27 +73,33 @@ const BookCardModal: React.FC<BookCardModalProps> = ({ id }) => {
               )}
             </div>
 
-            <div className={styles.book__bubbles}>
-              {category && (
-                <p className={styles.book__text_light}>Category: {category}</p>
-              )}
+            {(category || volume.authors || volume.publishedDate) && (
+              <div className={styles.book__bubbles}>
+                {category && (
+                  <p className={styles.book__text_light}>
+                    Category: {category}
+                  </p>
+                )}
 
-              {volume.authors && (
-                <p className={styles.book__text_light}>
-                  By: {volume.authors.slice(0, 3).join(', ')}
-                </p>
-              )}
-              {volume.publishedDate && (
-                <p className={styles.book__text_light}>
-                  Published: {volume.publishedDate.slice(0, 4)}
-                </p>
-              )}
-            </div>
+                {volume.authors && (
+                  <p className={styles.book__text_light}>
+                    By: {volume.authors.slice(0, 3).join(', ')}
+                  </p>
+                )}
+                {volume.publishedDate && (
+                  <p className={styles.book__text_light}>
+                    Published: {volume.publishedDate.slice(0, 4)}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
 
           <h4>Description</h4>
           <p data-testid="subtitle" className={styles.book__description}>
-            {volume.description || 'No description available'}
+            {volume.description
+              ? string.cleanText(volume.description)
+              : 'No description available'}
           </p>
           <div className={styles.book__actions}>
             <a
