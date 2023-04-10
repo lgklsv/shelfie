@@ -4,7 +4,7 @@ import { apiInstance } from './base';
 
 export const getSearchBooks = (
   searchValue: string
-): AxiosPromise<SeachBookListRes> => {
+): AxiosPromise<SearchBookListRes> => {
   return apiInstance.get(`/volumes?q=${searchValue}&key=${API_KEY}`);
 };
 

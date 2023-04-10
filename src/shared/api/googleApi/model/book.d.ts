@@ -91,7 +91,7 @@ interface Book {
   };
 }
 
-interface SeachBookListRes {
+interface SearchBookListRes {
   kind: string;
   totalItems: number;
   items: Book[];

@@ -5,7 +5,7 @@ import { googleApi } from 'shared/api';
 export const getBookListAsync =
   (searchValue: string) =>
   (setBooks: React.Dispatch<React.SetStateAction<Book[]>>) =>
-    useQuery<AxiosResponse<SeachBookListRes>>(
+    useQuery<AxiosResponse<SearchBookListRes>>(
       'bookList',
       () => googleApi.books.getSearchBooks(searchValue),
       {
