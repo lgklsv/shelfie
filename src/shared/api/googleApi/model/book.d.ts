@@ -2,6 +2,7 @@ interface Volume {
   title: string;
   subtitle?: string;
   authors: string[];
+  publisher?: string;
   publishedDate: string;
   description: string;
   industryIdentifiers: {
@@ -13,9 +14,17 @@ interface Volume {
     image: boolean;
   };
   pageCount: number;
+  dimensions?: {
+    height: string;
+    width: string;
+    thickness: string;
+  };
   printType: string;
+  mainCategory?: string;
   categories: string[];
   maturityRating: string;
+  averageRating?: number;
+  ratingsCount?: number;
   allowAnonLogging: boolean;
   contentVersion: string;
   panelizationSummary: {
@@ -25,6 +34,10 @@ interface Volume {
   imageLinks: {
     smallThumbnail: string;
     thumbnail: string;
+    small?: string;
+    medium?: string;
+    large?: string;
+    extraLarge?: string;
   };
   language: string;
   previewLink: string;
@@ -36,6 +49,15 @@ interface SalesInfo {
   country: string;
   saleability: string;
   isEbook: boolean;
+  listPrice?: {
+    amount: number;
+    currencyCode: string;
+  };
+  retailPrice?: {
+    amount: number;
+    currencyCode: string;
+  };
+  buyLink?: string;
 }
 
 interface AccessInfo {
@@ -46,13 +68,14 @@ interface AccessInfo {
   textToSpeechPermission: string;
   epub: {
     isAvailable: boolean;
+    acsTokenLink?: string;
   };
   pdf: {
     isAvailable: boolean;
   };
-  webReaderLink: string;
+  webReaderLink?: string;
   accessViewStatus: string;
-  quoteSharingAllowed: boolean;
+  quoteSharingAllowed?: boolean;
 }
 
 interface Book {
@@ -63,7 +86,13 @@ interface Book {
   volumeInfo: Volume;
   saleInfo: SalesInfo;
   accessInfo: AccessInfo;
-  searchInfo: {
+  searchInfo?: {
     textSnippet: string;
   };
+}
+
+interface SearchBookListRes {
+  kind: string;
+  totalItems: number;
+  items: Book[];
 }

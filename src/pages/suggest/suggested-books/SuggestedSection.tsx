@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { SuggestBookContext } from 'features/suggest-book/suggest';
-import { BookCard } from 'entities/book';
+import { BookCardSuggested } from 'entities/book';
 import styles from './SuggestedSection.module.scss';
 
 const SuggestedSection: React.FC = () => {
@@ -12,10 +12,10 @@ const SuggestedSection: React.FC = () => {
       <div className="container">
         {suggestCtx.books.length > 0 && (
           <>
-            <h3>Suggested books</h3>
+            <h2>Suggested books</h2>
             <div className={styles.bookList}>
               {suggestCtx.books.map((obj: SuggestedBook) => (
-                <BookCard key={obj.id} data={obj} />
+                <BookCardSuggested key={obj.id} data={obj} />
               ))}
             </div>
           </>

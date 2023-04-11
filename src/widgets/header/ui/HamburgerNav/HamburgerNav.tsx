@@ -21,6 +21,7 @@ const HamburgerNav: React.FC = () => {
         <NavItems />
       </ul>
       <div
+        data-testid="hamburger"
         className={
           isOpen ? `${styles.hamburger} ${styles.active}` : styles.hamburger
         }

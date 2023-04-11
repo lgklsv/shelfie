@@ -19,8 +19,17 @@ const popupMockDefaultValue: PopupContextObj = {
   emitPopup: vi.fn(),
 };
 
+const popupMockVisibleValue: PopupContextObj = {
+  popup: {
+    isVisible: true,
+    type: 'success',
+    message: 'You are amazing',
+  },
+  emitPopup: vi.fn(),
+};
+
 describe('Book form section', () => {
-  it('should render book form and not show popup notification by rener', () => {
+  it('should render book form and not show popup notification by render', () => {
     render(
       <PopupContext.Provider value={popupMockDefaultValue}>
         <SuggestBookContext.Provider value={mockCtxValue}>
@@ -34,6 +43,18 @@ describe('Book form section', () => {
 
     expect(formTitle).toBeInTheDocument();
     expect(popup).toBeNull();
+  });
+
+  it('should show popup notification is state isVisible=true', () => {
+    render(
+      <PopupContext.Provider value={popupMockVisibleValue}>
+        <SuggestBookContext.Provider value={mockCtxValue}>
+          <BookFormSection />
+        </SuggestBookContext.Provider>
+      </PopupContext.Provider>
+    );
+
+    expect(screen.getByTestId('popup')).toBeVisible();
   });
 
   it('should show error popup on incorrect form submit', () => {

@@ -1,0 +1,94 @@
+@import '/src/shared/styles/mixins.scss';
+
+.book {
+  background-color: var(--background-secondary);
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  min-height: 240px;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__bottom {
+    @include flex-center;
+    gap: 1rem;
+  }
+
+  &_wrapper {
+    @include flex-center;
+  }
+
+  &__imgcont {
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    border-radius: 3px;
+    transform: rotate(-3.5deg);
+
+    @media (max-width: 450px) {
+      top: -40px;
+      transform: scale(0.8) rotate(-3.5deg);
+    }
+  }
+
+  &__info {
+    margin-left: 145px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (max-width: 450px) {
+      margin-left: 125px;
+    }
+  }
+
+  &__title_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  &__title {
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    width: fit-content;
+    word-break: break-all;
+  }
+
+  &__subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+  }
+
+  &__description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 140%;
+    max-height: 200px;
+    overflow: scroll;
+  }
+
+  &__text_light {
+    color: var(--text-primary);
+    font-size: 0.7rem;
+    padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+    border-radius: 15px;
+    background-color: var(--button-primary);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

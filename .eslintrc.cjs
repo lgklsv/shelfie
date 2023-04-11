@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': 0,
 
     'import/prefer-default-export': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 
     'react/react-in-jsx-scope': 0,
     'react/function-component-definition': 0,

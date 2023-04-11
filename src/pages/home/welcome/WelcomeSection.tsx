@@ -10,7 +10,7 @@ const WelcomeSection: React.FC = () => {
       <div className="container">
         <div className={styles.welcome__content}>
           <h2 className={styles.welcome__heading}>
-            This week you can`t search, but here are some books on React.js ⚛️
+            What book are you looking for ?
           </h2>
           <Searchbar.Search />
         </div>

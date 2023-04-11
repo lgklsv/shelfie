@@ -4,3 +4,7 @@ export const sliceText = (text: string, charCount: number): string => {
     ? `${cleanText.slice(0, charCount)}...`
     : cleanText;
 };
+
+export const cleanText = (text: string): string => {
+  return text.trim().replace(/(<([^>]+)>)/gi, '');
+};
