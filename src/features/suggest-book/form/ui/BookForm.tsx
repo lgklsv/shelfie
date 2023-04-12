@@ -1,8 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { PopupContext } from 'features/notification/popup';
 import { SuggestBookContext } from 'features/suggest-book/suggest';
 import {
   CheckboxInput,
@@ -12,11 +12,12 @@ import {
   TextLikeInput,
 } from 'shared/ui';
 import { bookCategories } from 'shared/model/book-categories';
+import { emitNotification } from 'features/notification/popup/model';
 import { form } from '../model';
 import styles from './BookForm.module.scss';
 
 const BookForm: React.FC = () => {
-  const popupCtx = React.useContext(PopupContext);
+  const dispatch = useDispatch();
   const suggestCtx = React.useContext(SuggestBookContext);
 
   const {
@@ -33,13 +34,15 @@ const BookForm: React.FC = () => {
 
   React.useEffect(() => {
     if (isSubmitting && !isValid) {
-      popupCtx.emitPopup({
-        isVisible: true,
-        type: 'error',
-        message: 'All form fields are required !',
-      });
+      dispatch(
+        emitNotification({
+          isVisible: true,
+          type: 'error',
+          message: 'All form fields are required !',
+        })
+      );
     }
-  }, [popupCtx, isSubmitting, isValid]);
+  }, [dispatch, isSubmitting, isValid]);
 
   const submitHandler: SubmitHandler<FieldValues> = (data) => {
     const newBook: SuggestedBook = {
@@ -57,11 +60,13 @@ const BookForm: React.FC = () => {
     reset();
     suggestCtx.addBook(newBook);
 
-    popupCtx.emitPopup({
-      isVisible: true,
-      type: 'success',
-      message: 'Your suggestion successfully added! 🎉',
-    });
+    dispatch(
+      emitNotification({
+        isVisible: true,
+        type: 'success',
+        message: 'Your suggestion successfully added! 🎉',
+      })
+    );
   };
 
   return (

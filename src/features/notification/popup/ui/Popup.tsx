@@ -1,6 +1,7 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { PopupContext } from '../model/popup-context';
+import { emitNotification } from '../model';
 import styles from './Popup.module.scss';
 
 type PopupProps = {
@@ -9,27 +10,31 @@ type PopupProps = {
 };
 
 const Popup: React.FC<PopupProps> = ({ type, message }) => {
-  const popupCtx = React.useContext(PopupContext);
+  const dispatch = useDispatch();
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      popupCtx.emitPopup({
-        isVisible: false,
-        type: 'error',
-        message: '',
-      });
-    }, 3000);
-    return () => {
-      if (type === 'error') {
-        popupCtx.emitPopup({
+      dispatch(
+        emitNotification({
           isVisible: false,
           type: 'error',
           message: '',
-        });
+        })
+      );
+    }, 3000);
+    return () => {
+      if (type === 'error') {
+        dispatch(
+          emitNotification({
+            isVisible: false,
+            type: 'error',
+            message: '',
+          })
+        );
         clearTimeout(timer);
       }
     };
-  }, [popupCtx, type]);
+  }, [dispatch, type]);
 
   return (
     <div data-testid="popup" className={`${styles.popup} ${styles[type]}`}>
