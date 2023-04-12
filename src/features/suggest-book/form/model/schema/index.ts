@@ -28,7 +28,7 @@ export const formSchema = object({
   category: string()
     .required()
     .notOneOf(['DEFAULT'], 'Category should be selected'),
-  type: string().required('Type should be choosen'),
+  type: string().required('Type should be chosen'),
   image: mixed<FileList>().test('image', 'Image should be provided', (value) =>
     value ? value.length > 0 : false
   ),

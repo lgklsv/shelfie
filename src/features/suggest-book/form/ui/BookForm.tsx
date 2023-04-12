@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import useFormPersist from 'react-hook-form-persist';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { SuggestBookContext } from 'features/suggest-book/suggest';
+import { suggestedSlice } from 'features/suggest-book/suggest';
+import { notificationSlice } from 'features/notification/popup';
 import {
   CheckboxInput,
   ImageInput,
@@ -12,18 +14,18 @@ import {
   TextLikeInput,
 } from 'shared/ui';
 import { bookCategories } from 'shared/model/book-categories';
-import { emitNotification } from 'features/notification/popup/model';
 import { form } from '../model';
 import styles from './BookForm.module.scss';
 
 const BookForm: React.FC = () => {
   const dispatch = useDispatch();
-  const suggestCtx = React.useContext(SuggestBookContext);
 
   const {
     register,
     handleSubmit,
     reset,
+    watch,
+    setValue,
     formState: { errors, isValid, isSubmitting },
   } = useForm<FormInputs>({
     mode: 'onSubmit',
@@ -32,10 +34,12 @@ const BookForm: React.FC = () => {
     resolver: yupResolver(form.formSchema),
   });
 
+  useFormPersist('bookForm', { watch, setValue });
+
   React.useEffect(() => {
     if (isSubmitting && !isValid) {
       dispatch(
-        emitNotification({
+        notificationSlice.emitNotification({
           isVisible: true,
           type: 'error',
           message: 'All form fields are required !',
@@ -58,10 +62,10 @@ const BookForm: React.FC = () => {
     };
 
     reset();
-    suggestCtx.addBook(newBook);
+    dispatch(suggestedSlice.saveSuggested(newBook));
 
     dispatch(
-      emitNotification({
+      notificationSlice.emitNotification({
         isVisible: true,
         type: 'success',
         message: 'Your suggestion successfully added! 🎉',
