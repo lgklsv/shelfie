@@ -5,10 +5,10 @@ export const books = createApi({
   reducerPath: 'books',
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
-    getSearchBooks: builder.query({
+    getSearchBooks: builder.query<SearchBookListRes, string>({
       query: (searchValue) => `/volumes?q=${searchValue}&key=${API_KEY}`,
     }),
-    getBookById: builder.query({
+    getBookById: builder.query<Book, string>({
       query: (id) => `/volumes/${id}?key=${API_KEY}`,
     }),
   }),
