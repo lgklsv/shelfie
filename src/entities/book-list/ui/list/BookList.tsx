@@ -5,6 +5,7 @@ import { searchSlice } from 'features/searchbar/search';
 import { BookSimpleCard } from 'entities/book';
 import { getBookListAsync } from 'entities/book-list/model';
 import { LoadingSpinner, Card } from 'shared/ui';
+import { googleApi } from 'shared/api';
 import styles from './BookList.module.scss';
 
 const BookList: React.FC = () => {
@@ -14,6 +15,10 @@ const BookList: React.FC = () => {
   const { isFetching, isError, refetch } = getBookListAsync(
     searchValue || 'react'
   )(setBooks);
+
+  const { data } = googleApi.useGetSearchBooksQuery(searchValue || 'react');
+
+  console.log(data);
 
   React.useEffect(() => {
     refetch();

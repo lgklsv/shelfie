@@ -1,1 +1,1 @@
-export * as books from './books';
+export * from './books';

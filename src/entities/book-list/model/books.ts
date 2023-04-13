@@ -7,7 +7,7 @@ export const getBookListAsync =
   (setBooks: React.Dispatch<React.SetStateAction<Book[]>>) =>
     useQuery<AxiosResponse<SearchBookListRes>>(
       'bookList',
-      () => googleApi.books.getSearchBooks(searchValue),
+      () => googleApi.getSearchBooks(searchValue),
       {
         onSuccess: ({ data }) => setBooks(data.items || []),
         refetchOnWindowFocus: false,
@@ -18,12 +18,8 @@ export const getBookListAsync =
 export const getBookByIdAsync =
   (id: string) =>
   (setBook: React.Dispatch<React.SetStateAction<Book | undefined>>) =>
-    useQuery<AxiosResponse<Book>>(
-      'book',
-      () => googleApi.books.getBookById(id),
-      {
-        onSuccess: ({ data }) => setBook(data),
-        refetchOnWindowFocus: false,
-        retry: false,
-      }
-    );
+    useQuery<AxiosResponse<Book>>('book', () => googleApi.getBookById(id), {
+      onSuccess: ({ data }) => setBook(data),
+      refetchOnWindowFocus: false,
+      retry: false,
+    });

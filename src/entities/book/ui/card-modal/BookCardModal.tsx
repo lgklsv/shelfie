@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Card, LoadingSpinner } from 'shared/ui';
 import { getBookByIdAsync } from 'entities/book-list/model';
+import { Card, LoadingSpinner } from 'shared/ui';
 import { string } from 'shared/lib';
 import LinkIcon from './LinkIcon.icon';
 import BookCover from '../book-cover/BookCover';
