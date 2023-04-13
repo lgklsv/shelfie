@@ -1,21 +1,17 @@
+import { Provider } from 'react-redux';
 import { describe, it, vi } from 'vitest';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { SuggestBookContext } from 'features/suggest-book/suggest';
+import { store } from 'app/store';
 import BookForm from './BookForm';
-
-const mockCtxValue = {
-  books: [],
-  addBook: vi.fn(),
-};
 
 describe('Book form', () => {
   it('should show error messages if from is not filled in', async () => {
     render(
-      <SuggestBookContext.Provider value={mockCtxValue}>
+      <Provider store={store}>
         <BookForm />
-      </SuggestBookContext.Provider>
+      </Provider>
     );
 
     const submitBtn = screen.getByRole('button');
@@ -25,7 +21,7 @@ describe('Book form', () => {
     const dateError = await screen.findByText(
       /Published date should not be empty/i
     );
-    const typeError = await screen.findByText(/Type should be choosen/i);
+    const typeError = await screen.findByText(/Type should be chosen/i);
     const categoryError = await screen.findByText(
       /Category should be selected/i
     );
@@ -41,10 +37,13 @@ describe('Book form', () => {
     expect(termsError).toBeInTheDocument();
   });
   it('should send data to render if form validation is successfully passed', async () => {
+    const mockDispatch = vi.fn();
+    store.dispatch = mockDispatch;
+
     render(
-      <SuggestBookContext.Provider value={mockCtxValue}>
+      <Provider store={store}>
         <BookForm />
-      </SuggestBookContext.Provider>
+      </Provider>
     );
 
     const submitBtn = screen.getByRole('button');
@@ -61,7 +60,7 @@ describe('Book form', () => {
       selector: 'input',
     }) as HTMLInputElement;
     const ebookRadioInput = screen.getAllByTestId('radio-input')[0];
-    const ageementCheckbox = screen.getByRole('checkbox');
+    const agreementCheckbox = screen.getByRole('checkbox');
 
     fireEvent.change(titleInput, { target: { value: 'The best new book' } });
     fireEvent.change(authorInput, { target: { value: 'Artemij Fedosejev' } });
@@ -70,7 +69,7 @@ describe('Book form', () => {
     });
     fireEvent.change(categoryInput, { target: { value: 'b3' } });
     fireEvent.click(ebookRadioInput);
-    fireEvent.click(ageementCheckbox);
+    fireEvent.click(agreementCheckbox);
 
     await userEvent.upload(inputImage, mockImg);
 
@@ -79,16 +78,19 @@ describe('Book form', () => {
     expect(inputImage.files).toHaveLength(1);
 
     await waitFor(() =>
-      expect(mockCtxValue.addBook).toHaveBeenCalledWith({
-        id: expect.any(String),
-        title: 'The best new book',
-        authors: ['Artemij Fedosejev'],
-        publishedDate: '1999-01-04',
-        isEbook: true,
-        categories: ['b3'],
-        imageLinks: {
-          thumbnail: 'test.png',
+      expect(mockDispatch).toHaveBeenCalledWith({
+        payload: {
+          id: expect.any(String),
+          title: 'The best new book',
+          authors: ['Artemij Fedosejev'],
+          publishedDate: '1999-01-04',
+          isEbook: true,
+          categories: ['b3'],
+          imageLinks: {
+            thumbnail: 'test.png',
+          },
         },
+        type: 'suggested/saveSuggested',
       })
     );
   });

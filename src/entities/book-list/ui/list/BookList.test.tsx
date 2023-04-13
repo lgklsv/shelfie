@@ -1,13 +1,12 @@
 import ReactDOM from 'react-dom';
 import { ReactPortal } from 'react';
+import { Provider } from 'react-redux';
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from 'react-query';
 
+import { store } from 'app/store';
 import { fakeApi } from 'shared/api';
 import BookListSection from './BookList';
-
-const queryClient = new QueryClient();
 
 describe('BooksList', () => {
   beforeAll(() => {
@@ -16,9 +15,9 @@ describe('BooksList', () => {
 
   it('should render all books', async () => {
     render(
-      <QueryClientProvider client={queryClient} contextSharing>
+      <Provider store={store}>
         <BookListSection />
-      </QueryClientProvider>
+      </Provider>
     );
     const renderedBooks = await screen.findAllByTestId('book-item');
 

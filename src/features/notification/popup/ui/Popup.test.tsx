@@ -1,44 +1,44 @@
+import { Provider } from 'react-redux';
 import { describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
+import { store } from 'app/store';
 import PopupNotification from './Popup';
-import { PopupContext } from '../model/popup-context';
-
-const popupMockDefaultValue: PopupContextObj = {
-  popup: {
-    isVisible: false,
-    type: 'error',
-    message: '',
-  },
-  emitPopup: vi.fn(),
-};
 
 describe('Popup Notification', () => {
   it('should render and have provided text', () => {
     render(
-      <PopupContext.Provider value={popupMockDefaultValue}>
+      <Provider store={store}>
         <PopupNotification type="success" message="Success, you are amazing" />
-      </PopupContext.Provider>
+      </Provider>
     );
 
     expect(screen.getByText(/Success/i)).toBeInTheDocument();
   });
-  it('should call unmount fuction after 3s and hide popup', () => {
+  it('should call unmount function after 3s and hide popup', () => {
     vi.useFakeTimers();
 
+    const mockDispatch = vi.fn();
+    store.dispatch = mockDispatch;
+
     render(
-      <PopupContext.Provider value={popupMockDefaultValue}>
+      <Provider store={store}>
         <PopupNotification type="success" message="Success, you are amazing" />
-      </PopupContext.Provider>
+      </Provider>
     );
 
     expect(screen.getByText(/Success, you are amazing/i)).toBeInTheDocument();
     vi.advanceTimersByTime(3000);
 
-    expect(popupMockDefaultValue.emitPopup).toBeCalledWith({
-      isVisible: false,
-      type: 'error',
-      message: '',
+    expect(mockDispatch).toBeCalledTimes(1);
+
+    expect(mockDispatch).toBeCalledWith({
+      payload: {
+        isVisible: false,
+        message: '',
+        type: 'error',
+      },
+      type: 'notification/emitNotification',
     });
   });
 });
