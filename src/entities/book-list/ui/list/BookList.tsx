@@ -10,12 +10,9 @@ import styles from './BookList.module.scss';
 const BookList: React.FC = () => {
   const { searchValue } = useSelector(searchSlice.selectSearch);
 
-  const { data, isFetching, isError, refetch } =
-    googleApi.useGetSearchBooksQuery(searchValue || 'react');
-
-  React.useEffect(() => {
-    refetch();
-  }, [refetch, searchValue]);
+  const { data, isFetching, isError } = googleApi.useGetSearchBooksQuery(
+    searchValue || 'react'
+  );
 
   if (isError) {
     return (
