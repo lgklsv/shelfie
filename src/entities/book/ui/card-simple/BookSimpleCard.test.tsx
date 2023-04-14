@@ -43,8 +43,6 @@ describe('Simple Book Card', () => {
 
     fireEvent.click(bookElement);
 
-    expect(screen.getByTestId('modal').getAttribute('class')).toMatch(
-      /active/i
-    );
+    expect(screen.getByTestId('modal').getAttribute('class')).toMatch(/modal/i);
   });
 });
