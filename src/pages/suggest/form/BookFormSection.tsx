@@ -1,24 +1,22 @@
 import React from 'react';
 
-import { PopupContext } from 'features/notification/popup';
+import { notificationSlice } from 'features/notification/popup';
 import { Notification } from 'features/notification';
 import { SuggestBook } from 'features/suggest-book';
+import { useSelector } from 'react-redux';
 import styles from './BookFormSection.module.scss';
 
 const BookFormSection: React.FC = () => {
-  const popupCtx = React.useContext(PopupContext);
+  const { isVisible, type, message } = useSelector(
+    notificationSlice.selectNotification
+  ).notification;
 
   return (
     <section className="container">
       <div className={styles.form_container}>
         <SuggestBook.Form />
       </div>
-      {popupCtx.popup.isVisible && (
-        <Notification.Popup
-          type={popupCtx.popup.type}
-          message={popupCtx.popup.message}
-        />
-      )}
+      {isVisible && <Notification.Popup type={type} message={message} />}
     </section>
   );
 };

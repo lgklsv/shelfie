@@ -1,22 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { LoadingSpinner, Card } from 'shared/ui';
-import { SearchContext } from 'features/searchbar/search';
+import { searchSlice } from 'features/searchbar/search';
 import { BookSimpleCard } from 'entities/book';
-import { getBookListAsync } from 'entities/book-list/model';
+import { LoadingSpinner, Card } from 'shared/ui';
+import { googleApi } from 'shared/api';
 import styles from './BookList.module.scss';
 
 const BookList: React.FC = () => {
-  const [books, setBooks] = React.useState<Book[]>([]);
-  const searchCtx = React.useContext(SearchContext);
+  const { searchValue } = useSelector(searchSlice.selectSearch);
 
-  const { isFetching, isError, refetch } = getBookListAsync(
-    searchCtx.value || 'react'
-  )(setBooks);
-
-  React.useEffect(() => {
-    refetch();
-  }, [refetch, searchCtx.value]);
+  const { data, isFetching, isError } = googleApi.useGetSearchBooksQuery(
+    searchValue || 'react'
+  );
 
   if (isError) {
     return (
@@ -37,13 +33,13 @@ const BookList: React.FC = () => {
     );
   }
 
-  if (books.length === 0) {
+  if (!data || !data.items || data.items.length === 0) {
     return <Card type="transparent">Nothing was found 😔</Card>;
   }
 
   return (
     <div className={styles.bookList}>
-      {books.map((obj: Book) => (
+      {data.items.map((obj: Book) => (
         <BookSimpleCard key={obj.id} data={obj} />
       ))}
     </div>

@@ -1,41 +1,17 @@
+import { Provider } from 'react-redux';
 import { describe, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { SuggestBookContext } from 'features/suggest-book/suggest';
-import { PopupContext } from 'features/notification/popup';
+import { store } from 'app/store';
+import { notificationSlice } from 'features/notification/popup';
 import BookFormSection from './BookFormSection';
-
-const mockCtxValue = {
-  books: [],
-  addBook: vi.fn(),
-};
-
-const popupMockDefaultValue: PopupContextObj = {
-  popup: {
-    isVisible: false,
-    type: 'error',
-    message: '',
-  },
-  emitPopup: vi.fn(),
-};
-
-const popupMockVisibleValue: PopupContextObj = {
-  popup: {
-    isVisible: true,
-    type: 'success',
-    message: 'You are amazing',
-  },
-  emitPopup: vi.fn(),
-};
 
 describe('Book form section', () => {
   it('should render book form and not show popup notification by render', () => {
     render(
-      <PopupContext.Provider value={popupMockDefaultValue}>
-        <SuggestBookContext.Provider value={mockCtxValue}>
-          <BookFormSection />
-        </SuggestBookContext.Provider>
-      </PopupContext.Provider>
+      <Provider store={store}>
+        <BookFormSection />
+      </Provider>
     );
 
     const formTitle = screen.getByText(/Book details/i);
@@ -46,24 +22,31 @@ describe('Book form section', () => {
   });
 
   it('should show popup notification is state isVisible=true', () => {
+    store.dispatch(
+      notificationSlice.emitNotification({
+        isVisible: true,
+        type: 'success',
+        message: 'You are amazing',
+      })
+    );
+
     render(
-      <PopupContext.Provider value={popupMockVisibleValue}>
-        <SuggestBookContext.Provider value={mockCtxValue}>
-          <BookFormSection />
-        </SuggestBookContext.Provider>
-      </PopupContext.Provider>
+      <Provider store={store}>
+        <BookFormSection />
+      </Provider>
     );
 
     expect(screen.getByTestId('popup')).toBeVisible();
   });
 
   it('should show error popup on incorrect form submit', () => {
+    const mockDispatch = vi.fn();
+    store.dispatch = mockDispatch;
+
     render(
-      <PopupContext.Provider value={popupMockDefaultValue}>
-        <SuggestBookContext.Provider value={mockCtxValue}>
-          <BookFormSection />
-        </SuggestBookContext.Provider>
-      </PopupContext.Provider>
+      <Provider store={store}>
+        <BookFormSection />
+      </Provider>
     );
 
     const submitBtn = screen.getByRole('button');
@@ -71,10 +54,13 @@ describe('Book form section', () => {
 
     const popup = screen.queryByText(/All form fields are required !/i);
 
-    expect(popupMockDefaultValue.emitPopup).toBeCalledWith({
-      isVisible: true,
-      type: 'error',
-      message: 'All form fields are required !',
+    expect(mockDispatch).toBeCalledWith({
+      payload: {
+        isVisible: true,
+        type: 'error',
+        message: 'All form fields are required !',
+      },
+      type: 'notification/emitNotification',
     });
     expect(popup).toBeNull();
   });

@@ -5,13 +5,12 @@ digital library app. Here you can find almost every book you want. We use google
 
 ## Key features
 
-- (⚙️ new) books search using google books API
-- save search value to local storage on search submit
+- books search using google books API
 - responsive design (up to iphone SE support)
 - suggest a book to the library with new form
 - notification popup
 - [feature sliced design](https://feature-sliced.design/) architecture
-- (🚀 coming soon ...) state management with Redux
+- (⚙️ new) state management with Redux / api calls with RTK query
 
 ## Screenshot
 
@@ -20,6 +19,7 @@ digital library app. Here you can find almost every book you want. We use google
 ## Tech stack
 
 - React
+- Redux / RTK Query
 - Scss
 - MDX
 - Vite, Vitest, React Testing Library

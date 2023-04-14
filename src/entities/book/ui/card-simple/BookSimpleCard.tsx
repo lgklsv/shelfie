@@ -1,4 +1,5 @@
 import React from 'react';
+import { AnimatePresence } from 'framer-motion';
 
 import { Modal } from 'shared/ui';
 import { string } from 'shared/lib';
@@ -33,9 +34,13 @@ const BookSimpleCard: React.FC<BookCardProps> = ({ data }) => {
       />
       <div className={styles.shelf_shadows} />
       <div className={styles.shelf} />
-      <Modal active={isModalOpen} toggle={toggleModal}>
-        {isModalOpen && <BookCardModal id={data.id} />}
-      </Modal>
+      <AnimatePresence initial={false} mode="wait">
+        {isModalOpen && (
+          <Modal toggle={toggleModal}>
+            <BookCardModal id={data.id} />
+          </Modal>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

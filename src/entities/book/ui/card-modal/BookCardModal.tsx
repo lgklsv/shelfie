@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Card, LoadingSpinner } from 'shared/ui';
-import { getBookByIdAsync } from 'entities/book-list/model';
 import { string } from 'shared/lib';
+import { googleApi } from 'shared/api';
 import LinkIcon from './LinkIcon.icon';
 import BookCover from '../book-cover/BookCover';
 import styles from './BookCardModal.module.scss';
@@ -12,9 +12,8 @@ type BookCardModalProps = {
 };
 
 const BookCardModal: React.FC<BookCardModalProps> = ({ id }) => {
-  const [data, setData] = React.useState<Book>();
-
-  const { isFetching, isError, refetch } = getBookByIdAsync(id)(setData);
+  const { data, isFetching, isError, refetch } =
+    googleApi.useGetBookByIdQuery(id);
 
   const refetchHandler = () => {
     refetch();

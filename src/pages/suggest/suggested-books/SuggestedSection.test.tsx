@@ -1,23 +1,25 @@
-import { describe, it, vi } from 'vitest';
+import { Provider } from 'react-redux';
+import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 
-import { SuggestBookContext } from 'features/suggest-book/suggest';
+import { store } from 'app/store';
+import { suggestedSlice } from 'features/suggest-book/suggest';
 import { fakeApi } from 'shared/api';
 import SuggestedSection from './SuggestedSection';
 
-const mockAddBook = vi.fn();
-
 describe('SuggestedSection', () => {
   it('should render all suggested books', () => {
+    const bookList = fakeApi.suggestedBooks.BOOK_LIST;
+    for (let i = 0; i < bookList.length; i += 1) {
+      store.dispatch(
+        suggestedSlice.saveSuggested(fakeApi.suggestedBooks.BOOK_LIST[i])
+      );
+    }
+
     render(
-      <SuggestBookContext.Provider
-        value={{
-          books: fakeApi.suggestedBooks.BOOK_LIST,
-          addBook: mockAddBook,
-        }}
-      >
+      <Provider store={store}>
         <SuggestedSection />
-      </SuggestBookContext.Provider>
+      </Provider>
     );
     const renderedBooks = screen.getAllByTestId('book-item');
 

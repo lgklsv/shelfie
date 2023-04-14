@@ -1,20 +1,22 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 
 import ArrowIcon from './assets/Arrow.icon';
 import ClearSearchIcon from './assets/ClearSearch.icon';
 import SearchIcon from './assets/Search.icon';
-import { SearchContext } from '../model/search-context';
+import { selectSearch, setSearchValue } from '../model';
 import styles from './Search.module.scss';
 
 const Search: React.FC = () => {
-  const searchCtx = React.useContext(SearchContext);
+  const dispatch = useDispatch();
+  const { searchValue } = useSelector(selectSearch);
+  const searchRef = React.useRef<HTMLInputElement>(null);
   const [value, setValue] = React.useState('');
 
   React.useEffect(() => {
-    const savedSearch = localStorage.getItem('search');
-    setValue(savedSearch || '');
-  }, []);
+    setValue(searchValue || '');
+  }, [searchValue]);
 
   const saveValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
@@ -23,12 +25,13 @@ const Search: React.FC = () => {
 
   const clearSearchHandler = () => {
     setValue('');
+    dispatch(setSearchValue(''));
   };
 
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
-    searchCtx.saveValue(value);
-    localStorage.setItem('search', value);
+    const inputValue = searchRef.current ? searchRef.current.value : '';
+    dispatch(setSearchValue(inputValue));
   };
 
   return (
@@ -38,6 +41,7 @@ const Search: React.FC = () => {
       </div>
       <form onSubmit={submitHandler} className={styles.search__form}>
         <input
+          ref={searchRef}
           value={value}
           className={styles.search__input}
           placeholder="Search..."

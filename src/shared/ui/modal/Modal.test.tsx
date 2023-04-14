@@ -13,8 +13,8 @@ describe('Modal', () => {
 
   it('should render provided children', () => {
     render(
-      <Modal active toggle={mockToggle}>
-        <h1>Some childen text</h1>
+      <Modal toggle={mockToggle}>
+        <h1>Some children text</h1>
       </Modal>
     );
 
@@ -22,22 +22,22 @@ describe('Modal', () => {
   });
   it('should close modal by clicking on cross icon or overlay', () => {
     render(
-      <Modal active toggle={mockToggle}>
-        <h1>Some childen text</h1>
+      <Modal toggle={mockToggle}>
+        <h1>Some children text</h1>
       </Modal>
     );
     const closeBtn = screen.getByText('╳');
-    const overlay = screen.getByTestId('modal');
+    const backdrop = screen.getByTestId('backdrop');
 
     fireEvent.click(closeBtn);
-    fireEvent.click(overlay);
+    fireEvent.click(backdrop);
 
     expect(mockToggle).toBeCalledTimes(2);
   });
   it('should not be visible if state is closed', () => {
     render(
-      <Modal active={false} toggle={mockToggle}>
-        <h1>Some childen text</h1>
+      <Modal toggle={mockToggle}>
+        <h1>Some children text</h1>
       </Modal>
     );
     expect(screen.getByRole('heading', { level: 1 })).not.toBeVisible();

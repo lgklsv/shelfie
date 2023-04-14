@@ -1,25 +1,24 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
 
+import { store } from 'app/store';
 import BookCardModal from './BookCardModal';
-
-const queryClient = new QueryClient();
 
 describe('BookCardModal', () => {
   it('should have img', async () => {
     render(
-      <QueryClientProvider client={queryClient} contextSharing>
+      <Provider store={store}>
         <BookCardModal id="HAKdjwEACAAJ" />
-      </QueryClientProvider>
+      </Provider>
     );
     expect(await screen.findByTestId('image')).toBeVisible();
   });
   it('should render subtitle', async () => {
     render(
-      <QueryClientProvider client={queryClient} contextSharing>
+      <Provider store={store}>
         <BookCardModal id="HAKdjwEACAAJ" />
-      </QueryClientProvider>
+      </Provider>
     );
     expect(await screen.findByRole('heading', { level: 5 })).toHaveTextContent(
       'Painless web apps with React, JSX, Redux, and GraphQL'
@@ -27,17 +26,17 @@ describe('BookCardModal', () => {
   });
   it('should render empty message if there is no data', async () => {
     render(
-      <QueryClientProvider client={queryClient} contextSharing>
+      <Provider store={store}>
         <BookCardModal id="empty" />
-      </QueryClientProvider>
+      </Provider>
     );
     expect(await screen.findByText(/Nothing was found/i)).toBeInTheDocument();
   });
   it('should render error message if bad request or server error', async () => {
     render(
-      <QueryClientProvider client={queryClient} contextSharing>
+      <Provider store={store}>
         <BookCardModal id="error" />
-      </QueryClientProvider>
+      </Provider>
     );
     expect(
       await screen.findByText(/Something went wrong/i)

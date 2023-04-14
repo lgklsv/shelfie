@@ -1,20 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import { SuggestBookContext } from 'features/suggest-book/suggest';
+import { suggestedSlice } from 'features/suggest-book/suggest';
 import { BookCardSuggested } from 'entities/book';
 import styles from './SuggestedSection.module.scss';
 
 const SuggestedSection: React.FC = () => {
-  const suggestCtx = useContext(SuggestBookContext);
+  const { suggested } = useSelector(suggestedSlice.selectSuggested);
 
   return (
     <section>
       <div className="container">
-        {suggestCtx.books.length > 0 && (
+        {suggested.length > 0 && (
           <>
             <h2>Suggested books</h2>
             <div className={styles.bookList}>
-              {suggestCtx.books.map((obj: SuggestedBook) => (
+              {suggested.map((obj: SuggestedBook) => (
                 <BookCardSuggested key={obj.id} data={obj} />
               ))}
             </div>

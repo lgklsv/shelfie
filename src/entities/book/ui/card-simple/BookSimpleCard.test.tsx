@@ -2,12 +2,11 @@ import ReactDOM from 'react-dom';
 import { ReactPortal } from 'react';
 import { describe, it } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
 
+import { store } from 'app/store';
 import { fakeApi } from 'shared/api';
 import BookSimpleCard from './BookSimpleCard';
-
-const queryClient = new QueryClient();
 
 describe('Simple Book Card', () => {
   beforeAll(() => {
@@ -34,9 +33,9 @@ describe('Simple Book Card', () => {
   });
   it('should open modal by clicking on the book', () => {
     render(
-      <QueryClientProvider client={queryClient} contextSharing>
+      <Provider store={store}>
         <BookSimpleCard data={fakeApi.books.BOOK_FULL} />
-      </QueryClientProvider>
+      </Provider>
     );
 
     const bookElement = screen.getByTestId('image')
@@ -44,8 +43,6 @@ describe('Simple Book Card', () => {
 
     fireEvent.click(bookElement);
 
-    expect(screen.getByTestId('modal').getAttribute('class')).toMatch(
-      /active/i
-    );
+    expect(screen.getByTestId('modal').getAttribute('class')).toMatch(/modal/i);
   });
 });
