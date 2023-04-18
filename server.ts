@@ -36,9 +36,15 @@ const bootstrapServer = async () => {
           res.write(html[0]);
           pipe(res);
         },
+        onShellError(err: Error) {
+          console.error(err);
+        },
         onAllReady() {
           res.write(html[1]);
           res.end();
+        },
+        onError(err: Error) {
+          console.error(err);
         },
       });
     } catch (err) {
@@ -49,7 +55,9 @@ const bootstrapServer = async () => {
     }
   });
 
-  app.listen(3000, () => console.log('http://localhost:3000/'));
+  app.listen(5173, () =>
+    console.log('Server is up and running on: http://localhost:5173/')
+  );
 };
 
 bootstrapServer();
