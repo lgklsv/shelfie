@@ -18,6 +18,16 @@
     "noImplicitAny": true,
     "jsx": "react-jsx"
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs", "src", "./setupTest.ts"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": [
+    "vite.config.ts",
+    ".eslintrc.cjs",
+    "src",
+    "./setupTest.ts",
+    "./server.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

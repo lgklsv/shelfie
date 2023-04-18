@@ -5,11 +5,11 @@ import { Home } from './home';
 import { About } from './about';
 import { NotFound } from './notfound';
 import { Suggest } from './suggest';
-import { useResetScroll } from './hooks';
+// import { useResetScroll } from './hooks';
 import { Layout } from './layout';
 
 const Routing: React.FC = () => {
-  useResetScroll();
+  // useResetScroll();
 
   return (
     <Routes>
