@@ -21,7 +21,12 @@ module.exports = {
     project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'plugin:cypress/recommended',
+  ],
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
 
