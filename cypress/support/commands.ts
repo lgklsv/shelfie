@@ -8,6 +8,7 @@
 // commands please read more here:
 // https://on.cypress.io/custom-commands
 // ***********************************************
+import 'cypress-file-upload';
 //
 //
 // -- This is a parent command --

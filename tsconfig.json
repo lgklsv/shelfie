@@ -16,7 +16,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "noImplicitAny": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["cypress", "cypress-file-upload"]
   },
   "ts-node": {
     "esm": true,

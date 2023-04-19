@@ -1,17 +1,13 @@
-describe('My First Test', () => {
-  it('Gets, types and asserts', () => {
-    cy.visit('https://example.cypress.io');
+describe('The Home Page', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
 
-    cy.contains('type').click();
+  it('successfully loads', () => {
+    cy.visit('/');
+  });
 
-    // Should be on a new URL which
-    // includes '/commands/actions'
-    cy.url().should('include', '/commands/actions');
-
-    // Get an input, type into it
-    cy.get('.action-email').type('fake@email.com');
-
-    //  Verify that the value has been updated
-    cy.get('.action-email').should('have.value', 'fake@email.com');
+  it('Just a test to remove page load on coverage saving', () => {
+    expect(true).to.equal(true);
   });
 });

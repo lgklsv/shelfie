@@ -56,7 +56,7 @@ const bootstrapServer = async () => {
   });
 
   app.listen(5173, () =>
-    console.log('Server is up and running on: http://localhost:5173/')
+    console.log(`Server is up and running on: http://localhost:${5173}/`)
   );
 };
 
