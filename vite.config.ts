@@ -21,6 +21,8 @@ export default defineConfig({
         'src/const/*',
         '**/*/@(index|config).@(tsx|ts)',
         '**/*/*.@(icon|asset).@(tsx|ts)',
+        'src/entry-client.tsx',
+        'src/entry-server.tsx',
       ],
       enabled: true,
       provider: 'istanbul',
