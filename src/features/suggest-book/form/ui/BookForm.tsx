@@ -75,6 +75,7 @@ const BookForm: React.FC = () => {
 
   return (
     <form
+      data-testid="suggest-form"
       onSubmit={handleSubmit(submitHandler)}
       className={`${styles.form} container_sm`}
       noValidate

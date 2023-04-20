@@ -27,8 +27,4 @@ describe('Navigation between pages', () => {
     cy.url().should('include', '/thereispagewiththispath');
     cy.get('h2').contains('404').should('be.visible');
   });
-
-  it('Just a test to remove page load on coverage saving', () => {
-    expect(true).to.equal(true);
-  });
 });

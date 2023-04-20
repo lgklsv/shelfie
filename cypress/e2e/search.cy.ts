@@ -1,4 +1,4 @@
-describe('search', () => {
+describe('Search', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -44,9 +44,5 @@ describe('search', () => {
 
     cy.contains('home').click();
     cy.get('[type="search"]').should('have.value', 'javascript');
-  });
-
-  it('Just a test to remove page load on coverage saving', () => {
-    expect(true).to.equal(true);
   });
 });
