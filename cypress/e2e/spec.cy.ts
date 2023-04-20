@@ -1,8 +1,4 @@
-describe('The Home Page', () => {
-  beforeEach(() => {
-    cy.visit('/');
-  });
-
+describe('Navigation between pages', () => {
   it('successfully loads', () => {
     cy.visit('/');
   });

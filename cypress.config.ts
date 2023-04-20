@@ -8,5 +8,6 @@ export default defineConfig({
       coverage(on, config);
       return config;
     },
+    experimentalRunAllSpecs: true,
   },
 });
