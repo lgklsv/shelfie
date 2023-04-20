@@ -82,6 +82,8 @@ describe('Suggest book', () => {
 
     cy.contains('The best book ever').should('be.visible');
     cy.contains('Dan Brown').should('be.visible');
+    cy.contains('Published: 2015').should('be.visible');
+    cy.contains('Category: Thriller').should('be.visible');
 
     cy.get('[data-testid="popup"]').should('not.exist');
 
@@ -98,6 +100,8 @@ describe('Suggest book', () => {
 
     cy.contains('The best book ever').should('be.visible');
     cy.contains('Dan Brown').should('be.visible');
+    cy.contains('Published: 2015').should('be.visible');
+    cy.contains('Category: Thriller').should('be.visible');
   });
 
   it('Just a test to remove page load on coverage saving', () => {
