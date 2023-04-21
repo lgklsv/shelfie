@@ -14,9 +14,9 @@ describe('Search', () => {
     cy.get('[type="search"]').type('harry potter');
     cy.get('[type="submit"]').click();
 
-    // TODO change assertion here
-    cy.contains('Harry Potter and the Cham...').should('exist');
-    cy.contains('Harry Potter and the Cham...').should('not.be.visible');
+    cy.contains('[data-testid="simple-card-title"]', /harry potter/i)
+      .should('exist')
+      .should('not.be.visible');
 
     cy.get('[data-testid="clear-btn"]').children('svg').should('be.visible');
 
