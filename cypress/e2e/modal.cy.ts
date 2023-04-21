@@ -22,6 +22,8 @@ describe('Modal', () => {
     // Open modal
     cy.get('[data-testid="book-item"]').first().click();
 
+    cy.contains('google books').should('be.visible');
+    cy.get('[data-testid="image"]').should('be.visible');
     cy.get('[data-testid="modal"]').should('be.visible');
     cy.get('[data-testid="backdrop"]').should('be.visible');
 

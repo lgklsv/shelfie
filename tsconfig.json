@@ -16,8 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "noImplicitAny": true,
-    "jsx": "react-jsx",
-    "types": ["cypress", "cypress-file-upload"]
+    "jsx": "react-jsx"
   },
   "ts-node": {
     "esm": true,
@@ -28,9 +27,13 @@
     ".eslintrc.cjs",
     "src",
     "./setupTest.ts",
-    "./server.ts",
-    "./cypress.config.ts",
-    "cypress"
+    "./server.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "exclude": ["./cypress.config.ts", "cypress"],
+  "references": [
+    { "path": "./tsconfig.node.json" },
+    {
+      "path": "./cypress/tsconfig.spec.json"
+    }
+  ]
 }

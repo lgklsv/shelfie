@@ -10,6 +10,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    'plugin:cypress/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,15 +19,10 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: ['./tsconfig.json', './cypress/tsconfig.spec.json'],
     tsconfigRootDir: __dirname,
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier',
-    'plugin:cypress/recommended',
-  ],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'cypress'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
 
