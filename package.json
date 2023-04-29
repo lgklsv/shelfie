@@ -87,8 +87,10 @@
     "instrument": true
   },
   "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "npm rum lint:fix"
+    ],
     "*.{js,ts,tsx,scss,css,md}": [
-      "npm rum lint:fix",
       "npm run format"
     ]
   }
