@@ -1,3 +1,4 @@
+/* eslint-disable cypress/no-unnecessary-waiting */
 describe('Suggest book', () => {
   beforeEach(() => {
     cy.visit('/suggest');
