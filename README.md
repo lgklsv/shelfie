@@ -10,7 +10,8 @@ digital library app. Here you can find almost every book you want. We use google
 - suggest a book to the library with new form
 - notification popup
 - [feature sliced design](https://feature-sliced.design/) architecture
-- (⚙️ new) state management with Redux / api calls with RTK query
+- state management with Redux / api calls with RTK query
+- (⚙️ new) Server-side rendering with React 18
 
 ## Screenshot
 
