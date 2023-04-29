@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "types": ["cypress", "cypress-file-upload"],
+    "composite": true
+  },
+
+  "include": ["**/*.cy.ts", "**/*.ts", "../cypress.config.ts"]
+}

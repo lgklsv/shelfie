@@ -22,7 +22,7 @@ const BookSimpleCard: React.FC<BookCardProps> = ({ data }) => {
   return (
     <div className={styles.card} data-testid="book-item">
       <div className={styles.card__title}>
-        <p className={styles.card__title_text}>
+        <p data-testid="simple-card-title" className={styles.card__title_text}>
           {string.sliceText(volume.title || 'Title is not available', 25)}
         </p>
       </div>

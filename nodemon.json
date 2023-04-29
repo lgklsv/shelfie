@@ -1,0 +1,5 @@
+{
+  "ignore": ["node_modules"],
+  "exec": "ts-node --experimental-specifier-resolution=node server.ts",
+  "ext": ".ts"
+}

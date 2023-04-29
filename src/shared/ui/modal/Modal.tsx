@@ -44,7 +44,11 @@ const Modal: React.FC<ModalProps> = ({ children, toggle }) => {
         exit="exit"
       >
         {children}
-        <div onClick={toggle} className={styles.modal__close}>
+        <div
+          data-testid="close-modal-btn"
+          onClick={toggle}
+          className={styles.modal__close}
+        >
           ╳
         </div>
       </motion.div>

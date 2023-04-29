@@ -9,7 +9,15 @@ import mdx from '@mdx-js/rollup';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), mdx(), tsconfigPaths()],
+  plugins: [
+    react({
+      babel: {
+        plugins: [['istanbul']],
+      },
+    }),
+    mdx(),
+    tsconfigPaths(),
+  ],
   test: {
     globals: true,
     environment: 'jsdom',
@@ -20,10 +28,12 @@ export default defineConfig({
       exclude: [
         'src/const/*',
         '**/*/@(index|config).@(tsx|ts)',
-        '**/*/*.@(icon|asset).@(tsx|ts)',
+        '**/*/*.@(icon|asset|d|test).@(tsx|ts)',
+        'src/entry-client.tsx',
+        'src/entry-server.tsx',
       ],
       enabled: true,
-      provider: 'istanbul',
+      provider: 'c8',
       reporter: ['text'],
       all: true,
     },
